@@ -124,7 +124,7 @@
       </div>
       <div class="nav-row">
        <button class="icon-btn" id="learn-prev-btn" onclick="learnPrev()"><img src="img/prev_btn.png" alt="Previous" /></button>
-        <button class="icon-btn notes-btn"><img src="img/notes.png" alt="Notes" /></button>
+        
         <button class="icon-btn" id="learn-next-btn" onclick="learnNext()"><img src="img/next_btn.png" alt="Next" /></button>
    </div>
     </div>
@@ -156,7 +156,7 @@
     <!-- QUESTION BAR -->
  <div class="mcq-question-bar">
       <span id="mcq-question-text">A short way to say thank you</span>
-      <button class="audio-btn small" onclick="playAudio()"><img src="img/audio.png" alt="Audio" /></button>
+      <button class="audio-btn small" onclick="playMCQAudio()"><img src="img/audio.png" alt="Audio" /></button>
     </div>
     <div class="counter-badge" id="mcq-counter">01/10</div>
 
@@ -165,20 +165,18 @@
       <div class="mcq-options" id="mcq-options">
         <!-- injected by JS -->
       </div>
-      <div class="mcq-feedback hidden" id="mcq-feedback">
-        <div class="star-anim">⭐</div>
-        <div class="correct-text">You are correct!</div>
+<div class="mcq-feedback hidden" id="mcq-feedback">
+        <div class="feedback-text correct-text">You are correct!</div>
       </div>
       <div class="wrong-feedback hidden" id="mcq-wrong-feedback">
-        <div class="wrong-icon">✗</div>
-        <div class="wrong-text">Oops! Try again.</div>
+        <div class="feedback-text wrong-text">So Close!</div>
       </div>
     </div>
 
     <!-- NAV ROW -->
     <div class="nav-row">
       <button class="icon-btn" id="mcq-prev-btn" onclick="mcqPrev()"><img src="img/prev_btn.png" alt="Previous" /></button>
-      <button class="icon-btn notes-btn"><img src="img/notes.png" alt="Notes" /></button>
+      
       <button class="icon-btn" id="mcq-next-btn" onclick="mcqNext()"><img src="img/next_btn.png" alt="Next" /></button>
     </div>
 
@@ -224,12 +222,16 @@
       <img src="img/ribbon.png" alt="ribbon" class="ribbon-img" />
     </div>
 
+  <!-- RESULTS TABLE -->
+    <div id="results-review" style="width:100%;max-height:200px;overflow-y:auto;margin-top:8px;display:none;">
+    </div>
+
     <!-- BUTTONS -->
     <div class="congrats-btns">
       <button class="replay-btn" onclick="replayMCQ()">
         <img src="img/replay_btn.png" alt="Replay" class="replay-img" />
       </button>
-      <button class="icon-btn notes-btn-round" onclick="">
+     <button class="icon-btn notes-btn-round" onclick="toggleReview()">
         <img src="img/notes.png" alt="Notes" />
       </button>
     </div>
@@ -366,10 +368,11 @@
   </div>
   <div class="use-page-card">
    <div class="instr-row-wrap">
-  <div class="use-instr-bar">
-    <span>Read the scenario below and write an answer within 100 to 150 words for it.</span>
-    <button class="audio-btn small" onclick="playInstrAudio('writing')"><img src="img/audio.png" alt="Audio" /></button>
-  </div>
+<div class="use-instr-bar">
+    <span>Write a 100–120 word paragraph about a situation where you helped someone or solved a problem.
+Use all 5 given words meaningfully. Add a creative title for your paragraph.
+ <button class="audio-btn small" onclick="playInstrAudio('writing')"><img src="img/audio.png" alt="Audio" /></button></span>
+</div>
   <button class="chag-btn" onclick="showWritingInfo()">
     <img src="img/chag.png" alt="Info" />
   </button>
@@ -377,7 +380,7 @@
     <div class="use-scenario" id="writing-scenario">Loading...</div>
     <textarea class="writing-box" id="writing-answer" placeholder="Write your answer here..."></textarea>
     <div class="use-bottom-row">
-      <button class="sample-ans-btn" >Sample Answer</button>
+      <button class="sample-ans-btn" onclick="showSampleAnswer()">Sample Answer</button>
      <button class="save-btn" onclick="saveWriting()"><img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" /></button>
     </div>
   </div>
@@ -440,6 +443,18 @@
       <button class="modal-close-btn" onclick="hideModal('more-examples-modal')">✕</button>
     </div>
     <div id="more-examples-content">
+    </div>
+  </div>
+</div>
+
+  <!-- REVIEW MODAL -->
+<div class="modal-overlay hidden" id="review-modal">
+  <div class="modal-box writing-info-box">
+    <div class="modal-top-row">
+      <h3>Your Answers</h3>
+      <button class="modal-close-btn" onclick="hideModal('review-modal')">✕</button>
+    </div>
+    <div class="writing-info-scroll" id="review-modal-content">
     </div>
   </div>
 </div>

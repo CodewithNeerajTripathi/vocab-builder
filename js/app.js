@@ -9,26 +9,26 @@
 ──────────────────────────────────────────── */
 const VOCAB_SETS = {
 1: [
-    { word: "Considerate", pos: "Adjective",    meaning: "Thoughtful about other people's feelings and needs",               example: "Deepika is {word} when someone feels left out.", examples: ["Deepika is {word} when someone feels left out.", "It was {word} of Nihal to wait for his friend after class.", "It is always {word} to include everyone in a group activity.", "A {word} student listens without interrupting.", "You were so rude to Hema. Was that {word} of you?"] },
-    { word: "Frustrated",  pos: "Adjective",    meaning: "Upset because something is difficult or not working",              example: "The toddler felt {word} when his tiny hands could not hold the toy.", examples: ["The toddler felt {word} when his tiny hands could not hold the toy.", "Kabir was {word}, but he kept trying to solve the maths problem.", "It is normal to feel {word} when things do not work quickly.", "Even when she felt {word}, Tara kept trying.", "Even when she felt {word}, Tara kept trying."] },
-    { word: "Determined",  pos: "Adjective",    meaning: "Not giving up easily",                                             example: "Aparna was {word} to finish the race, even after she stumbled.", examples: ["Aparna was {word} to finish the race, even after she stumbled.", "A {word} student keeps practising after making mistakes.", "The team stayed {word} during the final minutes of the match.", "If you are {word}, you keep working towards your goal.", "Gopi's father helped him stay {word} until the end."] },
-    { word: "Cautious",    pos: "Adjective",    meaning: "Careful to avoid danger or mistakes",                              example: "Since the floor was wet, the students were {word} as they walked.", examples: ["Since the floor was wet, the students were {word} as they walked.", "Ever since his fall, Surya has been {word} while climbing the stairs.", "Be {word} while crossing the road in heavy traffic.", "It is wise to be {word} when trying something unfamiliar.", "We need to be more {word} when no one is home."] },
-    { word: "Fortunate",   pos: "Adjective",    meaning: "Lucky; having something good happen",                              example: "We are {word} to have a good library in our neighbourhood.", examples: ["We are {word} to have a good library in our neighbourhood.", "Naina felt {word} when her lost watch was returned.", "It was {word} that the rain stopped before the match began.", "I am {word} to have led a happy life, said grandfather.", "We felt {word} that the bus arrived just in time."] },
-    { word: "Patiently",   pos: "Adverb",       meaning: "In a calm, waiting way",                                           example: "Jackson waited {word} while the doctor checked his arm.", examples: ["Jackson waited {word} while the doctor checked his arm.", "The teacher listened {word} to every student's question.", "Varsha worked {word} on the model until it was complete.", "If you wait {word}, your turn will come.", "She spent hours {word} weaving threads into a beautiful sari."] },
-    { word: "Briskly",     pos: "Adverb",       meaning: "Quickly and energetically",                                        example: "Mr Singh walked {word} to the station so he would not miss the train.", examples: ["Mr Singh walked {word} to the station so he would not miss the train.", "The players moved {word} across the field during practice.", "Tara and her friends packed their bags {word} when the school bell rang.", "Walk {word}. We are getting late!", "On a cold morning, people often walk {word} to keep warm."] },
-    { word: "Organise",    pos: "Verb",         meaning: "To plan and arrange neatly",                                       example: "We should {word} our notebooks before the new term begins.", examples: ["We should {word} our notebooks before the new term begins.", "Jai and Meena organised the class chart.", "If you {word} your time well, you can work without rushing.", "Tomorrow, we will {word} the materials for the science project.", "Please {word} the files and keep them in the cabinet."] },
-    { word: "Suggest",     pos: "Verb",         meaning: "To give an idea or advice",                                        example: "The tutor said, 'I {word} we read this chapter first.'", examples: ["The tutor said, 'I {word} we read this chapter first.'", "Sarika suggested a new game for our summer party.", "She suggested an idea that solved the problem quickly.", "I will {word} a better title for the story.", "I {word} we go out for breakfast today."] },
-    { word: "Resolve",     pos: "Verb",         meaning: "To solve a problem or settle a disagreement",                      example: "The two friends talked calmly to {word} the argument.", examples: ["The two friends talked calmly to {word} the argument.", "We should {word} small problems before they grow bigger.", "The class monitor helped {word} the confusion about the timetable.", "The group resolved the misunderstanding and continued working together.", "I feel we {word} this fairly."] },
-    { word: "Predict",     pos: "Verb",         meaning: "To say what may happen based on clues",                            example: "We {word} the weather from dark clouds.", examples: ["We {word} the weather from dark clouds.", "The old man had {word} the winner yesterday.", "Can you {word} what happens next in the story?", "We can {word} the result more easily after looking at the data.", "Scientists {word} weather by studying patterns."] },
-    { word: "Navigate",    pos: "Verb",         meaning: "To find the way through or across something",                      example: "We used a map to {word} through the old part of the city.", examples: ["We used a map to {word} through the old part of the city.", "The driver carefully navigated the crowded street.", "Landmarks can help travellers {word} unfamiliar places.", "It is easier to {word} a new place if you notice landmarks.", "In computer class, we learned how to {word} the website safely."] },
-    { word: "Record",      pos: "Noun / Verb",  meaning: "Information kept for future use; to write down or save information", example: "The teacher keeps a {word} of attendance.", examples: ["The teacher keeps a {word} of attendance.", "A team of five people were asked to {word} the results.", "A {word} helps us remember important details later.", "We will {word} the experiment results on a chart.", "Did you check the {word} carefully?"] },
-    { word: "Summary",     pos: "Noun",         meaning: "A short version of the main points",                               example: "The {word} gives the main idea of the chapter.", examples: ["The {word} gives the main idea of the chapter.", "Our teacher asked us to write a {word} of the lesson.", "A good {word} includes key points, not every detail.", "We will share the {word} in class tomorrow.", "Can you write a {word} in five lines?"] },
-    { word: "Solution",    pos: "Noun",         meaning: "An answer to a problem",                                           example: "The {word} is on the next page.", examples: ["The {word} is on the next page.", "The traffic officers found a {word} to the traffic problem.", "We need a practical {word} to reduce plastic waste.", "We will discuss the {word} after checking your work.", "What is your {word}?"] },
-    { word: "Permission",  pos: "Noun",         meaning: "Approval to do something",                                         example: "Will you take {word} to leave early?", examples: ["Will you take {word} to leave early?", "The children got {word} to use the art room after school.", "We should never take something without {word}.", "You must ask for {word} before leaving the classroom.", "Dad said, 'Ask Mom's {word} before you go to your friend's house.'"] },
-    { word: "Decision",    pos: "Noun",         meaning: "A choice made after thinking carefully",                           example: "The teacher made a fair {word} after hearing both sides.", examples: ["The teacher made a fair {word} after hearing both sides.", "Choosing a team captain can be a difficult {word}.", "The debate team's win was based on one judge's final {word}.", "We will make a {word} after discussing all the options.", "A thoughtful {word} often comes after careful discussion."] },
-    { word: "Resource",    pos: "Noun",         meaning: "Something useful that helps you learn or do something",            example: "A dictionary is a useful {word} for learning new words.", examples: ["A dictionary is a useful {word} for learning new words.", "This website is a useful {word} for our project.", "Our school's online library is an excellent {word} for project work.", "We used a video as a {word} for our science task.", "Water is a natural {word} that we must use wisely."] },
-    { word: "Evidence",    pos: "Noun",         meaning: "Facts or clues that show something is true",                      example: "The police looked for {word} at the scene.", examples: ["The police looked for {word} at the scene.", "The students found {word} during the experiment.", "Good answers include fact-based {word} to support ideas.", "We will collect {word} before making a decision.", "What {word} do you have?"] },
-    { word: "Gratitude",   pos: "Noun",         meaning: "Thankfulness and appreciation",                                    example: "The students showed {word} by thanking the bus driver.", examples: ["The students showed {word} by thanking the bus driver.", "Amita expressed {word} to her teachers.", "A letter of {word} was sent to teachers by Class 5 students.", "We should show {word} when someone helps us.", "The class expressed {word} to the school helpers."] },
+    { word: "considerate", pos: "adjective",    meaning: "thoughtful about other people's feelings and needs",               example: "Deepika is {word} when someone feels left out.", examples: ["Deepika is {word} when someone feels left out.", "It was {word} of Nihal to wait for his friend after class.", "It is always {word} to include everyone in a group activity.", "A {word} student listens without interrupting.", "You were so rude to Hema. Was that {word} of you?"] },
+    { word: "frustrated",  pos: "adjective",    meaning: "upset because something is difficult or not working",              example: "The toddler felt {word} when his tiny hands could not hold the toy.", examples: ["The toddler felt {word} when his tiny hands could not hold the toy.", "Kabir was {word}, but he kept trying to solve the maths problem.", "It is normal to feel {word} when things do not work quickly.", "Even when she felt {word}, Tara kept trying.", "Even when she felt {word}, Tara kept trying."] },
+    { word: "determined",  pos: "adjective",    meaning: "not giving up easily",                                             example: "Aparna was {word} to finish the race, even after she stumbled.", examples: ["Aparna was {word} to finish the race, even after she stumbled.", "A {word} student keeps practising after making mistakes.", "The team stayed {word} during the final minutes of the match.", "If you are {word}, you keep working towards your goal.", "Gopi's father helped him stay {word} until the end."] },
+    { word: "cautious",    pos: "adjective",    meaning: "careful to avoid danger or mistakes",                              example: "Since the floor was wet, the students were {word} as they walked.", examples: ["Since the floor was wet, the students were {word} as they walked.", "Ever since his fall, Surya has been {word} while climbing the stairs.", "Be {word} while crossing the road in heavy traffic.", "It is wise to be {word} when trying something unfamiliar.", "We need to be more {word} when no one is home."] },
+    { word: "fortunate",   pos: "adjective",    meaning: "lucky; having something good happen",                              example: "We are {word} to have a good library in our neighbourhood.", examples: ["We are {word} to have a good library in our neighbourhood.", "Naina felt {word} when her lost watch was returned.", "It was {word} that the rain stopped before the match began.", "I am {word} to have led a happy life, said grandfather.", "We felt {word} that the bus arrived just in time."] },
+    { word: "patiently",   pos: "adverb",       meaning: "in a calm, waiting way",                                           example: "Jackson waited {word} while the doctor checked his arm.", examples: ["Jackson waited {word} while the doctor checked his arm.", "The teacher listened {word} to every student's question.", "Varsha worked {word} on the model until it was complete.", "If you wait {word}, your turn will come.", "She spent hours {word} weaving threads into a beautiful sari."] },
+    { word: "briskly",     pos: "adverb",       meaning: "quickly and energetically",                                        example: "Mr Singh walked {word} to the station so he would not miss the train.", examples: ["Mr Singh walked {word} to the station so he would not miss the train.", "The players moved {word} across the field during practice.", "Tara and her friends packed their bags {word} when the school bell rang.", "Walk {word}. We are getting late!", "On a cold morning, people often walk {word} to keep warm."] },
+    { word: "organise",    pos: "verb",         meaning: "to plan and arrange neatly",                                       example: "We should {word} our notebooks before the new term begins.", examples: ["We should {word} our notebooks before the new term begins.", "Jai and Meena organised the class chart.", "If you {word} your time well, you can work without rushing.", "Tomorrow, we will {word} the materials for the science project.", "Please {word} the files and keep them in the cabinet."] },
+    { word: "suggest",     pos: "verb",         meaning: "to give an idea or advice",                                        example: "The tutor said, 'I {word} we read this chapter first.'", examples: ["The tutor said, 'I {word} we read this chapter first.'", "Sarika suggested a new game for our summer party.", "She suggested an idea that solved the problem quickly.", "I will {word} a better title for the story.", "I {word} we go out for breakfast today."] },
+    { word: "resolve",     pos: "verb",         meaning: "to solve a problem or settle a disagreement",                      example: "The two friends talked calmly to {word} the argument.", examples: ["The two friends talked calmly to {word} the argument.", "We should {word} small problems before they grow bigger.", "The class monitor helped {word} the confusion about the timetable.", "The group resolved the misunderstanding and continued working together.", "I feel we {word} this fairly."] },
+    { word: "predict",     pos: "verb",         meaning: "to say what may happen based on clues",                            example: "We {word} the weather from dark clouds.", examples: ["We {word} the weather from dark clouds.", "The old man who sits in the stands for every match had predicted the winner yesterday.", "Can you {word} what happens next in the story?", "We can {word} the result more easily after looking at the data.", "Scientists {word} weather by studying patterns."] },
+    { word: "navigate",    pos: "verb",         meaning: "to find the way through or across something",                      example: "We used a map to {word} through the old part of the city.", examples: ["We used a map to {word} through the old part of the city.", "The driver carefully navigated the crowded street.", "Landmarks can help travellers {word} unfamiliar places.", "It is easier to {word} a new place if you notice landmarks.", "In computer class, we learned how to {word} the website safely."] },
+    { word: "record",      pos: "noun / verb",  meaning: "information kept for future use; to write down or save information", example: "The teacher keeps a {word} of attendance.", examples: ["The teacher keeps a {word} of attendance.", "A team of five people were asked to {word} the results.", "A {word} helps us remember important details later.", "We will {word} the experiment results on a chart.", "Did you check the {word} carefully?"] },
+    { word: "summary",     pos: "noun",         meaning: "a short version of the main points",                               example: "The {word} gives the main idea of the chapter.", examples: ["The {word} gives the main idea of the chapter.", "Our teacher asked us to write a {word} of the lesson.", "A good {word} includes key points, not every detail.", "We will share the {word} in class tomorrow.", "Can you write a {word} in five lines?"] },
+    { word: "solution",    pos: "noun",         meaning: "an answer to a problem",                                           example: "The {word} is on the next page.", examples: ["The {word} is on the next page.", "The traffic officers found a {word} to the traffic problem.", "We need a practical {word} to reduce plastic waste.", "We will discuss the {word} after checking your work.", "What is your {word}?"] },
+    { word: "permission",  pos: "noun",         meaning: "approval to do something",                                         example: "Will you take {word} to leave early?", examples: ["Will you take {word} to leave early?", "The children got {word} to use the art room after school.", "We should never take something without {word}.", "You must ask for {word} before leaving the classroom.", "Dad said, 'Ask Mom's {word} before you go to your friend's house.'"] },
+    { word: "decision",    pos: "noun",         meaning: "a choice made after thinking carefully",                           example: "The teacher made a fair {word} after hearing both sides.", examples: ["The teacher made a fair {word} after hearing both sides.", "Choosing a team captain can be a difficult {word}.", "The debate team's win was based on one judge's final {word}.", "We will make a {word} after discussing all the options.", "A thoughtful {word} often comes after careful discussion."] },
+    { word: "resource",    pos: "noun",         meaning: "something useful that helps you learn or do something",            example: "A dictionary is a useful {word} for learning new words.", examples: ["A dictionary is a useful {word} for learning new words.", "This website is a useful {word} for our project.", "Our school's online library is an excellent {word} for project work.", "We used a video as a {word} for our science task.", "Water is a natural {word} that we must use wisely."] },
+    { word: "evidence",    pos: "noun",         meaning: "facts or clues that show something is true",                      example: "The police looked for {word} at the scene.", examples: ["The police looked for {word} at the scene.", "The students found {word} during the experiment.", "Good answers include fact-based {word} to support ideas.", "We will collect {word} before making a decision.", "What {word} do you have?"] },
+    { word: "gratitude",   pos: "noun",         meaning: "thankfulness and appreciation",                                    example: "The students showed {word} by thanking the bus driver.", examples: ["The students showed {word} by thanking the bus driver.", "Amita expressed {word} to her teachers.", "A letter of {word} was sent to teachers by Class 5 students.", "We should show {word} when someone helps us.", "The class expressed {word} to the school helpers."] },
   ],
   2: [
     { word: "Present",     pos: "Noun / Verb / Adjective", meaning: "Gift; to show; happening now",          example: "Mom gave me a {word} for my birthday.",                    examples: ["Mom gave me a {word} for my birthday.", "Riya will be {word} at the debate competition tomorrow.", "Who else is {word} in class today?", "They presented their ideas clearly yesterday.", "The {word} situation needs attention."] },
@@ -126,9 +126,9 @@ const VOCAB_SETS = {
    USE THE WORDS DATA
 ──────────────────────────────────────────── */
 const WRITING_DATA = {
-  1: {
+1: {
     scenario: "You are a brave explorer in an ancient jungle. Suddenly, you see a gigantic animal you've never seen before! Tell the story of your adventure.",
-    sample: "As a determined explorer, I was navigating through an ancient jungle when I spotted a massive creature. I was cautious as I moved closer. I decided to record what I saw as evidence. I was fortunate to have my camera. I felt frustrated but excited — this was a remarkable discovery. Patiently, I observed from a safe distance. Later, I wrote a summary for my team. We made a decision to return with more resources. I felt great gratitude for the experience. It taught me to be considerate of nature and all its mysteries."
+    sample: "A Small Choice, A Big Difference\n\nYesterday, my friend Arul looked upset during lunch. I tried to be considerate (Set 1) and asked him what had happened. He said his science notebook was missing. First, I stayed calm and thought in a logical (Set 2) way about where it could be. We decided to discover (Set 3) possible places, like the classroom and the playground. Then I helped him clarify (Set 4) where he had last kept it. Suddenly, he remembered leaving it near the lab table. We rushed there and found it safely. I felt happy and made a sankalp (Set 5) to always support my friends when they need help."
   },
   2: {
     scenario: "You meet a new student at school who is feeling shy and nervous. Describe how you helped them feel welcome.",
@@ -216,7 +216,7 @@ function showWritingInfo() { showModal('writing-info-modal'); }
 function closeWritingInfo() { hideModal('writing-info-modal'); }
 function showSampleAnswer() {
   const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
-  document.getElementById('sample-text').textContent = data.sample;
+  document.getElementById('sample-text').innerHTML = data.sample.replace(/\n/g, '<br/>');
   showModal('sample-modal');
 }
 function closeSampleModal() { hideModal('sample-modal'); }
@@ -424,18 +424,24 @@ function selectMCQOption(btn, chosen, correct, question) {
   const allBtns = document.querySelectorAll('.mcq-opt-btn');
   allBtns.forEach(b => { b.disabled = true; });
 
-  const isCorrect = chosen === correct;
+const isCorrect = chosen === correct;
+  btn.classList.add('clicked-selected');
 if (isCorrect) {
     btn.classList.add('correct');
-    // Add green checkmark badge next to button
     const check = document.createElement('span');
     check.className = 'mcq-check';
     check.textContent = '✓';
     btn.parentElement.appendChild(check);
     document.getElementById('mcq-feedback').classList.remove('hidden');
     document.getElementById('mcq-wrong-feedback').classList.add('hidden');
-  } else {
+    document.querySelector('.mcq-card').classList.remove('wrong-answer');
+    document.querySelector('.mcq-card').classList.add('correct-answer');
+} else {
     btn.classList.add('wrong');
+    const wrongCheck = document.createElement('span');
+    wrongCheck.className = 'mcq-check mcq-wrong-check';
+    wrongCheck.textContent = '✗';
+    btn.parentElement.appendChild(wrongCheck);
     allBtns.forEach(b => {
       if (b.textContent === correct) {
         b.classList.add('correct');
@@ -447,17 +453,19 @@ if (isCorrect) {
     });
     document.getElementById('mcq-wrong-feedback').classList.remove('hidden');
     document.getElementById('mcq-feedback').classList.add('hidden');
+    document.querySelector('.mcq-card').classList.remove('correct-answer');
+    document.querySelector('.mcq-card').classList.add('wrong-answer');
   }
-
   mcqResults.push({ question, userAnswer: chosen, correct, isCorrect });
 }
 
 function hideFeedback() {
   document.getElementById('mcq-feedback').classList.add('hidden');
   document.getElementById('mcq-wrong-feedback').classList.add('hidden');
+  document.querySelector('.mcq-card').classList.remove('correct-answer', 'wrong-answer');
 }
-
 function mcqNext() {
+  if (!mcqAnswered) return;
   if (mcqIndex < 9) {
     mcqIndex++;
     renderMCQ();
@@ -511,22 +519,66 @@ function showResults() {
   document.getElementById('congrats-msg').innerHTML = msgs[stars];
 
 // Render stars using images
-  for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 3; i++) {
     const img = document.getElementById('star' + i);
     img.src = i <= stars ? 'img/star_yellow.png' : 'img/star_grey.png';
   }
+
+  // Show review of all answers
+  let reviewHtml = '';
+  mcqResults.forEach((r, i) => {
+    const icon = r.isCorrect ? '✅' : '❌';
+    const color = r.isCorrect ? '#16a34a' : '#ef4444';
+    reviewHtml += `
+      <div style="background:#f9fafb;border-radius:12px;padding:12px 16px;margin-bottom:10px;text-align:left;border:1.5px solid ${r.isCorrect ? '#bbf7d0' : '#fecaca'};">
+        <div style="font-size:1rem;font-weight:700;color:#1f2937;">${icon} Q${i+1}: ${r.question}</div>
+        <div style="font-size:0.9rem;color:${color};margin-top:4px;">Your answer: <strong>${r.userAnswer}</strong></div>
+        ${!r.isCorrect ? `<div style="font-size:0.9rem;color:#16a34a;">Correct answer: <strong>${r.correct}</strong></div>` : ''}
+      </div>
+    `;
+  });
+  document.getElementById('results-review').innerHTML = reviewHtml;
+  document.getElementById('review-modal-content').innerHTML = reviewHtml;
 }
 
 /* ────────────────────────────────────────────
    AUDIO (placeholder – wire up real TTS if needed)
 ──────────────────────────────────────────── */
+let isSpeaking = false;
+
 function playAudio() {
   const wordEl = document.getElementById('learn-word');
   const word = wordEl ? wordEl.textContent : '';
   if ('speechSynthesis' in window && word) {
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      return;
+    }
     const utt = new SpeechSynthesisUtterance(word);
     utt.lang = 'en-US';
     utt.rate = 0.85;
+    utt.onend = () => { isSpeaking = false; };
+    isSpeaking = true;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utt);
+  }
+}
+
+function playMCQAudio() {
+  const questionEl = document.getElementById('mcq-question-text');
+  const question = questionEl ? questionEl.textContent : '';
+  if ('speechSynthesis' in window && question) {
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      return;
+    }
+    const utt = new SpeechSynthesisUtterance(question);
+    utt.lang = 'en-US';
+    utt.rate = 0.85;
+    utt.onend = () => { isSpeaking = false; };
+    isSpeaking = true;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utt);
   }
@@ -618,7 +670,7 @@ function saveSpeaking() {
 
 function playInstrAudio(type) {
   const text = type === 'writing'
-    ? 'Read the scenario below and write an answer within 100 to 150 words for it.'
+    ? '"Write a 100–120 word paragraph about a situation where you helped someone or solved a problem. Use all 5 given words meaningfully. Add a creative title for your paragraph.'
     : 'Now read your answer aloud and record it clearly using the correct pronunciation and expression.';
   if ('speechSynthesis' in window) {
     const utt = new SpeechSynthesisUtterance(text);
@@ -699,6 +751,9 @@ function formatTime(secs) {
   const m = Math.floor(secs / 60);
   const s = secs % 60;
   return m + ':' + String(s).padStart(2, '0');
+}
+function toggleReview() {
+  showModal('review-modal');
 }
 
 function replayMCQ() {
