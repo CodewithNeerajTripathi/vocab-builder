@@ -30,94 +30,94 @@ const VOCAB_SETS = {
     { word: "evidence",    pos: "noun",         meaning: "facts or clues that show something is true",                      example: "The police looked for {word} at the scene.", examples: ["The police looked for {word} at the scene.", "The students found {word} during the experiment.", "Good answers include fact-based {word} to support ideas.", "We will collect {word} before making a decision.", "What {word} do you have?"] },
     { word: "gratitude",   pos: "noun",         meaning: "thankfulness and appreciation",                                    example: "The students showed {word} by thanking the bus driver.", examples: ["The students showed {word} by thanking the bus driver.", "Amita expressed {word} to her teachers.", "A letter of {word} was sent to teachers by Class 5 students.", "We should show {word} when someone helps us.", "The class expressed {word} to the school helpers."] },
   ],
-  2: [
-    { word: "Present",     pos: "Noun / Verb / Adjective", meaning: "Gift; to show; happening now",          example: "Mom gave me a {word} for my birthday.",                    examples: ["Mom gave me a {word} for my birthday.", "Riya will be {word} at the debate competition tomorrow.", "Who else is {word} in class today?", "They presented their ideas clearly yesterday.", "The {word} situation needs attention."] },
-    { word: "Change",      pos: "Noun / Verb",             meaning: "Difference; to make different",         example: "There is a {word} in the weather.",                        examples: ["There is a {word} in the weather.", "We need to {word} our plan.", "The {word} was sudden.", "She changed her answer after checking it.", "What {word} do you notice?"] },
-    { word: "Plan",        pos: "Noun / Verb",             meaning: "A method; to decide in advance",        example: "We made a clear {word}.",                                  examples: ["We made a clear {word}.", "I will {word} my work properly.", "The {word} looks effective.", "She planned her project yesterday.", "What is your {word}?"] },
-    { word: "Mark",        pos: "Noun / Verb",             meaning: "A score; to show or label",             example: "He got a good {word} in science.",                         examples: ["He got a good {word} in science.", "Please {word} the correct option.", "The {word} is visible on the page.", "The teacher marked the answers yesterday.", "Did the Science teacher {word} your work?"] },
-    { word: "Accurate",    pos: "Adjective",               meaning: "Correct and exact",                     example: "The answer must be {word}.",                               examples: ["The answer must be {word}.", "A result of bad eating habits is obesity.", "We need a more {word} method to avoid mistakes.", "Your answer will be {word} if you check it.", "Is Harsh's calculation {word}?"] },
-    { word: "Relevant",    pos: "Adjective",               meaning: "Closely connected to the topic",        example: "Your points are {word} to the topic.",                     examples: ["Your points are {word} to the topic.", "Her example was {word} yesterday.", "{word} details make answers stronger.", "Add only {word} information.", "I don't think Gia's example is {word}."] },
-    { word: "Logical",     pos: "Adjective",               meaning: "Based on clear thinking",               example: "That is a {word} answer.",                                 examples: ["That is a {word} answer.", "His explanation was {word} yesterday.", "A {word} method helps solve problems faster.", "Your reasoning will be {word} if steps are clear.", "Does this seem {word}?"] },
-    { word: "Efficient",   pos: "Adjective",               meaning: "Working well without wasting time",     example: "An {word} plan saves effort.",                             examples: ["Ms Shalini's teaching method is the most {word}.", "Most employees in the new office are {word}.", "An {word} plan saves effort.", "You will be {word} with practice.", "There has to be a more {word} way of working on this project."] },
-    { word: "Analyse",     pos: "Verb",                    meaning: "Examine closely",                       example: "We {word} a passage in class.",                            examples: ["We {word} a passage in class.", "The teacher analysed the chart in class.", "He is analysing the project carefully.", "We will {word} the answers tomorrow.", "Scientists {word} all the facts before they make a conclusion."] },
-    { word: "Justify",     pos: "Verb",                    meaning: "Give reasons for something",            example: "Please {word} your answer.",                               examples: ["Please {word} your answer.", "He justified his idea yesterday.", "Jaya is justifying her choice with examples.", "You will {word} your reasoning in writing.", "No reason can {word} the inequality women face in the society."] },
-    { word: "Summarise",   pos: "Verb",                    meaning: "Give main points briefly",              example: "Please {word} the lesson.",                                examples: ["Please {word} the lesson.", "She summarised the story yesterday.", "The group will {word} the article in their presentation.", "The teacher said, 'We will {word} the chapter tomorrow.'", "I have to {word} ten chapters and submit it to the teacher by Wednesday."] },
-    { word: "Conclude",    pos: "Verb",                    meaning: "Decide after thinking",                 example: "We {word} after checking all answers.",                    examples: ["We {word} after checking all answers.", "Can you help me {word} this essay on Marie Curie?", "He is concluding the experiment results.", "We will {word} after analysis.", "What can you {word}?"] },
-    { word: "Modify",      pos: "Verb",                    meaning: "To change slightly",                    example: "Can you {word} this sentence?",                            examples: ["The teacher allowed me to {word} some of my answers and resubmit the homework.", "Our travel plan had to be modified at the last minute.", "We will {word} the solar engine model for the next science fair.", "The team will {word} the work if needed.", "Can you {word} this sentence?"] },
-    { word: "Gradually",   pos: "Adverb",                  meaning: "Slowly over time",                      example: "The weather changed {word}.",                              examples: ["The weather changed {word}.", "Mala improved her handwriting {word}.", "I {word} learnt to drive a car.", "Abhi can improve {word} with effort.", "We must get used to change {word}."] },
-    { word: "Effectively", pos: "Adverb",                  meaning: "In a way that works well",              example: "Ayaan explained his model {word}.",                        examples: ["Ayaan explained his model {word} and impressed the judges.", "Mia gave instructions {word}, and the team quickly changed their plan.", "Kabir worked {word} and finished the project.", "Ritu spoke {word}, and everyone understood her point clearly.", "Can Farah solve the puzzle {word} before the timer runs out?"] },
-    { word: "Specifically", pos: "Adverb",                 meaning: "Clearly and exactly",                   example: "Can you explain {word} why this answer is correct?",       examples: ["Arjun, can you explain {word} why this answer is correct?", "Zara spoke {word} about the Mughal period.", "Nina asked {word} for the exact location on the map.", "Leo asked {word} for chocolate cupcakes, not vanilla ones.", "Kids in my class {word} ask me to read at least one story to them every day."] },
-    { word: "Result",      pos: "Noun",                    meaning: "Outcome",                               example: "Rohan was waiting nervously for the {word}.",              examples: ["Rohan was waiting nervously for the {word}.", "Meera saw a great {word} in her dance performance.", "The class worked together. The {word} was a beautiful wall magazine.", "Aarav forgot to water the plant. The {word} was that it dried up.", "The final {word} of the basketball match was in our school's favour."] },
-    { word: "Method",      pos: "Noun",                    meaning: "Way of doing something",                example: "Vihaan tried a new {word} and solved it quickly.",          examples: ["Vihaan tried a new {word} and solved it quickly.", "Sara used a creative {word} to mix colours and paint the sunset.", "Heena changed the {word} and fixed the problem.", "This old {word} always makes the softest rotis.", "Which {word} will you use to solve this tricky maths problem?"] },
-    { word: "Progress",    pos: "Noun",                    meaning: "Improvement over time",                 example: "Anika showed great {word} in singing.",                    examples: ["Anika showed great {word} in singing.", "Dev practised cricket. His {word} made his coach proud.", "The tiny plant grew taller each day. Its {word} was easy to notice.", "Leo made {word} step by step and built his first game.", "How much {word} have you made in your reading challenge this month?"] },
-    { word: "Outcome",     pos: "Noun",                    meaning: "Result of something",                   example: "Everyone waited eagerly for the {word} of the story.",     examples: ["Everyone waited eagerly for the {word} of the story.", "Isha recorded the {word} in her notebook.", "The teacher stepped in to ensure a fair {word}.", "The explorers followed the map. The {word} was a hidden treasure!", "The {word} of this decision for the environment was significant."] },
+ 2: [
+    { word: "present", pos: "noun / verb / adjective", meaning: "gift; to show; happening now", example: "Mom gave me a {word} for my birthday.", examples: ["Mom gave me a {word} for my birthday.", "Riya will be {word} at the debate competition tomorrow.", "Who else is {word} in class today?", "They {word}ed their ideas clearly yesterday.", "The {word} situation needs attention."] },
+    { word: "change", pos: "noun / verb", meaning: "difference; to make different", example: "There is a {word} in the weather.", examples: ["There is a {word} in the weather.", "We need to {word} our plan.", "The {word} was sudden.", "She {word}d her answer after checking it.", "What {word} do you notice?"] },
+    { word: "plan", pos: "noun / verb", meaning: "a method; to decide in advance", example: "We made a clear {word}.", examples: ["We made a clear {word}.", "I will {word} my work properly.", "The {word} looks effective.", "She {word}ned her project yesterday.", "What is your {word}?"] },
+    { word: "mark", pos: "noun / verb", meaning: "a score; to show or label", example: "He got a good {word} in science.", examples: ["He got a good {word} in science.", "Please {word} the correct option.", "The {word} is visible on the page.", "The teacher {word}ed the answers yesterday.", "Did the Science teacher {word} your work?"] },
+    { word: "accurate", pos: "adjective", meaning: "correct and exact", example: "The answer must be {word}.", examples: ["The answer must be {word}.", "A result of bad eating habits is obesity.", "We need a more {word} method to avoid mistakes.", "Your answer will be {word} if you check it.", "Is Harsh's calculation {word}?"] },
+    { word: "relevant", pos: "adjective", meaning: "closely connected to the topic", example: "Your points are {word} to the topic.", examples: ["Your points are {word} to the topic.", "Her example was {word} yesterday.", "{word} details make answers stronger.", "Add only {word} information.", "I don't think Gia's example is {word}."] },
+    { word: "logical", pos: "adjective", meaning: "based on clear thinking", example: "That is a {word} answer.", examples: ["That is a {word} answer.", "His explanation was {word} yesterday.", "A {word} method helps solve problems faster.", "Your reasoning will be {word} if steps are clear.", "Does this seem {word}?"] },
+    { word: "efficient", pos: "adjective", meaning: "working well without wasting time", example: "An {word} plan saves effort.", examples: ["Ms Shalini's teaching method is the most {word}.", "Most employees in the new office are {word}.", "An {word} plan saves effort.", "You will be {word} with practice.", "There has to be a more {word} way of working on this project."] },
+    { word: "analyse", pos: "verb", meaning: "examine closely", example: "We {word} a passage in class.", examples: ["We {word} a passage in class.", "The teacher {word}d the chart in class.", "He is {word}ing the project carefully.", "We will {word} the answers tomorrow.", "Scientists {word} all the facts before they make a conclusion."] },
+    { word: "justify", pos: "verb", meaning: "give reasons for something", example: "Please {word} your answer.", examples: ["Please {word} your answer.", "He {word}ied his idea yesterday.", "She is {word}ing her choice with examples.", "You will {word} your reasoning in writing.", "No reason can {word} the inequality women face in the society."] },
+    { word: "summarise", pos: "verb", meaning: "give main points briefly", example: "Please {word} the lesson.", examples: ["Please {word} the lesson.", "She {word}d the story yesterday.", "He is {word}ing the article clearly.", "We will {word} the chapter tomorrow.", "{word} this paragraph in two lines."] },
+    { word: "conclude", pos: "verb", meaning: "decide after thinking", example: "We {word} after checking all answers.", examples: ["We {word} after checking all answers.", "Can you help me {word} this essay on Marie Curie?", "He is {word}ing the experiment results.", "We will {word} after analysis.", "What can you {word}?"] },
+    { word: "modify", pos: "verb", meaning: "to change slightly", example: "Can you {word} this sentence?", examples: ["The teacher allowed me to {word} some of my answers and resubmit the homework.", "Our travel plan had to be {word}ied at the last minute.", "We will {word} the solar engine model for the next science fair.", "The team will {word} the work if needed.", "Can you {word} this sentence?"] },
+    { word: "gradually", pos: "adverb", meaning: "slowly over time", example: "The weather changed {word}.", examples: ["The weather changed {word}.", "Mala improved her handwriting {word}.", "I {word} learnt to drive a car.", "Students can improve {word} with effort.", "We must get used to change {word}."] },
+    { word: "effectively", pos: "adverb", meaning: "in a way that works well", example: "Ayaan explained his model {word} and impressed the judges.", examples: ["Ayaan explained his model {word} and impressed the judges.", "Mia gave instructions {word}, and the team quickly changed their plan.", "Using only a torch, Kabir worked {word} and finished the project.", "Ritu spoke {word}, and everyone understood her point clearly.", "Can Farah solve the puzzle {word} before the timer runs out?"] },
+    { word: "specifically", pos: "adverb", meaning: "clearly and exactly", example: "Can you explain {word} why this answer is correct?", examples: ["Arjun, can you explain {word} why this answer is correct?", "Zara spoke {word} about the Mughal period.", "Nina asked {word} for the exact location on the map.", "Leo asked {word} for chocolate cupcakes, not vanilla ones.", "Kids in my class {word} ask me to read at least one story to them every day."] },
+    { word: "result", pos: "noun", meaning: "outcome", example: "Rohan was waiting nervously for the {word}.", examples: ["Rohan was waiting nervously for the {word}.", "Meera saw a great {word} in her dance performance.", "The class worked together. The {word} was a beautiful wall magazine.", "Aarav forgot to water the plant. The {word} was that it dried up.", "The final {word} of the basketball match was in our school's favour."] },
+    { word: "method", pos: "noun", meaning: "way of doing something", example: "Vihaan tried a new {word} and solved it quickly.", examples: ["Vihaan tried a new {word} and solved it quickly.", "Sara used a creative {word} to mix colours and paint the sunset.", "Heena changed the {word} and fixed the problem.", "This old {word} always makes the softest rotis.", "Which {word} will you use to solve this tricky maths problem?"] },
+    { word: "progress", pos: "noun", meaning: "improvement over time", example: "Anika showed great {word} in singing.", examples: ["Anika showed great {word} in singing.", "Dev practised cricket. His {word} made his coach proud.", "The tiny plant grew taller each day. Its {word} was easy to notice.", "Leo made {word} step by step and built his first game.", "How much {word} have you made in your reading challenge this month?"] },
+    { word: "outcome", pos: "noun", meaning: "result of something", example: "Everyone waited eagerly for the {word} of the story.", examples: ["Everyone waited eagerly for the {word} of the story.", "Isha recorded the {word} in her notebook.", "The teacher stepped in to ensure a fair {word}.", "The explorers followed the map. The {word} was a hidden treasure!", "The {word} of this decision for the environment was significant."] },
   ],
 3: [
-    { word: "Suspicious",  pos: "Adjective",       meaning: "Feeling that something may be wrong or not as it seems",  example: "The message had no sender name, so it looked {word}.",         examples: ["Riju grew {word} when he heard footsteps in the corridor.", "Sofia became {word} of an unattended bag near the gate.", "The message had no sender name, so it looked {word}.", "If the clues do not match, you will become {word}.", "The locked cupboard seemed {word} to Meera."] },
-    { word: "Vanish",      pos: "Verb",             meaning: "To disappear suddenly",                                   example: "The coin seemed to {word} into thin air.",                      examples: ["The coin seemed to {word} into thin air.", "The mountains began to {word} from view.", "My bookmark seemed to {word} during reading time.", "The footprints will {word} after the rain.", "Where did your ticket {word} at the station?"] },
-    { word: "Discover",    pos: "Verb",             meaning: "To find or learn something for the first time",           example: "Komal {word}ed a tiny garden full of yellow flowers.",           examples: ["Komal discovered a tiny garden full of yellow flowers.", "Bakul discovered a narrow waterfall behind the rocks.", "Liam discovered a mistake in the final step.", "If you keep reading, you will {word} new ideas in every chapter.", "What did you {word} during the museum visit?"] },
-    { word: "Whisper",     pos: "Verb / Noun",      meaning: "To speak very softly; a very soft voice",                 example: "Meera had to {word} to her friend in the library.",             examples: ["Meera had to {word} to her friend in the library.", "I heard a {word} behind the curtain during the play rehearsal.", "The leaves seemed to {word} in the wind.", "Please {word} during the quiz, or you may disturb others.", "Why are you speaking in a {word}?"] },
-    { word: "Chase",       pos: "Verb",             meaning: "To run after someone or something to catch it",           example: "Gogo ran to {word} the ball across the field.",                  examples: ["Gogo ran to {word} the ball across the field.", "The dog chased the waves and barked happily.", "The guard chased the thief through the market.", "You must {word} your goals with patience and effort.", "Chase your dreams!"] },
-    { word: "Rescue",      pos: "Verb",             meaning: "To save someone from danger",                             example: "Viji climbed up to {word} the kitten.",                          examples: ["Viji climbed up to {word} the kitten.", "The guides worked together to {word} a lost traveller.", "The lifeguard rescued a swimmer near the shore just in time.", "Brave people {word} others when help is needed most.", "The forest officers did their best to {word} the hikers."] },
-    { word: "Inquisitive", pos: "Adjective",        meaning: "Eager to know or learn more",                             example: "An {word} reader notices tiny details that others may miss.",    examples: ["Anika grew {word} about what was inside the chest.", "Omar asked {word} questions about the robot arm.", "An {word} reader notices tiny details that others may miss.", "If you stay {word}, every trip can teach you something new.", "Tara was so {word} and full of questions during the fort visit."] },
-    { word: "Route",       pos: "Noun",             meaning: "The way or direction taken to get somewhere",             example: "The driver chose a quieter {word} through the village.",         examples: ["The driver chose a quieter {word} through the village.", "Jivika traced the {word} from Delhi to Agra on the map.", "A safe {word} helped the hikers reach the campsite before dark.", "We will take another {word} if the weather changes suddenly.", "Which {word} should we follow to reach the main city?"] },
-    { word: "Signal",      pos: "Noun / Verb",      meaning: "A sign or message; to give a sign",                       example: "The red light flashed as a {word} to stop.",                     examples: ["The red light flashed, and everyone knew it was a {word} to stop.", "The guide signalled the group to move away from the cliff edge.", "A whistle can be a useful {word} for help.", "Please {word} clearly before your team begins.", "What {word} did you notice near the crossing?"] },
-    { word: "Escape",      pos: "Verb / Noun",      meaning: "To get away from a place or danger; a way of getting away", example: "The parrot managed to {word} through the open door.",          examples: ["The parrot managed to {word} through the open door.", "The hero planned a clever {word} through a secret tunnel.", "The thief escaped into the crowd at the station.", "You must {word} quickly if there is danger.", "There was no easy {word} from the locked room."] },
-    { word: "Clue",        pos: "Noun",             meaning: "Something that helps solve a mystery or problem",         example: "Balapriya found the first {word} under the table.",              examples: ["Balapriya found the first {word} under the table.", "A bus ticket on the floor became an important {word}.", "Each {word} brought the team closer to the answer.", "Follow every {word} carefully, even the tiny ones.", "What {word} did you find near the window?"] },
-    { word: "Explore",     pos: "Verb",             meaning: "To travel around or look around to learn more",           example: "The children rushed to {word} the old fort.",                    examples: ["The children rushed to {word} the old fort.", "We explored quiet lanes and colourful markets.", "Scientists {word} space to learn more about distant worlds.", "You will {word} many interesting ideas in this project.", "I would love to {word} Japan in spring season."] },
-    { word: "Trap",        pos: "Noun / Verb",      meaning: "Something used to catch; to catch or hold someone",       example: "The hunter set a {word} deep in the jungle.",                    examples: ["The hunter set a {word} deep in the jungle.", "The suitcase got trapped between the train seats.", "He didn't mean to {word} the bird inside the room.", "The mouse got caught in a {word}.", "This question is a {word} for students who don't read carefully."] },
-    { word: "Alert",       pos: "Adjective / Verb", meaning: "Quick to notice danger; to warn someone",                 example: "The guard stayed {word} at the airport.",                        examples: ["The guard stayed {word} at the airport late into the night.", "The teacher alerted the class when the safety drill began.", "Staying {word} helps you notice changes around you.", "You must remain {word} while crossing a busy road.", "The guard alerted the manager about the safety issue."] },
-    { word: "Expedition",  pos: "Noun",             meaning: "A journey made for a special purpose, especially exploration", example: "At sunrise, the team began its mountain {word}.",            examples: ["At sunrise, the team began its mountain {word}.", "The students explored old gates and quiet courtyards on the school {word}.", "The forest {word} became exciting when the group found unusual footprints.", "Every {word} needs planning and teamwork.", "What was the most exciting part of the desert {word}?"] },
-    { word: "Glimpse",     pos: "Noun / Verb",      meaning: "A quick look or a brief view",                            example: "We caught a {word} of the waterfall through the trees.",         examples: ["We caught a {word} of the waterfall through the trees.", "Ajita glimpsed the castle just before the train entered the tunnel.", "I only had a {word} of the answer before the page turned.", "I glimpsed a deer near the road as the car moved quickly past.", "Sometimes one {word} is enough to spark curiosity."] },
-    { word: "Ancient",     pos: "Adjective",        meaning: "Very old and from a long time ago",                       example: "The guide showed us an {word} wall covered in faded carvings.",  examples: ["The guide showed us an {word} wall covered in faded carvings.", "Akshita stood quietly beside an {word} map.", "{word} stories often travel from one generation to the next.", "You can learn a lot from {word} objects and ruins.", "Which {word} place would you like to visit?"] },
-    { word: "Hesitate",    pos: "Verb",             meaning: "To pause because you are unsure",                         example: "The bridge looked shaky, so the driver began to {word}.",        examples: ["The bridge looked shaky, so the driver began to {word}.", "Marvin did not {word} to help the lost child.", "I {word} before answering when the question seems tricky.", "Do not {word} to ask if you need help.", "Rudra hesitated before opening the door."] },
-    { word: "Distant",     pos: "Adjective",        meaning: "Far away in space or time",                               example: "We could see {word} hills under the evening sky.",               examples: ["We could see {word} hills under the evening sky.", "A {word} horn echoed across the harbour.", "The explorers wrote about {word} lands in their journals.", "The stars may look tiny, but they are very {word}.", "I can hear the {word} sound of chirping birds."] },
-    { word: "Encounter",   pos: "Verb / Noun",      meaning: "To meet unexpectedly; an unexpected meeting",             example: "The group encountered a deer near the water.",                   examples: ["The group encountered a deer near the water.", "I had a strange {word} with a monkey at the hill station.", "Travellers sometimes {word} surprises on the way.", "Their first {word} with snow was unforgettable.", "The hikers may {word} wild pigs on the route."] },
-    { word: "Secret",      pos: "Noun / Adjective", meaning: "Something hidden or not meant to be known by everyone",   example: "She promised not to tell the {word} to anyone.",                 examples: ["She promised not to tell the {word} to anyone.", "Behind the bookshelf, the children found a {word} drawer.", "What {word} did the note reveal?", "Some stories become more exciting when they include a {word} plan.", "The {word} was shared only with close friends."] },
+    { word: "suspicious", pos: "adjective", meaning: "feeling that something may be wrong or not as it seems", example: "The message had no sender name, so it looked {word}.", examples: ["Aarav grew {word} when he heard footsteps in the corridor.", "Sofia became {word} of an unattended bag near the gate.", "The message had no sender name, so it looked {word}.", "If the clues do not match, you will become {word}.", "The locked cupboard seem {word} to Meera."] },
+    { word: "vanish", pos: "verb", meaning: "to disappear suddenly", example: "The coin seemed to {word} into thin air.", examples: ["The coin seemed to {word} into thin air.", "The mountains began to {word} from view.", "My bookmark seemed to {word} during reading time.", "The footprints will {word} after the rain.", "Where did your ticket {word} at the station?"] },
+    { word: "discover", pos: "verb", meaning: "to find or learn something for the first time", example: "Riya {word}ed a tiny garden full of yellow flowers.", examples: ["Riya {word}ed a tiny garden full of yellow flowers.", "Kabir {word}ed a narrow waterfall behind the rocks.", "Liam {word}ed a mistake in the final step.", "If you keep reading, you will {word} new ideas in every chapter.", "What did you {word} during the museum visit?"] },
+    { word: "whisper", pos: "verb / noun", meaning: "to speak very softly; a very soft voice", example: "Meera had to {word} to her friend in the library.", examples: ["Meera had to {word} to her friend in the library.", "I heard a {word} behind the curtain during the play rehearsal.", "The leaves seemed to {word} in the wind.", "Please {word} during the quiz, or you may disturb others.", "Why are you speaking in a {word}?"] },
+    { word: "chase", pos: "verb", meaning: "to run after someone or something to catch it", example: "Gogo ran to {word} the ball across the field.", examples: ["Gogo ran to {word} the ball across the field.", "The dog {word}d the waves and barked happily.", "The guard {word}d the thief through the market.", "You must {word} your goals with patience and effort.", "'Chase your dreams!' said the main actor in the movie."] },
+    { word: "rescue", pos: "verb", meaning: "to save someone from danger", example: "Aarav climbed up to {word} the kitten.", examples: ["Aarav climbed up to {word} the kitten.", "The guides worked together to {word} a lost traveller.", "The lifeguard {word}d a swimmer near the shore just in time.", "Brave people {word} others when help is needed most.", "The forest officers did their best to {word} the hikers."] },
+    { word: "inquisitive", pos: "adjective", meaning: "eager to know or learn more", example: "An {word} reader notices tiny details that others may miss.", examples: ["Anika grew {word} about what was inside the chest.", "Omar asked {word} questions about the robot arm.", "An {word} reader notices tiny details that others may miss.", "If you stay {word}, every trip can teach you something new.", "Tara was so {word} and full of questions during the fort visit."] },
+    { word: "route", pos: "noun", meaning: "the way or direction taken to get somewhere", example: "The driver chose a quieter {word} through the village.", examples: ["The driver chose a quieter {word} through the village.", "Meera traced the {word} from Delhi to Agra on the map.", "A safe {word} helped the hikers reach the campsite before dark.", "We will take another {word} if the weather changes suddenly.", "Which {word} should we follow to reach the main city?"] },
+    { word: "signal", pos: "noun / verb", meaning: "a sign or message; to give a sign", example: "The red light flashed as a {word} to stop.", examples: ["The red light flashed, and everyone knew it was a {word} to stop.", "The guide {word}led the group to move away from the cliff edge.", "A whistle can be a useful {word} for help.", "Please {word} clearly before your team begins.", "What {word} did you notice near the crossing?"] },
+    { word: "escape", pos: "verb / noun", meaning: "to get away from a place or danger; a way of getting away", example: "The parrot managed to {word} through the open door.", examples: ["The parrot managed to {word} through the open door.", "The hero planned a clever {word} through a secret tunnel.", "The thief {word}d into the crowd at the station.", "You must {word} quickly if there is danger.", "How did the team {word} from the maze?"] },
+    { word: "clue", pos: "noun", meaning: "something that helps solve a mystery or problem", example: "Zara found the first {word} under the table.", examples: ["Zara found the first {word} under the table.", "A bus ticket on the floor became an important {word}.", "Each {word} brought the team closer to the answer.", "Follow every {word} carefully, even the tiny ones.", "What {word} did you find near the window?"] },
+    { word: "explore", pos: "verb", meaning: "to travel around or look around to learn more", example: "The children rushed to {word} the old fort.", examples: ["The children rushed to {word} the old fort.", "We {word}d quiet lanes and colourful markets.", "Scientists {word} space to learn more about distant worlds.", "You will {word} many interesting ideas in this project.", "I would love to {word} Japan in spring season."] },
+    { word: "trap", pos: "noun / verb", meaning: "something used to catch; to catch or hold someone or something", example: "The hunter set a {word} deep in the jungle.", examples: ["The hunter set a {word} deep in the jungle.", "The suitcase got {word}ped between the train seats.", "He didn't mean to {word} the bird inside the room.", "The mouse got caught in a {word}.", "This question is a {word} for students who don't read carefully."] },
+    { word: "alert", pos: "adjective / verb", meaning: "quick to notice danger; to warn someone", example: "The guard stayed {word} at the airport.", examples: ["The guard stayed {word} at the airport late into the night.", "The teacher {word}ed the class when the safety drill began.", "Staying {word} helps you notice changes around you.", "You must remain {word} while crossing a busy road.", "Tourists were told to stay {word} in crowded places."] },
+    { word: "expedition", pos: "noun", meaning: "a journey made for a special purpose, especially for exploration", example: "At sunrise, the team began its mountain {word}.", examples: ["At sunrise, the team began its mountain {word}.", "During the school {word} to Jaipur, the students explored old gates and quiet courtyards.", "The forest {word} became exciting when the group found unusual footprints.", "Every {word} needs planning and teamwork.", "What was the most exciting part of the desert {word}?"] },
+    { word: "glimpse", pos: "noun / verb", meaning: "a quick look or a brief view", example: "We caught a {word} of the waterfall through the trees.", examples: ["We caught a {word} of the waterfall through the trees.", "Nina {word}d the castle just before the train entered the tunnel.", "I only had a {word} of the answer before the page turned.", "Sometimes one {word} is enough to spark curiosity.", "Did you catch a {word} of the rainbow?"] },
+    { word: "ancient", pos: "adjective", meaning: "very old and from a long time ago", example: "The guide showed us an {word} wall covered in faded carvings.", examples: ["The guide showed us an {word} wall covered in faded carvings.", "Yusuf stood quietly beside an {word} map.", "{word} stories often travel from one generation to the next.", "You can learn a lot from {word} objects and ruins.", "Which {word} place would you like to visit?"] },
+    { word: "hesitate", pos: "verb", meaning: "to pause because you are unsure", example: "The bridge looked shaky, so the driver began to {word}.", examples: ["The bridge looked shaky, so the driver began to {word}.", "Marvin did not {word} to help the lost child.", "I {word} before answering when the question seems tricky.", "Do not {word} to ask if you need help.", "Rudra {word}d before opening the door."] },
+    { word: "distant", pos: "adjective", meaning: "far away in space or time", example: "We could see {word} hills under the evening sky.", examples: ["We could see {word} hills under the evening sky.", "A {word} horn echoed across the harbour.", "The explorers wrote about {word} lands in their journals.", "The stars may look tiny, but they are very {word}.", "I can hear the {word} sound of chirping birds."] },
+    { word: "encounter", pos: "verb / noun", meaning: "to meet unexpectedly; an unexpected meeting", example: "The group {word}ed a deer near the water.", examples: ["The group {word}ed a deer near the water.", "I had a strange {word} with a monkey at the hill station.", "Travellers sometimes {word} surprises on the way.", "You may {word} new ideas when you read different books.", "The hikers may {word} wild pigs on the route."] },
+    { word: "secret", pos: "noun / adjective", meaning: "something hidden or not meant to be known by everyone", example: "The children found a {word} drawer behind the bookshelf.", examples: ["The children found a {word} drawer behind the bookshelf.", "Eva discovered a {word} path to the garden.", "The map carried a {word} message in tiny letters.", "Some stories become more exciting when they include a {word} plan.", "What {word} did the note reveal?"] },
   ],
 4: [
-    { word: "Infer",         pos: "Verb",             meaning: "To work out or understand something from clues",              example: "Good readers {word} meaning by using clues from the text.",       examples: ["Good readers {word} meaning by using clues from the text.", "The class could {word} that an animal had passed that way.", "The paragraph does not say it directly, but we can {word} the idea.", "Meera inferred that the writer missed home.", "What can you {word} from the graph about rainfall this month?"] },
-    { word: "Verify",        pos: "Verb",             meaning: "To check if something is true or correct",                    example: "Always {word} your answer by checking your steps again.",          examples: ["Always {word} your answer by checking your steps again.", "The students verified the experiment results before writing their conclusions.", "Please {word} the information before sharing it with the class.", "Rohan verified the spelling using a dictionary.", "Why is it important to {word} facts before believing them?"] },
-    { word: "Clarify",       pos: "Verb",             meaning: "To make something clear and easy to understand",              example: "The teacher explained the rule again to {word} the idea.",          examples: ["The teacher explained the rule again to {word} the idea.", "Jason went to the Science teacher to {word} his doubt.", "Good explanations {word} difficult concepts.", "The diagram helped {word} how the machine works.", "Please help us to {word} this misunderstanding."] },
-    { word: "Prioritise",    pos: "Verb",             meaning: "To decide what is most important and do it first",            example: "Good students {word} their homework before playtime.",              examples: ["Good students {word} their homework before playtime.", "The team prioritised finishing the main task first.", "You should {word} important questions during a test.", "Learning to {word} helps you manage time well.", "You should {word} practice while preparing for exams."] },
-    { word: "Anticipate",    pos: "Verb",             meaning: "To expect something before it happens",                       example: "From the dark clouds, we could {word} rain.",                       examples: ["The teacher could {word} the students' questions before they were asked.", "From the dark clouds, we could {word} rain.", "Good players {word} the next move in the game.", "The guide anticipated a crowd and chose a quieter route.", "I did not {word} Aunt Jane's arrival. She surprised us all."] },
-    { word: "Assumption",    pos: "Noun",             meaning: "Something you believe without proof",                         example: "The answer was based on an {word}, not on facts.",                  examples: ["The answer was based on an {word}, not on facts.", "Do not make an {word} without checking the question properly.", "His {word} about the ending of the story was incorrect.", "Scientists test their {word}s using experiments.", "An {word} can often be misleading."] },
-    { word: "Criteria",      pos: "Noun",             meaning: "Rules or standards used to make a decision",                  example: "The teacher shared the {word} for grading the project.",            examples: ["The teacher shared the {word} for grading the project.", "We used clear {word} to choose the best design.", "Good writers follow certain {word} when editing their work.", "The team discussed the {word} before selecting a winner.", "I have very specific {word} when I choose a book."] },
-    { word: "Perspective",   pos: "Noun",             meaning: "A way of thinking about or looking at something",             example: "Try to understand your friend's {word} before responding.",         examples: ["The story becomes more interesting from another character's {word}.", "Try to understand your friend's {word} before responding.", "The map shows the place from a bird's-eye {word}.", "Different people may have different {word}s on the same problem.", "What is the narrator's {word} in this story?"] },
-    { word: "Sequence",      pos: "Noun",             meaning: "The correct order of things",                                 example: "Arrange the pictures in the correct {word} to complete the story.", examples: ["Arrange the pictures in the correct {word} to complete the story.", "The steps must follow a proper {word}.", "Understanding the {word} helps you solve the problem more easily.", "The teacher asked us to write the events in {word}.", "What is the correct {word} of events in the chapter?"] },
-    { word: "Contrast",      pos: "Verb / Noun",      meaning: "To show differences between things",                          example: "There is a clear {word} between the two pictures.",                 examples: ["The teacher asked us to {word} the two poems.", "Compare and {word} the two characters in the story.", "There is a clear {word} between the two pictures.", "The {word} between day and night is easy to notice.", "The author has contrasted the past and the present."] },
-    { word: "Subtle",        pos: "Adjective",        meaning: "Not obvious; small but important",                            example: "There was a {word} change in the character's behaviour.",           examples: ["There was a {word} change in the character's behaviour.", "The artist used {word} colours to show evening light.", "Sometimes the meaning of a line is {word} and needs careful reading.", "A {word} clue helped solve the mystery.", "Did you notice the {word} difference between the two drawings?"] },
-    { word: "Thorough",      pos: "Adjective",        meaning: "Complete and careful",                                        example: "The teacher gave a {word} explanation of the topic.",               examples: ["The teacher gave a {word} explanation of the topic.", "Riya did a {word} check before submitting her work.", "A {word} reading helps avoid mistakes.", "The team prepared a {word} plan for the project.", "Why is a {word} revision important before exams?"] },
-    { word: "Consistent",    pos: "Adjective",        meaning: "Happening regularly or staying the same",                     example: "Regular practice leads to {word} improvement.",                     examples: ["Regular practice leads to {word} improvement.", "Her performance was {word} throughout the competition.", "Be {word} with your efforts to improve your skills.", "A {word} routine helps build strong habits.", "I am proud that you have stayed {word} in your studies."] },
-    { word: "Flexible",      pos: "Adjective",        meaning: "Able to change easily when needed",                           example: "Good planners stay {word} when plans change.",                      examples: ["Good planners stay {word} when plans change.", "The team made a {word} schedule to adjust to delays.", "Being {word} helps you handle new situations better.", "The teacher encouraged {word} thinking during problem-solving.", "Why is it important to stay {word} in a group task?"] },
-    { word: "Sceptical",     pos: "Adjective",        meaning: "Not easily convinced; questioning",                           example: "A {word} reader asks questions while reading.",                     examples: ["The class was {word} about the surprising result.", "Meera felt {word} until she saw the proof.", "A {word} reader asks questions while reading.", "It is good to be {word} of unclear information.", "Why should we be {word} of rumours?"] },
-    { word: "Precisely",     pos: "Adverb",           meaning: "Exactly and clearly",                                         example: "Write your answer {word} using correct steps.",                     examples: ["Write your answer {word} using correct steps.", "The instructions were explained {word}.", "He measured the length {word} using a ruler.", "A {word} written answer is easy to understand.", "Why is it important to answer {word}?"] },
-    { word: "Strategically", pos: "Adverb",           meaning: "In a planned and thoughtful way",                             example: "The team acted {word} to win the match.",                           examples: ["The team acted {word} to win the match.", "Place your moves {word} in a game of chess.", "Students solve difficult questions {word}.", "Planning {word} helps avoid mistakes.", "How can you prepare {word} for exams?"] },
-    { word: "Outline",       pos: "Verb / Noun",      meaning: "To give the main points",                                     example: "A clear {word} helps organise your thoughts.",                      examples: ["What is the best way to {word} a story?", "A clear {word} helps organise your thoughts.", "Please {word} your answer before writing in detail.", "We made an {word} before writing the essay.", "The teacher asked us to {word} the main ideas of the chapter."] },
-    { word: "Report",        pos: "Noun / Verb",      meaning: "To give information clearly",                                 example: "A good {word} includes facts and observations.",                    examples: ["A good {word} includes facts and observations.", "Please {word} your findings to the class.", "The weather {word} was shown on television.", "Please {word} your findings to the class.", "The students wrote a {word} on their science experiment."] },
-    { word: "Reflection",    pos: "Noun",             meaning: "Careful thinking about something",                            example: "Writing a journal helps with {word}.",                              examples: ["Writing a journal helps with {word}.", "After the activity, the class shared their {word}s.", "{word} helps you learn from your mistakes.", "Ms Smith gave the class time for quiet {word} after each lesson.", "Upon {word}, Uday realised that he should have checked his answers carefully."] },
+    { word: "infer", pos: "verb", meaning: "to work out or understand something from clues", example: "Good readers {word} meaning by using clues from the text.", examples: ["Good readers {word} meaning by using clues from the text.", "The class could {word} that an animal had passed that way.", "The paragraph does not say it directly, but we can {word} the idea.", "Meera {word}red that the writer missed home.", "What can you {word} from the graph about rainfall this month?"] },
+    { word: "verify", pos: "verb", meaning: "to check if something is true or correct", example: "Always {word} your answer by checking your steps again.", examples: ["Always {word} your answer by checking your steps again.", "The students {word}ied the experiment results before writing their conclusions.", "Please {word} the information before sharing it with the class.", "Rohan {word}ied the spelling using a dictionary.", "Why is it important to {word} facts before believing them?"] },
+    { word: "clarify", pos: "verb", meaning: "to make something clear and easy to understand", example: "The teacher explained the rule again to {word} the idea.", examples: ["The teacher explained the rule again to {word} the idea.", "Jason went to the Science teacher to {word} his doubt.", "Good explanations {word} difficult concepts.", "The diagram helped {word} how the machine works.", "Please help us to {word} this misunderstanding."] },
+    { word: "prioritise", pos: "verb", meaning: "to decide what is most important and do it first", example: "Good students {word} their homework before playtime.", examples: ["Good students {word} their homework before playtime.", "The team {word}d finishing the main task first.", "You should {word} important questions during a test.", "Learning to {word} helps you manage time well.", "You should {word} practice while preparing for exams."] },
+    { word: "anticipate", pos: "verb", meaning: "to expect something before it happens", example: "From the dark clouds, we could {word} rain.", examples: ["The teacher could {word} the students' questions before they were asked.", "From the dark clouds, we could {word} rain.", "Good players {word} the next move in the game.", "The guide {word}d a crowd and chose a quieter route.", "I did not {word} Aunt Jane's arrival. She surprised us all."] },
+    { word: "assumption", pos: "noun", meaning: "something you believe without proof", example: "The answer was based on an {word}, not on facts.", examples: ["The answer was based on an {word}, not on facts.", "Do not make an {word} without checking the question properly.", "His {word} about the ending of the story was incorrect.", "Scientists test their {word}s using experiments.", "An {word} can often be misleading."] },
+    { word: "criteria", pos: "noun", meaning: "rules or standards used to make a decision", example: "The teacher shared the {word} for grading the project.", examples: ["The teacher shared the {word} for grading the project.", "We used clear {word} to choose the best design.", "Good writers follow certain {word} when editing their work.", "The team discussed the {word} before selecting a winner.", "I have very specific {word} when I choose a book."] },
+    { word: "perspective", pos: "noun", meaning: "a way of thinking about or looking at something", example: "Try to understand your friend's {word} before responding.", examples: ["The story becomes more interesting from another character's {word}.", "Try to understand your friend's {word} before responding.", "The map shows the place from a bird's-eye {word}.", "Different people may have different {word}s on the same problem.", "What is the narrator's {word} in this story?"] },
+    { word: "sequence", pos: "noun", meaning: "the correct order of things", example: "Arrange the pictures in the correct {word} to complete the story.", examples: ["Arrange the pictures in the correct {word} to complete the story.", "The steps must follow a proper {word}.", "Understanding the {word} helps you solve the problem more easily.", "The teacher asked us to write the events in {word}.", "What is the correct {word} of events in the chapter?"] },
+    { word: "contrast", pos: "verb / noun", meaning: "to show differences between things", example: "There is a clear {word} between the two pictures.", examples: ["The teacher asked us to {word} the two poems.", "Compare and {word} the two characters in the story.", "There is a clear {word} between the two pictures.", "The {word} between day and night is easy to notice.", "The author has {word}ed the past and the present."] },
+    { word: "subtle", pos: "adjective", meaning: "not obvious; small but important", example: "There was a {word} change in the character's behaviour.", examples: ["There was a {word} change in the character's behaviour.", "The artist used {word} colours to show evening light.", "Sometimes the meaning of a line is {word} and needs careful reading.", "A {word} clue helped solve the mystery.", "Did you notice the {word} difference between the two drawings?"] },
+    { word: "thorough", pos: "adjective", meaning: "complete and careful", example: "The teacher gave a {word} explanation of the topic.", examples: ["The teacher gave a {word} explanation of the topic.", "Riya did a {word} check before submitting her work.", "A {word} reading helps avoid mistakes.", "The team prepared a {word} plan for the project.", "Why is a {word} revision important before exams?"] },
+    { word: "consistent", pos: "adjective", meaning: "happening regularly or staying the same", example: "Regular practice leads to {word} improvement.", examples: ["Regular practice leads to {word} improvement.", "Her performance was {word} throughout the competition.", "Be {word} with your efforts to improve your skills.", "A {word} routine helps build strong habits.", "I am proud that you have stayed {word} in your studies."] },
+    { word: "flexible", pos: "adjective", meaning: "able to change easily when needed", example: "Good planners stay {word} when plans change.", examples: ["Good planners stay {word} when plans change.", "The team made a {word} schedule to adjust to delays.", "Being {word} helps you handle new situations better.", "The teacher encouraged {word} thinking during problem-solving.", "Why is it important to stay {word} in a group task?"] },
+    { word: "sceptical", pos: "adjective", meaning: "not easily convinced; questioning", example: "A {word} reader asks questions while reading.", examples: ["The class was {word} about the surprising result.", "Meera felt {word} until she saw the proof.", "A {word} reader asks questions while reading.", "It is good to be {word} of unclear information.", "Why should we be {word} of rumours?"] },
+    { word: "precisely", pos: "adverb", meaning: "exactly and clearly", example: "Write your answer {word} using correct steps.", examples: ["Write your answer {word} using correct steps.", "The instructions were explained {word}.", "He measured the length {word} using a ruler.", "A {word} written answer is easy to understand.", "Why is it important to answer {word}?"] },
+    { word: "strategically", pos: "adverb", meaning: "in a planned and thoughtful way", example: "The team acted {word} to win the match.", examples: ["The team acted {word} to win the match.", "Place your moves {word} in a game of chess.", "Students solve difficult questions {word}.", "Planning {word} helps avoid mistakes.", "How can you prepare {word} for exams?"] },
+    { word: "outline", pos: "verb / noun", meaning: "to give the main points", example: "A clear {word} helps organise your thoughts.", examples: ["What is the best way to {word} a story?", "A clear {word} helps organise your thoughts.", "Please {word} your answer before writing in detail.", "We made an {word} before writing the essay.", "The teacher asked us to {word} the main ideas of the chapter."] },
+    { word: "report", pos: "noun / verb", meaning: "to give information clearly", example: "A good {word} includes facts and observations.", examples: ["A good {word} includes facts and observations.", "Please {word} your findings to the class.", "The weather {word} was shown on television.", "Please {word} your findings to the class.", "The students wrote a {word} on their science experiment."] },
+    { word: "reflection", pos: "noun", meaning: "careful thinking about something", example: "Writing a journal helps with {word}.", examples: ["Writing a journal helps with {word}.", "After the activity, the class shared their {word}s.", "{word} helps you learn from your mistakes.", "Ms Smith gave the class time for quiet {word} after each lesson.", "Upon {word}, Uday realised that he should have checked his answers carefully."] },
   ],
 5: [
-    { word: "Seva",         pos: "Sanskrit/Hindi",  meaning: "Selfless service",                        example: "The students volunteered at the community hall as an act of {word}.",        examples: ["The students volunteered at the community hall as an act of {word}."], link: "https://www.forvo.com/word/seva/" },
-    { word: "Ahimsa",       pos: "Sanskrit",        meaning: "Non-violence",                            example: "Our teacher said that {word} means treating all living beings with care.",    examples: ["Our teacher said that {word} means treating all living beings with care."], link: "https://www.forvo.com/word/ahimsa/" },
-    { word: "Dharma",       pos: "Sanskrit",        meaning: "Duty or moral responsibility",            example: "The prince felt it was his {word} to tell the truth.",                        examples: ["The prince felt it was his {word} to tell the truth, even when it was difficult."], link: "https://www.forvo.com/word/dharma/" },
-    { word: "Jugaad",       pos: "Hindi",           meaning: "Clever practical solution",               example: "The art teacher used a clever {word} with string and clips.",                  examples: ["When the chart stand broke, the art teacher used a clever {word} with string and clips."], link: "https://www.forvo.com/word/jugaad/" },
-    { word: "Sabha",        pos: "Sanskrit",        meaning: "Formal gathering",                        example: "The village {word} met under the banyan tree.",                               examples: ["The village {word} met under the banyan tree to discuss water use."], link: "https://www.forvo.com/word/sabha/" },
-    { word: "Sankalp",      pos: "Sanskrit",        meaning: "Firm determination",                      example: "The boy took a {word} to protect nature and never waste water.",               examples: ["Standing before the village tree, the boy took a {word} to protect nature and never waste water."], link: "https://www.forvo.com/word/sankalp/" },
-    { word: "Samvad",       pos: "Hindi",           meaning: "Meaningful discussion",                   example: "The teacher encouraged a {word} so everyone could share their ideas.",         examples: ["The teacher encouraged a {word} in class so everyone could share their ideas respectfully."], link: "https://www.forvo.com/word/samvad/" },
-    { word: "Shanti",       pos: "Sanskrit",        meaning: "Peace",                                   example: "After the morning prayer, the hall was filled with a sense of {word}.",        examples: ["After the morning prayer, the hall was filled with a sense of {word}."], link: "https://www.forvo.com/word/shanti/" },
-    { word: "Prerna",       pos: "Hindi",           meaning: "Inspiration",                             example: "Her grandmother's courage became a source of {word} for Riya.",                examples: ["Her grandmother's struggles and courage became a source of {word} for Riya."], link: "https://www.forvo.com/word/prerna/" },
-    { word: "Pind",         pos: "Punjabi",         meaning: "Village; rural town",                     example: "Every summer, Arjun visits his {word} in Punjab.",                            examples: ["Every summer, Arjun visits his {word} in Punjab and spends time with his grandparents."], link: "https://forvo.com/word/pind/" },
-    { word: "Itminaan",     pos: "Urdu",            meaning: "Calmness and peace of mind",              example: "Dada sat in the courtyard with {word}, sipping tea.",                          examples: ["Dada sat in the courtyard with {word}, sipping tea and reading the newspaper."], link: "https://www.forvo.com/word/itminaan/" },
-    { word: "Gourmet",      pos: "French",          meaning: "Expert in or lover of good food",         example: "Even a {word} would have admired the chef's delicious meal.",                   examples: ["The chef prepared such a delicious meal that even a {word} would have admired it."], link: "https://dictionary.cambridge.org/pronunciation/english/gourmet" },
-    { word: "Boutique",     pos: "French",          meaning: "Small specialised shop",                  example: "Mum bought a handmade scarf from a small {word} near the market.",              examples: ["Mum bought a handmade scarf from a small {word} near the market."], link: "https://dictionary.cambridge.org/pronunciation/english/boutique" },
-    { word: "Karaoke",      pos: "Japanese",        meaning: "Singing along to recorded music",         example: "The students laughed and sang together during {word} at the school fair.",      examples: ["The students laughed and sang together during {word} at the school fair."], link: "https://dictionary.cambridge.org/pronunciation/english/karaoke" },
-    { word: "Emoji",        pos: "Japanese",        meaning: "Small digital symbol",                    example: "Our teacher added a smile {word} to sound friendly.",                          examples: ["Our teacher added a smile {word} at the end of the message to sound friendly."], link: "https://dictionary.cambridge.org/pronunciation/english/emoji" },
-    { word: "Algebra",      pos: "Arabic",          meaning: "Branch of mathematics using symbols",     example: "In maths class, we used {word} to solve a puzzle with missing numbers.",         examples: ["In maths class, we used {word} to solve a puzzle with missing numbers."], link: "https://dictionary.cambridge.org/pronunciation/english/algebra" },
-    { word: "Safari",       pos: "Swahili",         meaning: "Journey to observe wildlife",             example: "During the {word}, the children spotted deer and birds.",                       examples: ["During the {word}, the children spotted deer, birds and a crocodile near the water."], link: "https://dictionary.cambridge.org/pronunciation/english/safari" },
-    { word: "Robot",        pos: "Czech",           meaning: "Machine that performs tasks",             example: "The {word} in the lab could sort blocks by colour and size.",                   examples: ["The {word} in the lab could sort blocks by colour and size."], link: "https://dictionary.cambridge.org/pronunciation/english/robot" },
-    { word: "Ubuntu",       pos: "Nguni (Zulu/Xhosa)", meaning: "Humaneness; belief in sharing and community", example: "Our class showed {word} by sharing materials and helping one another.", examples: ["Our class showed {word} by sharing materials and helping one another during the project."], link: "https://dictionary.cambridge.org/pronunciation/english/ubuntu" },
-    { word: "Kindergarten", pos: "German",          meaning: "Early childhood school",                  example: "My little cousin was excited on the first day of {word}.",                      examples: ["My little cousin was excited on the first day of {word}."], link: "https://dictionary.cambridge.org/pronunciation/english/kindergarten" },
+    { word: "seva", pos: "Sanskrit/Hindi", meaning: "selfless service", example: "The students volunteered at the shelter as an act of {word}.", examples: ["The students volunteered at the shelter as an act of {word}."], link: "https://www.forvo.com/word/seva/" },
+    { word: "ahimsa", pos: "Sanskrit", meaning: "non-violence", example: "Our teacher said that {word} means treating all living beings with care.", examples: ["Our teacher said that {word} means treating all living beings with care."], link: "https://www.forvo.com/word/ahimsa/" },
+    { word: "dharma", pos: "Sanskrit", meaning: "duty or moral responsibility", example: "The prince felt it was his {word} to tell the truth.", examples: ["The prince felt it was his {word} to tell the truth, even when it was difficult."], link: "https://www.forvo.com/word/dharma/" },
+    { word: "jugaad", pos: "Hindi", meaning: "clever practical solution", example: "The art teacher used a clever {word} with string and clips.", examples: ["When the chart stand broke, the art teacher used a clever {word} with string and clips."], link: "https://www.forvo.com/word/jugaad/" },
+    { word: "sabha", pos: "Sanskrit", meaning: "formal gathering", example: "The village {word} met under the banyan tree.", examples: ["The village {word} met under the banyan tree to discuss water use."], link: "https://www.forvo.com/word/sabha/" },
+    { word: "sankalp", pos: "Sanskrit", meaning: "firm determination", example: "The boy took a {word} to protect nature.", examples: ["Standing before the village tree, the boy took a {word} to protect nature and never waste water."], link: "https://www.forvo.com/word/sankalp/" },
+    { word: "samvad", pos: "Hindi", meaning: "meaningful discussion", example: "The teacher encouraged a {word} in class.", examples: ["The teacher encouraged a {word} in class so everyone could share their ideas respectfully."], link: "https://www.forvo.com/word/samvad/" },
+    { word: "shanti", pos: "Sanskrit", meaning: "peace", example: "The hall was filled with a sense of {word}.", examples: ["After the morning prayer, the hall was filled with a sense of {word}."], link: "https://www.forvo.com/word/shanti/" },
+    { word: "prerna", pos: "Hindi", meaning: "inspiration", example: "Her grandmother's courage became a source of {word} for Riya.", examples: ["Her grandmother's struggles and courage became a source of {word} for Riya."], link: "https://www.forvo.com/word/prerna/" },
+    { word: "pind", pos: "Punjabi", meaning: "village; rural town", example: "Every summer, Arjun visits his {word} in Punjab.", examples: ["Every summer, Arjun visits his {word} in Punjab and spends time with his grandparents."], link: "https://forvo.com/word/pind/" },
+    { word: "itminaan", pos: "Urdu", meaning: "calmness and peace of mind", example: "Dada sat in the courtyard with {word}, sipping tea.", examples: ["Dada sat in the courtyard with {word}, sipping tea and reading the newspaper."], link: "https://www.forvo.com/word/itminaan/" },
+    { word: "gourmet", pos: "French", meaning: "expert in or lover of good food", example: "Even a {word} would have admired the chef's delicious meal.", examples: ["The chef prepared such a delicious meal that even a {word} would have admired it."], link: "https://dictionary.cambridge.org/pronunciation/english/gourmet" },
+    { word: "boutique", pos: "French", meaning: "small specialised shop", example: "Mum bought a handmade scarf from a small {word} near the market.", examples: ["Mum bought a handmade scarf from a small {word} near the market."], link: "https://dictionary.cambridge.org/pronunciation/english/boutique" },
+    { word: "karaoke", pos: "Japanese", meaning: "singing along to recorded music", example: "The students laughed and sang together during {word} at the school fair.", examples: ["The students laughed and sang together during {word} at the school fair."], link: "https://dictionary.cambridge.org/pronunciation/english/karaoke" },
+    { word: "emoji", pos: "Japanese", meaning: "small digital symbol", example: "Our teacher added a smile {word} at the end of the message.", examples: ["Our teacher added a smile {word} at the end of the message to sound friendly."], link: "https://dictionary.cambridge.org/pronunciation/english/emoji" },
+    { word: "algebra", pos: "Arabic", meaning: "branch of mathematics using symbols", example: "In maths class, we used {word} to solve a puzzle.", examples: ["In maths class, we used {word} to solve a puzzle with missing numbers."], link: "https://dictionary.cambridge.org/pronunciation/english/algebra" },
+    { word: "safari", pos: "Swahili", meaning: "journey to observe wildlife", example: "During the {word}, the children spotted deer and birds.", examples: ["During the {word}, the children spotted deer, birds and a crocodile near the water."], link: "https://dictionary.cambridge.org/pronunciation/english/safari" },
+    { word: "robot", pos: "Czech", meaning: "machine that performs tasks", example: "The {word} in the lab could sort blocks by colour and size.", examples: ["The {word} in the lab could sort blocks by colour and size."], link: "https://dictionary.cambridge.org/pronunciation/english/robot" },
+    { word: "ubuntu", pos: "Nguni (Zulu/Xhosa)", meaning: "humaneness; belief in sharing and community", example: "Our class showed {word} by sharing materials and helping one another.", examples: ["Our class showed {word} by sharing materials and helping one another during the project."], link: "https://dictionary.cambridge.org/pronunciation/english/ubuntu" },
+    { word: "kindergarten", pos: "German", meaning: "early childhood school", example: "My little cousin was excited on the first day of {word}.", examples: ["My little cousin was excited on the first day of {word}."], link: "https://dictionary.cambridge.org/pronunciation/english/kindergarten" },
   ],
 };
 
@@ -150,6 +150,7 @@ const WRITING_DATA = {
 
 /* USE THE WORDS STATE */
 let mediaRecorder = null;
+let recordingMimeType = 'audio/wav';
 let audioChunks   = [];
 let audioBlob     = null;
 let audioURL      = null;
@@ -212,15 +213,33 @@ function hideModal(id) {
 }
 function showInfo() { showModal('info-modal'); }
 function closeInfo() { hideModal('info-modal'); }
+function showSetsInfo() { showModal('sets-info-modal'); }
+function closeSetsInfo() { hideModal('sets-info-modal'); }
 function showWritingInfo() { showModal('writing-info-modal'); }
 function closeWritingInfo() { hideModal('writing-info-modal'); }
 function showSampleAnswer() {
   const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
-  document.getElementById('sample-text').innerHTML = data.sample.replace(/\n/g, '<br/>');
+ const firstLine = data.sample.split('\n')[0];
+const rest = data.sample.split('\n').slice(1).join('\n');
+document.getElementById('sample-text').innerHTML = `<strong>${firstLine}</strong>` + rest.replace(/\n/g, '<br/>');
   showModal('sample-modal');
 }
 function closeSampleModal() { hideModal('sample-modal'); }
 function saveWriting() { showModal('challenge-modal'); }
+
+function downloadWritingPDF() {
+  const text = document.getElementById('writing-answer').value.trim();
+  if (!text) { alert('Please write something first!'); return; }
+  const blob = new Blob([
+    `My Writing Answer\n\n${text}`
+  ], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'my-writing-answer.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
 function closeChallengeModal() { hideModal('challenge-modal'); }
 /* ────────────────────────────────────────────
    SET SELECTION
@@ -376,8 +395,8 @@ function initMCQ() {
       answer: e.word
     }));
   }
-  mcqIndex   = 0;
-  mcqResults = [];
+ mcqIndex   = 0;
+  mcqResults = new Array(10).fill(null);
   renderMCQ();
 }
 function renderMCQ() {
@@ -424,9 +443,10 @@ function selectMCQOption(btn, chosen, correct, question) {
   const allBtns = document.querySelectorAll('.mcq-opt-btn');
   allBtns.forEach(b => { b.disabled = true; });
 
-const isCorrect = chosen === correct;
+  const isCorrect = chosen === correct;
   btn.classList.add('clicked-selected');
-if (isCorrect) {
+
+  if (isCorrect) {
     btn.classList.add('correct');
     const check = document.createElement('span');
     check.className = 'mcq-check';
@@ -436,7 +456,7 @@ if (isCorrect) {
     document.getElementById('mcq-wrong-feedback').classList.add('hidden');
     document.querySelector('.mcq-card').classList.remove('wrong-answer');
     document.querySelector('.mcq-card').classList.add('correct-answer');
-} else {
+  } else {
     btn.classList.add('wrong');
     const wrongCheck = document.createElement('span');
     wrongCheck.className = 'mcq-check mcq-wrong-check';
@@ -456,20 +476,21 @@ if (isCorrect) {
     document.querySelector('.mcq-card').classList.remove('correct-answer');
     document.querySelector('.mcq-card').classList.add('wrong-answer');
   }
-  mcqResults.push({ question, userAnswer: chosen, correct, isCorrect });
-}
 
+  // Save — always overwrite, only last answer kept per question index
+  mcqResults[mcqIndex] = { question, userAnswer: chosen, correct, isCorrect };
+}
 function hideFeedback() {
   document.getElementById('mcq-feedback').classList.add('hidden');
   document.getElementById('mcq-wrong-feedback').classList.add('hidden');
   document.querySelector('.mcq-card').classList.remove('correct-answer', 'wrong-answer');
 }
 function mcqNext() {
-  if (!mcqAnswered) return;
   if (mcqIndex < 9) {
     mcqIndex++;
     renderMCQ();
-  } else {
+    // always show fresh — user can re-answer
+} else {
     showResults();
     navigate('page-results');
   }
@@ -478,21 +499,8 @@ function mcqNext() {
 function mcqPrev() {
   if (mcqIndex > 0) {
     mcqIndex--;
-    // Replay that question (user can't change already-answered)
     renderMCQ();
-    // If already answered, show which answer was given
-    const prev = mcqResults[mcqIndex];
-    if (prev) {
-      const allBtns = document.querySelectorAll('.mcq-opt-btn');
-      allBtns.forEach(b => {
-        b.disabled = true;
-        if (b.textContent === prev.correct) b.classList.add('correct');
-        if (b.textContent === prev.userAnswer && !prev.isCorrect) b.classList.add('wrong');
-      });
-      mcqAnswered = true;
-      if (prev.isCorrect) document.getElementById('mcq-feedback').classList.remove('hidden');
-      else document.getElementById('mcq-wrong-feedback').classList.remove('hidden');
-    }
+    // always show fresh — user can re-answer
   }
 }
 
@@ -500,7 +508,7 @@ function mcqPrev() {
    RESULTS
 ──────────────────────────────────────────── */
 function showResults() {
-  const correct = mcqResults.filter(r => r.isCorrect).length;
+  const correct = mcqResults.filter(r => r && r.isCorrect).length;
 
   // Star logic: 0-4 = 1 star, 5-7 = 2 stars, 8-10 = 3 stars
   let stars = 1;
@@ -524,18 +532,28 @@ for (let i = 1; i <= 3; i++) {
     img.src = i <= stars ? 'img/star_yellow.png' : 'img/star_grey.png';
   }
 
-  // Show review of all answers
+// Show review of all answers
   let reviewHtml = '';
-  mcqResults.forEach((r, i) => {
-    const icon = r.isCorrect ? '✅' : '❌';
-    const color = r.isCorrect ? '#16a34a' : '#ef4444';
-    reviewHtml += `
-      <div style="background:#f9fafb;border-radius:12px;padding:12px 16px;margin-bottom:10px;text-align:left;border:1.5px solid ${r.isCorrect ? '#bbf7d0' : '#fecaca'};">
-        <div style="font-size:1rem;font-weight:700;color:#1f2937;">${icon} Q${i+1}: ${r.question}</div>
-        <div style="font-size:0.9rem;color:${color};margin-top:4px;">Your answer: <strong>${r.userAnswer}</strong></div>
-        ${!r.isCorrect ? `<div style="font-size:0.9rem;color:#16a34a;">Correct answer: <strong>${r.correct}</strong></div>` : ''}
-      </div>
-    `;
+  mcqWords.forEach((q, i) => {
+    const r = mcqResults[i];
+    if (r) {
+      const icon = r.isCorrect ? '✅' : '❌';
+      const color = r.isCorrect ? '#16a34a' : '#ef4444';
+reviewHtml += `
+        <div style="background:#f9fafb;border-radius:12px;padding:12px 16px;margin-bottom:10px;text-align:left;border:1.5px solid ${r.isCorrect ? '#bbf7d0' : '#fecaca'};">
+          <div style="font-size:1.9rem;font-weight:700;color:#1f2937;">${icon} ${i+1}. ${r.question}</div>
+          <div style="font-size:1.5rem;color:${color};margin-top:4px;">Your answer: <strong>${r.userAnswer}</strong></div>
+          ${!r.isCorrect ? `<div style="font-size:1.5rem;color:#16a34a;">Correct answer: <strong>${r.correct}</strong></div>` : ''}
+        </div>
+      `;
+    } else {
+      reviewHtml += `
+        <div style="background:#f9fafb;border-radius:12px;padding:12px 16px;margin-bottom:10px;text-align:left;border:1.5px solid #e5e7eb;">
+          <div style="font-size:1.9rem;font-weight:700;color:#9ca3af;">⬜ ${i+1}. ${q.question}</div>
+          <div style="font-size:1.5rem;color:#9ca3af;margin-top:4px;">Not attempted</div>
+        </div>
+      `;
+    }
   });
   document.getElementById('results-review').innerHTML = reviewHtml;
   document.getElementById('review-modal-content').innerHTML = reviewHtml;
@@ -595,15 +613,15 @@ function showMore() {
 }
 
 function renderExampleSlide(entry) {
-  const examples = entry.examples || [entry.example];
+  const examples = (entry.examples || [entry.example]).slice(1);
 
   let sectionsHtml = '';
   examples.forEach((ex, i) => {
     const text = ex.replace('{word}', `<strong>${entry.word}</strong>`);
-    sectionsHtml += `
+sectionsHtml += `
       <div class="writing-info-section">
-        <h4>Example ${i + 1}</h4>
-        <p style="font-size:1.3rem; color:#374151; line-height:1.6; margin:0;">${text}</p>
+        <h4 style="font-size:2.5rem;">Example ${i + 2}</h4>
+        <p style="font-size:2.1rem; color:#374151; line-height:1.6; margin:0;">${text}</p>
       </div>
     `;
   });
@@ -617,11 +635,7 @@ function renderExampleSlide(entry) {
     `;
   }
 
-  document.getElementById('more-examples-content').innerHTML = `
-    <div class="writing-info-scroll" style="max-height:320px;">
-      ${sectionsHtml}
-    </div>
-  `;
+document.getElementById('more-examples-content').innerHTML = sectionsHtml;
 }
 
 function slideExample(dir) {
@@ -658,14 +672,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 function startChallenge() {
   closeChallengeModal();
   resetRecorder();
+  const answer = document.getElementById('writing-answer').value.trim();
+  document.getElementById('speaking-answer-display').textContent = answer || 'No answer written yet.';
   navigate('page-speaking');
 }
 function saveSpeaking() {
-  alert('Your recording has been saved!');
+  if (!audioBlob) {
+    alert('Record audio first, then tap Save to download your recording.');
+    return;
+  }
+  const extension = recordingMimeType === 'audio/mp3' ? 'mp3' : recordingMimeType === 'audio/webm' ? 'webm' : 'wav';
+  const downloadName = `my-recording.${extension}`;
+  const url = URL.createObjectURL(audioBlob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = downloadName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 function playInstrAudio(type) {
@@ -702,11 +730,16 @@ function toggleRecording() {
 async function startRecording() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    mediaRecorder = new MediaRecorder(stream);
+    recordingMimeType = MediaRecorder.isTypeSupported('audio/mp3')
+      ? 'audio/mp3'
+      : MediaRecorder.isTypeSupported('audio/webm')
+        ? 'audio/webm'
+        : 'audio/wav';
+    mediaRecorder = new MediaRecorder(stream, { mimeType: recordingMimeType });
     audioChunks = [];
     mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
     mediaRecorder.onstop = () => {
-      audioBlob   = new Blob(audioChunks, { type: 'audio/wav' });
+      audioBlob   = new Blob(audioChunks, { type: recordingMimeType });
       audioURL    = URL.createObjectURL(audioBlob);
       audioPlayer = new Audio(audioURL);
       document.getElementById('rec-total').textContent       = formatTime(recSeconds);
