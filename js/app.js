@@ -127,7 +127,7 @@ const VOCAB_SETS = {
 ──────────────────────────────────────────── */
 const WRITING_DATA = {
 1: {
-    scenario: "You are a brave explorer in an ancient jungle. Suddenly, you see a gigantic animal you've never seen before! Tell the story of your adventure.",
+    scenario: "considerate (Set 1), logical (Set 2), discover (Set 3), clarify (Set 4), sankalp (Set 5)",
     sample: "A Small Choice, A Big Difference\n\nYesterday, my friend Arul looked upset during lunch. I tried to be considerate (Set 1) and asked him what had happened. He said his science notebook was missing. First, I stayed calm and thought in a logical (Set 2) way about where it could be. We decided to discover (Set 3) possible places, like the classroom and the playground. Then I helped him clarify (Set 4) where he had last kept it. Suddenly, he remembered leaving it near the lab table. We rushed there and found it safely. I felt happy and made a sankalp (Set 5) to always support my friends when they need help."
   },
   2: {
@@ -158,6 +158,41 @@ let audioPlayer   = null;
 let recInterval   = null;
 let recSeconds    = 0;
 let isRecording   = false;
+let learnAudioPlayer = null;
+let modalAudioPlayer = null;
+
+const LEARN_AUDIO_FILES = {
+  '1-0': './img/considerate_01.mp3',
+  '1-1': './img/frustrated_01.mp3'
+};
+
+const MODAL_AUDIO_FILES = {
+  '1-0': './img/considerate_02.mp3',
+  '1-1': './img/frustrated_02.mp3'
+};
+
+const MCQ_AUDIO_FILES = {
+  '1-0': './img/mcq_q1_set1.mp3',
+  '1-1': './img/mcq_q2_set1.mp3'
+};
+
+const INSTR_AUDIO_FILES = {
+  'writing': './img/Instructions.mp3'
+};
+
+let mcqAudioPlayer = null;
+
+function stopMCQAudio() {
+  if (mcqAudioPlayer) {
+    mcqAudioPlayer.pause();
+    mcqAudioPlayer.currentTime = 0;
+    mcqAudioPlayer = null;
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    isSpeaking = false;
+  }
+}
 
 /* ────────────────────────────────────────────
    STATE
@@ -173,7 +208,25 @@ let mcqWords       = [];      // 10 shuffled words for this MCQ session
 /* ────────────────────────────────────────────
    NAVIGATION
 ──────────────────────────────────────────── */
+function stopAllAudio() {
+  stopLearnAudio();
+  stopMCQAudio();
+  stopModalAudio();
+  if (instrAudioPlayer) {
+    instrAudioPlayer.pause();
+    instrAudioPlayer.currentTime = 0;
+    instrAudioPlayer = null;
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    isSpeaking = false;
+  }
+}
+
 function navigate(pageId, mode) {
+  if (pageId !== 'page-learn') {
+    stopLearnAudio();
+  }
   // hide all pages
   document.querySelectorAll('.page').forEach(p => {
     p.classList.remove('active');
@@ -207,6 +260,9 @@ function showModal(id) {
   m.classList.remove('hidden');
 }
 function hideModal(id) {
+  if (id === 'more-examples-modal') {
+    stopModalAudio();
+  }
   const m = document.getElementById(id);
   m.style.display = 'none';
   m.classList.add('hidden');
@@ -240,7 +296,17 @@ function downloadWritingPDF() {
   a.click();
   URL.revokeObjectURL(url);
 }
-function closeChallengeModal() { hideModal('challenge-modal'); }
+function closeChallengeModal() {
+  hideModal('challenge-modal');
+}
+
+function startFresh() {
+  hideModal('challenge-modal');
+  document.getElementById('writing-answer').value = '';
+  const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
+  document.getElementById('writing-scenario').textContent = data.scenario;
+  navigate('page-writing');
+}
 /* ────────────────────────────────────────────
    SET SELECTION
 ──────────────────────────────────────────── */
@@ -288,6 +354,7 @@ if (learnIndex === words.length - 1) {
 }
 
 function learnNext() {
+  stopLearnAudio();
   const words = VOCAB_SETS[currentSet];
   if (learnIndex < words.length - 1) {
     learnIndex++;
@@ -300,6 +367,7 @@ function learnNext() {
 }
 
 function learnPrev() {
+  stopLearnAudio();
   if (learnIndex > 0) {
     learnIndex--;
     renderLearnCard();
@@ -486,6 +554,7 @@ function hideFeedback() {
   document.querySelector('.mcq-card').classList.remove('correct-answer', 'wrong-answer');
 }
 function mcqNext() {
+  stopMCQAudio();
   if (mcqIndex < 9) {
     mcqIndex++;
     renderMCQ();
@@ -497,6 +566,7 @@ function mcqNext() {
 }
 
 function mcqPrev() {
+  stopMCQAudio();
   if (mcqIndex > 0) {
     mcqIndex--;
     renderMCQ();
@@ -564,9 +634,64 @@ reviewHtml += `
 ──────────────────────────────────────────── */
 let isSpeaking = false;
 
+function stopLearnAudio() {
+  if (learnAudioPlayer) {
+    learnAudioPlayer.pause();
+    learnAudioPlayer.currentTime = 0;
+    learnAudioPlayer = null;
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    isSpeaking = false;
+  }
+}
+
+function toggleMoreExampleAudio() {
+  stopAllAudio();
+  const audioKey = `${currentSet}-${learnIndex}`;
+  const mp3src = MODAL_AUDIO_FILES[audioKey];
+  if (!mp3src) return;
+
+  if (modalAudioPlayer && !modalAudioPlayer.paused) {
+    stopModalAudio();
+    return;
+  }
+
+  stopModalAudio();
+  modalAudioPlayer = new Audio(mp3src);
+  modalAudioPlayer.onended = () => { modalAudioPlayer = null; };
+  modalAudioPlayer.play().catch(() => {});
+}
+
+function stopModalAudio() {
+  if (modalAudioPlayer) {
+    modalAudioPlayer.pause();
+    modalAudioPlayer.currentTime = 0;
+    modalAudioPlayer = null;
+  }
+}
+
 function playAudio() {
+  stopMCQAudio();
+  stopModalAudio();
+  if (instrAudioPlayer) { instrAudioPlayer.pause(); instrAudioPlayer.currentTime = 0; instrAudioPlayer = null; }
   const wordEl = document.getElementById('learn-word');
   const word = wordEl ? wordEl.textContent : '';
+  const audioKey = `${currentSet}-${learnIndex}`;
+  const mp3src = LEARN_AUDIO_FILES[audioKey];
+
+  if (mp3src) {
+    if (learnAudioPlayer && !learnAudioPlayer.paused) {
+      stopLearnAudio();
+      return;
+    }
+    stopLearnAudio();
+    learnAudioPlayer = new Audio(mp3src);
+    learnAudioPlayer.onended = () => { learnAudioPlayer = null; };
+    learnAudioPlayer.play().catch(() => {});
+    return;
+  }
+
   if ('speechSynthesis' in window && word) {
     if (isSpeaking) {
       window.speechSynthesis.cancel();
@@ -584,8 +709,24 @@ function playAudio() {
 }
 
 function playMCQAudio() {
+  stopAllAudio();
   const questionEl = document.getElementById('mcq-question-text');
   const question = questionEl ? questionEl.textContent : '';
+  const audioKey = `${currentSet}-${mcqIndex}`;
+  const mp3src = MCQ_AUDIO_FILES[audioKey];
+
+  if (mp3src) {
+    if (mcqAudioPlayer && !mcqAudioPlayer.paused) {
+      stopMCQAudio();
+      return;
+    }
+    stopMCQAudio();
+    mcqAudioPlayer = new Audio(mp3src);
+    mcqAudioPlayer.onended = () => { mcqAudioPlayer = null; };
+    mcqAudioPlayer.play().catch(e => { console.error('MCQ audio error:', e); });
+    return;
+  }
+
   if ('speechSynthesis' in window && question) {
     if (isSpeaking) {
       window.speechSynthesis.cancel();
@@ -619,10 +760,8 @@ function renderExampleSlide(entry) {
   examples.forEach((ex, i) => {
     const text = ex.replace('{word}', `<strong>${entry.word}</strong>`);
 sectionsHtml += `
-      <div class="writing-info-section">
         <h4 style="font-size:2.5rem;">Example ${i + 2}</h4>
         <p style="font-size:2.1rem; color:#374151; line-height:1.6; margin:0;">${text}</p>
-      </div>
     `;
   });
 
@@ -660,10 +799,47 @@ document.addEventListener('DOMContentLoaded', () => {
     m.style.display = 'none';
     m.classList.add('hidden');
   });
-  // Show only page 1
+// Show only page 1
   const intro = document.getElementById('page-intro');
   intro.style.display = 'flex';
   intro.classList.add('active');
+
+// JS tooltip appended to body - always shows above everything
+  const tooltipEl = document.createElement('div');
+  tooltipEl.className = 'js-tooltip';
+  tooltipEl.style.opacity = '0';
+  tooltipEl.style.visibility = 'hidden';
+  document.body.appendChild(tooltipEl);
+
+  document.querySelectorAll('[title]').forEach(el => {
+    const text = el.getAttribute('title');
+    el.setAttribute('data-tooltip', text);
+    el.removeAttribute('title');
+
+    el.addEventListener('mouseenter', () => {
+      tooltipEl.textContent = text;
+      tooltipEl.style.visibility = 'hidden';
+      tooltipEl.style.opacity = '0';
+      tooltipEl.style.left = '0px';
+      tooltipEl.style.top = '0px';
+
+      requestAnimationFrame(() => {
+        const rect = el.getBoundingClientRect();
+        const tw = tooltipEl.offsetWidth;
+        const tx = rect.left + rect.width / 2 - tw / 2;
+        const ty = rect.bottom + 6;
+        tooltipEl.style.left = Math.max(4, tx) + 'px';
+        tooltipEl.style.top = ty + 'px';
+        tooltipEl.style.visibility = 'visible';
+        tooltipEl.style.opacity = '1';
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      tooltipEl.style.opacity = '0';
+      tooltipEl.style.visibility = 'hidden';
+    });
+  });
 });
 
 /* ────────────────────────────────────────────
@@ -696,9 +872,31 @@ function saveSpeaking() {
   URL.revokeObjectURL(url);
 }
 
+let instrAudioPlayer = null;
+
 function playInstrAudio(type) {
+  stopAllAudio();
+  const mp3src = INSTR_AUDIO_FILES[type];
+
+  if (mp3src) {
+    if (instrAudioPlayer && !instrAudioPlayer.paused) {
+      instrAudioPlayer.pause();
+      instrAudioPlayer.currentTime = 0;
+      instrAudioPlayer = null;
+      return;
+    }
+    if (instrAudioPlayer) {
+      instrAudioPlayer.pause();
+      instrAudioPlayer = null;
+    }
+    instrAudioPlayer = new Audio(mp3src);
+    instrAudioPlayer.onended = () => { instrAudioPlayer = null; };
+    instrAudioPlayer.play().catch(e => { console.error('Instr audio error:', e); });
+    return;
+  }
+
   const text = type === 'writing'
-    ? '"Write a 100–120 word paragraph about a situation where you helped someone or solved a problem. Use all 5 given words meaningfully. Add a creative title for your paragraph.'
+    ? 'Write a 100–120 word paragraph about a situation where you helped someone or solved a problem. Use all 5 given words meaningfully. Add a creative title for your paragraph.'
     : 'Now read your answer aloud and record it clearly using the correct pronunciation and expression.';
   if ('speechSynthesis' in window) {
     const utt = new SpeechSynthesisUtterance(text);
@@ -707,7 +905,6 @@ function playInstrAudio(type) {
     window.speechSynthesis.speak(utt);
   }
 }
-
 /* ── RECORDER ── */
 function resetRecorder() {
   isRecording = false;
