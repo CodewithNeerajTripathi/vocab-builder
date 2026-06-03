@@ -59,7 +59,7 @@
         <button class="pill-btn learn-pill" id="sets-mode-label">
   <img src="img/learn_pill.png" alt="Learn the Words" style="height:64px; object-fit:contain;" />
 </button>
-      <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+      <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="top-icons">
       <button class="icon-btn" onclick="navigate('page-intro')"  title="Home"><img src="img/home.png" alt="Home" /></button>
@@ -67,26 +67,21 @@
       </div>
     </div>
     <h2 class="sets-heading" id="sets-heading">Choose a set and start learning.</h2>
-    <div class="sets-grid">
-     <div class="set-card">
-        <span class="set-name">Set 1</span>
-        <button class="set-start-btn" onclick="startSet(1)" title="Start Set 1"><img src="img/start_arrow.png" alt="Start" /></button>
+<div class="sets-grid">
+   <div class="set-card" onclick="startSet(1)" title="Click to Start" style="justify-content:center;align-items:center;cursor:pointer;">
+        <span class="set-name" style="text-align:center;">Set 1</span>
       </div>
-  <div class="set-card">
-        <span class="set-name">Set 2</span>
-        <button class="set-start-btn" onclick="startSet(2)" title="Start Set 2"><img src="img/start_arrow.png" alt="Start" /></button>
+      <div class="set-card" onclick="startSet(2)" title="Click to Start" style="justify-content:center;align-items:center;cursor:pointer;">
+        <span class="set-name" style="text-align:center;">Set 2</span>
       </div>
-      <div class="set-card">
-        <span class="set-name">Set 3</span>
-        <button class="set-start-btn" onclick="startSet(3)" title="Start Set 3"><img src="img/start_arrow.png" alt="Start" /></button>
+      <div class="set-card" onclick="startSet(3)" title="Click to Start" style="justify-content:center;align-items:center;cursor:pointer;">
+        <span class="set-name" style="text-align:center;">Set 3</span>
       </div>
-      <div class="set-card">
-        <span class="set-name">Set 4</span>
-        <button class="set-start-btn" onclick="startSet(4)" title="Start Set 4"><img src="img/start_arrow.png" alt="Start" /></button>
+      <div class="set-card" onclick="startSet(4)" title="Click to Start" style="justify-content:center;align-items:center;cursor:pointer;">
+        <span class="set-name" style="text-align:center;">Set 4</span>
       </div>
-      <div class="set-card">
-        <span class="set-name">Set 5</span>
-        <button class="set-start-btn" onclick="startSet(5)" title="Start Set 5"><img src="img/start_arrow.png" alt="Start" /></button>
+      <div class="set-card" onclick="startSet(5)" title="Click to Start" style="justify-content:center;align-items:center;cursor:pointer;">
+        <span class="set-name" style="text-align:center;">Set 5</span>
       </div>
     </div>
   </div>
@@ -98,7 +93,7 @@
         <button class="pill-btn learn-pill">
   <img src="img/learn_pill.png" alt="Learn the Words" style="height:64px;object-fit:contain;" />
 </button>
-    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
       </div>
       <div class="set-badge-wrap">
         <span class="set-badge" id="learn-set-label">Set 1</span>
@@ -125,7 +120,7 @@
         <div class="example-text" id="learn-example"><strong id="learn-word-bold">Thanks</strong> for the help!</div>
       </div>
       <div class="nav-row">
-       <button class="icon-btn" id="learn-prev-btn" onclick="learnPrev()" title="Previous Word"><img src="img/prev_btn.png" alt="Previous" /></button>
+       <button class="icon-btn" id="learn-prev-btn" onclick="learnPrev()" title="Previous"><img src="img/prev_btn.png" alt="Previous" /></button>
         
         <button class="icon-btn" id="learn-next-btn" onclick="learnNext()" title="Next"><img src="img/next_btn.png" alt="Next" /></button>
    </div>
@@ -134,14 +129,13 @@
   </div>
 
   <!-- ========== PAGE 5: MCQ ========== -->
-  <!-- ========== PAGE 5: MCQ ========== -->
 <div class="page" id="page-mcq">
   <div class="top-bar">
     <div class="top-left">
       <button class="pill-btn learn-pill">
         <img src="img/learn_pill.png" alt="Learn the Words" style="height:64px;object-fit:contain;" />
       </button>
-    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="set-badge-wrap">
       <span class="set-badge mcq-badge" id="mcq-set-label">Set 1 - MCQ</span>
@@ -158,7 +152,7 @@
 <div id="mcq-counter">1/10</div>
 <div class="mcq-question-bar">
   <span id="mcq-question-text">A short way to say thank you</span>
-  <button class="audio-btn" onclick="playMCQAudio()" title="Listen to Question"><img src="img/audio.png" alt="Audio" /></button>
+  <button class="audio-btn" id="mcq-audio-btn" onclick="playMCQAudio()" title="Listen to Question"><img src="img/audio.png" alt="Audio" /></button>
 </div>
 
     <!-- OPTIONS + FEEDBACK ROW -->
@@ -176,9 +170,9 @@
 
     <!-- NAV ROW -->
     <div class="nav-row">
-      <button class="icon-btn" id="mcq-prev-btn" onclick="mcqPrev()" title="Previous Question"><img src="img/prev_btn.png" alt="Previous" /></button>
+      <button class="icon-btn" id="mcq-prev-btn" onclick="mcqPrev()" title="Previous"><img src="img/prev_btn.png" alt="Previous" /></button>
       
-      <button class="icon-btn" id="mcq-next-btn" onclick="mcqNext()" title="Next Question"><img src="img/next_btn.png" alt="Next" /></button>
+      <button class="icon-btn" id="mcq-next-btn" onclick="mcqNext()" title="Next"><img src="img/next_btn.png" alt="Next" /></button>
     </div>
   </div>
 </div>
@@ -190,7 +184,7 @@
       <button class="pill-btn learn-pill">
         <img src="img/learn_pill.png" alt="Learn the Words" style="height:64px;object-fit:contain;" />
       </button>
-    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+    <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="set-badge-wrap">
       <span class="set-badge mcq-badge" id="results-set-label">Set 1 - MCQ</span>
@@ -243,57 +237,50 @@
 <!-- SETS PAGE INFO MODAL -->
 <div class="modal-overlay hidden" id="sets-info-modal">
     <div class="modal-box writing-info-box">
-      <div class="modal-top-row">
-        <h3>Learn the Words</h3>
-        <button class="modal-close-btn" onclick="closeSetsInfo()">✕</button>
-      </div>
+<div class="modal-top-row" style="justify-content:center; position:relative;">
+        <h3 style="text-align:center; width:100%;">Learn the Words</h3>
+        <button class="modal-close-btn" onclick="closeSetsInfo()" style="position:absolute; right:0;">✕</button>
+      </div>    
       <div class="writing-info-scroll">
         <div class="writing-info-section">
           <p>In this section, you will explore new words through carefully designed word sets. Each set helps you understand meanings, recognise usage, and build confidence step by step.</p>
         </div>
         <div class="writing-info-section">
-          <h4>🧠 How to Learn Effectively</h4>
+          
           <ul>
-            <li>Go through each word in the set carefully.</li>
+            <li>Go through each word in the set <strong><span class="highlight">carefully</span></strong>.</li>
             <li>Read the meaning and try to understand how the word is used.</li>
             <li>Take your time — learning words well is more important than learning fast.</li>
           </ul>
         </div>
         <div class="writing-info-section">
-          <h4>📚 What You Will Do</h4>
+          <h4> What You Will Do</h4>
           <ul>
-            <li>Learn 5 sets of 20 words (100 words in total).</li>
-            <li>Explore a mix of everyday, academic, and non-English words to broaden your understanding of language.</li>
-            <li>After each set, attempt MCQs to check your understanding.</li>
+            <li><strong><span class="highlight">Learn 5 sets of 20 words</span></strong> (100 words in total).</li>
+            <li>Explore a mix of everyday, academic, and <strong><span class="highlight">non-English words</span></strong> to broaden your understanding of language.</li>
+            <li>After each set, attempt <strong><span class="highlight">MCQs</span></strong> to check your understanding.</li>
           </ul>
         </div>
 <div class="writing-info-section">
-          <h4>💡 Tips for Learning Better</h4>
+          <h4> How to Learn Better</h4>
           <ul>
-            <li>Try to use each word in a sentence in your mind or notebook.</li>
+            <li>Try to <strong><span class="highlight">use each word in a sentence</span></strong> in your mind or notebook.</li>
             <li>Look for these words when you are reading or listening.</li>
             <li>Revise words regularly to remember them better.</li>
             <li>Focus on understanding the meaning, not just memorising.</li>
           </ul>
         </div>
+      
         <div class="writing-info-section">
-          <h4>🚀 Challenge Yourself</h4>
+          <h4> Audio Support</h4>
           <ul>
-            <li>Learn extra words beyond the set if you are curious.</li>
-            <li>Try grouping words with similar meanings.</li>
-            <li>Think of situations where you can use these words in real life.</li>
-          </ul>
-        </div>
-        <div class="writing-info-section">
-          <h4>🔊 Accessibility Support</h4>
-          <ul>
-            <li>Use the audio feature (if available) to hear word pronunciations and meanings.</li>
+            <li>Use the <strong><span class="highlight">audio feature</span></strong> (if available) to hear word pronunciations and meanings.</li>
             <li>Listening can help improve both understanding and pronunciation.</li>
           </ul>
         </div>
         <div class="writing-info-section">
-          <h4>🎯 Your Goal</h4>
-          <p>By the end of this section, you will not just recognise new words — you will be ready to use them confidently in communication!</p>
+          
+          <p>By the end of this section, you will not just recognise new words — you will be ready to <strong><span class="highlight">use them confidently</span></strong> in communication!</p>
         </div>
       </div>
     </div>
@@ -302,9 +289,9 @@
 <!-- WRITING INFO MODAL - PAGE 7 -->
 <div class="modal-overlay hidden" id="writing-info-modal">
 <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Use the Words: Writing and Speaking</h3>
-      <button class="modal-close-btn" onclick="closeWritingInfo()">✕</button>
+  <div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Use the Words: Writing and Speaking</h3>
+      <button class="modal-close-btn" onclick="closeWritingInfo()" style="position:absolute; right:0;">✕</button>
     </div>
     <div class="writing-info-scroll">
     <div class="writing-info-section">
@@ -313,11 +300,47 @@
     <div class="writing-info-section">
       <h4>How to Attempt the Activity</h4>
       <ul>
-        <li>Carefully read the instructions given.</li>
+        <li><strong><span class="highlight">Carefully read the instructions</span></strong> given.</li>
         <li>Plan your ideas before you start writing.</li>
         <li>Organise your ideas logically.</li>
-        <li>Use the required target words if they are given in the activity.</li>
+        <li>Use the required <strong><span class="highlight">target words</span></strong> if they are given in the activity.</li>
         <li>Make sure your writing is clear and meaningful.</li>
+      </ul>
+    </div>
+    <div class="writing-info-section">
+      <h4>Tips for Better Writing</h4>
+      <ul>
+        <li>Think about what you learned.</li>
+        <li>Use your imagination to make your writing interesting.</li>
+        <li>Do not rush. Take your time to check your work before submitting.</li>
+        <li>Try to use new words in a <strong><span class="highlight">natural way</span></strong>.</li>
+        <li>Sample answers are only there as cues. Do your best to come up with your own answer that is imaginative, creative and shows your abilities.</li>
+        <li>Cues to think and help your writing are included.</li>
+        <li>A checklist of Success Criteria is also given for self-assessment.</li>
+      </ul>
+    </div>
+    <div class="writing-info-section">
+      <h4>Challenge Yourself</h4>
+      <ul>
+        <li><strong><span class="highlight">Add more details</span></strong> to your writing.</li>
+        <li><strong><span class="highlight">Write more sentences than required</span></strong>.</li>
+        <li><strong><span class="highlight">Use additional vocabulary words</span></strong> that you know.</li>
+        <li>Make your story or response more creative and engaging.</li>
+      </ul>
+    </div>
+    <div class="writing-info-section">
+      <h4>Accessibility Feature</h4>
+      <ul>
+        <li>You can use the <strong><span class="highlight">audio feature</span></strong> (if available) to listen to the instructions, sample answers, etc.</li>
+        <li>This can help you understand the task better and support your learning.</li>
+      </ul>
+    </div>
+    <div class="writing-info-section">
+      <h4>Saving Your Work</h4>
+      <ul>
+        <li>After completing your writing, you can <strong><span class="highlight">download your response as a PDF</span></strong>.</li>
+        <li>Save the file on your computer or device for future reference.</li>
+        <li>You can also review or share your work later if needed.</li>
       </ul>
     </div>
     </div>
@@ -327,9 +350,9 @@
 <!-- WRITING INFO MODAL - PAGE 8 -->
 <div class="modal-overlay hidden" id="writing-info-modal-p8">
 <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Use the Words: Writing and Speaking</h3>
-      <button class="modal-close-btn" onclick="hideModal('writing-info-modal-p8')">✕</button>
+<div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Use the Words: Writing and Speaking</h3>
+      <button class="modal-close-btn" onclick="hideModal('writing-info-modal-p8')" style="position:absolute; right:0;">✕</button>
     </div>
     <div class="writing-info-scroll">
     <div class="writing-info-section">
@@ -374,13 +397,13 @@
 <!-- WRITING INFO MODAL - PAGE 9 -->
 <div class="modal-overlay hidden" id="writing-info-modal-p9">
 <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Use the Words: Writing and Speaking</h3>
-      <button class="modal-close-btn" onclick="hideModal('writing-info-modal-p9')">✕</button>
+   <div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Use the Words: Writing and Speaking</h3>
+      <button class="modal-close-btn" onclick="hideModal('writing-info-modal-p9')" style="position:absolute; right:0;">✕</button>
     </div>
     <div class="writing-info-scroll">
     <div class="writing-info-section">
-      <p>Once you are done writing, record your response using the recording feature. This helps you practise speaking clearly, confidently, and with expression.</p>
+      <p>Once you are done writing; record your response using the recording feature in the Speaking section. This helps you practise speaking clearly, confidently, and with expression.</p>
       <p style="margin-top:10px;">When you record your answer, you learn to:</p>
       <ul>
         <li>Express your ideas in your own words</li>
@@ -389,15 +412,15 @@
       </ul>
     </div>
     <div class="writing-info-section">
-      <h4>Recording Your Answer</h4>
+      <h4>Record and Save Your Answer</h4>
       <p>You can also record your response using the recording feature. You will be able to:</p>
       <ul>
-        <li>Record your answer using your voice</li>
-        <li>Play back your recording to check it</li>
-        <li>Delete and re-record if you want to improve it</li>
-        <li>Download your recording and save it on your device</li>
+        <li><strong><span class="highlight">Record your answer</span></strong> using your voice</li>
+        <li><strong><span class="highlight">Play back</span></strong> your recording to check it</li>
+        <li><strong><span class="highlight">Delete and re-record</span></strong> if you want to improve it</li>
+        <li><strong><span class="highlight">Download your recording</span></strong> and save it on your device</li>
       </ul>
-      <p style="margin-top:10px;">This is a great way to practise speaking and expressing your ideas clearly.</p>
+      <p style="margin-top:10px;">This is a great way to practise <strong><span class="highlight">speaking and expressing your ideas clearly</span></strong>.</p>
     </div>
     </div>
   </div>
@@ -419,18 +442,16 @@
         <li>Add more details to make your story engaging</li>
       </ul>
     </div>
-    <button class="challenge-next-btn" onclick="startFresh()">
-      <img src="img/start-challenge.png" alt="Next" />
-    </button>
+
   </div>
 </div>
 
 <!-- SAMPLE ANSWER MODAL -->
 <div class="modal-overlay hidden" id="sample-modal">
   <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Sample Answer</h3>
-      <button class="modal-close-btn" onclick="closeSampleModal()">✕</button>
+<div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Sample Answer</h3>
+      <button class="modal-close-btn" onclick="closeSampleModal()" style="position:absolute; right:0;">✕</button>
     </div>
     <div class="sample-text" id="sample-text"></div>
     
@@ -440,12 +461,12 @@
 <!-- INFO MODAL -->
   <div class="modal-overlay hidden" id="info-modal">
     <div class="modal-box writing-info-box">
-      <div class="modal-top-row">
-        <h3>About Vocab Builder</h3>
-        <button class="modal-close-btn" onclick="closeInfo()">✕</button>
+     <div class="modal-top-row" style="justify-content:center; position:relative;">
+        <h3 style="text-align:center; width:100%;">About Vocab Builder</h3>
+        <button class="modal-close-btn" onclick="closeInfo()" style="position:absolute; right:0;">✕</button>
       </div>
       <div class="writing-info-scroll">
-        <p>Step into a world where words come alive! This module helps you explore, understand, and use new vocabulary in fun and meaningful ways. You will learn through carefully designed word sets, including one exciting set of non-English regional words, helping you connect with language beyond the classroom. With quick checks and creative speaking and writing tasks, you will not just learn words — you will use them confidently.</p>
+        <p>Step into a world where words come alive! This module helps you explore, understand, and use new vocabulary in fun and meaningful ways. You will learn through carefully designed word sets, including one exciting set of <strong><span class="highlight">non-English regional words</span></strong>, helping you connect with language beyond the classroom. With quick checks and creative speaking and writing tasks, you will not just learn words — you will use them confidently.</p>
       </div>
     </div>
   </div>
@@ -455,28 +476,24 @@
 <div class="page" id="page-use-menu">
   <div class="top-bar">
     <div class="top-left">
-      <button class="pill-btn use-pill" title="Use the Words">
+      <button class="pill-btn use-pill" >
         <img src="img/use_pill.png" alt="Use the Words" style="height:64px;object-fit:contain;" />
       </button>
-      <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+      <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="top-icons">
       <button class="icon-btn" onclick="navigate('page-intro')" title="Home"><img src="img/home.png" alt="Home" /></button>
       <button class="icon-btn" onclick="showWritingInfo()" title="Information"><img src="img/info.png" alt="Info" /></button>
     </div>
   </div>
-  <div class="use-menu-center">
-  <div class="use-ws-card" onclick="startUseWords()" style="background: #fff;">
+<div class="use-menu-center">
+  <div class="use-ws-card" onclick="startUseWords()" title="Start Writing and Speaking" style="background:#fff; justify-content:center; align-items:center;">
   <img src="img/words-bg.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:var(--radius); z-index:0;" />
-      <div class="use-ws-titles">
+    <div class="use-ws-titles" style="justify-content:center; align-items:center; flex-direction:row; gap:10px;">
         <span class="use-ws-writing">Writing</span>
         <span class="use-ws-amp">and</span>
         <span class="use-ws-speaking">Speaking</span>
       </div>
-    
-      <button class="set-start-btn" onclick="startUseWords()" title="Start">
-        <img src="img/start_arrow.png" alt="Start" />
-      </button>
     </div>
   </div>
 </div>
@@ -485,13 +502,13 @@
 <div class="page" id="page-writing">
   <div class="top-bar">
     <div class="top-left">
-      <button class="pill-btn use-pill" title="Use the Words">
+      <button class="pill-btn use-pill">
         <img src="img/use_pill.png" alt="Use the Words" style="height:64px;object-fit:contain;" />
       </button>
- <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+ <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="set-badge-wrap">
-      <span class="set-badge" style="background:#f59e0b;">Writing</span>
+      <span class="set-badge" style="background:#1461c7 ;">Writing</span>
     </div>
     <div class="top-icons">
       <button class="icon-btn" onclick="navigate('page-intro')"  title="Home"><img src="img/home.png" alt="Home" /></button>
@@ -503,7 +520,7 @@
 <div class="use-instr-bar">
     <span>Write a 100–120 word paragraph about a situation where you helped someone or solved a problem.
 Use all 5 given words meaningfully. Add a creative title for your paragraph.
- <button class="audio-btn small" onclick="playInstrAudio('writing')" title="Listen"><img src="img/audio.png" alt="Audio" /></button></span>
+ <button class="audio-btn small" id="writing-instr-audio-btn" onclick="playInstrAudio('writing')" title="Listen"><img src="img/audio.png" alt="Audio" /></button></span>
 </div>
  <button class="chag-btn" onclick="showModal('challenge-modal')" title="Challenge">
     <img src="img/chag.png" alt="Info" />
@@ -522,11 +539,11 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
   </button>
   <button class="sample-ans-btn" onclick="showSampleAnswer()" title="Sample Answer">Sample Answer</button>
   <div style="display:flex; align-items:center; gap:12px;">
-    <button class="save-btn" onclick="downloadWritingPDF()" title="Save Answer">
+    <button class="save-btn" onclick="downloadWritingPDF()" title="Save">
       <img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" />
     </button>
-    <button class="icon-btn" onclick="startChallenge()" style="padding:0;" title="Next step">
-      <img src="img/next_btn.png" alt="Next" style="width:170px;height:80px;object-fit:contain;" />
+    <button class="icon-btn" onclick="startChallenge()" style="padding:0;" title="Next">
+      <img src="img/next_btn.png" alt="Next" style="width:130px;height:80px;object-fit:contain;" />
     </button>
   </div>
 </div>
@@ -537,10 +554,10 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
 <div class="page" id="page-speaking">
   <div class="top-bar">
     <div class="top-left">
-      <button class="pill-btn use-pill" title="Use the Words">
+      <button class="pill-btn use-pill">
         <img src="img/use_pill.png" alt="Use the Words" style="height:64px;object-fit:contain;" />
       </button>
-     <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Open Menu"><img src="img/hamburger.png" alt="Menu" /></button>
+     <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
     </div>
     <div class="set-badge-wrap">
       <span class="set-badge" style="background:#1a3a8f;">Speaking</span>
@@ -553,8 +570,9 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
   <div class="use-page-card" >
 <div class="instr-row-wrap">
   <div class="use-instr-bar">
-    <span>Now read your answer aloud and record it clearly using the correct pronunciation and expression.</span>
-    <button class="audio-btn small" onclick="playInstrAudio('speaking')" title="Listen"><img src="img/audio.png" alt="Audio" /></button>
+    <span>Now that you have written your answer. Read it and record it in a clear tone, using correct pronunciation and expressions.
+</span>
+    <button class="audio-btn small" id="speaking-instr-audio-btn" onclick="playInstrAudio('speaking')" title="Listen"><img src="img/audio.png" alt="Audio" /></button>
   </div>
 </div>
 <div class="use-scenario" id="speaking-answer-display" style="background:#f0f8ff; border:2px solid #e0eeff; font-size:1.8rem; line-height:1.8; min-height:80px;"></div>
@@ -577,7 +595,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
       </div>
     </div>
   <div class="use-bottom-row" style="justify-content: flex-end;">
-      <button class="save-btn" onclick="saveSpeaking()" title="Save Speaking"><img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" /></button>
+      <button class="save-btn" onclick="saveSpeaking()" title="Save"><img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" /></button>
     </div>
   </div>
 </div>
@@ -585,11 +603,11 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
 <!-- MORE EXAMPLES MODAL -->
 <div class="modal-overlay hidden" id="more-examples-modal">
   <div class="modal-box writing-info-box">
- <div class="modal-top-row">
-      <h3>Examples <button class="audio-btn small" id="more-examples-audio-btn" onclick="toggleMoreExampleAudio()" title="Play example audio"><img src="img/audio.png" alt="Audio" /></button></h3>
-      <button class="modal-close-btn" onclick="hideModal('more-examples-modal')">✕</button>
+<div class="modal-top-row" style="justify-content:center; position:relative;">
+     <h3 style="text-align:center; width:100%;">Examples <button class="audio-btn small" id="more-examples-audio-btn" onclick="toggleMoreExampleAudio()" title="Play example audio"><img src="img/audio.png" alt="Audio" /></button></h3>
+      <button class="modal-close-btn" onclick="hideModal('more-examples-modal')" style="position:absolute; right:0;">✕</button>
     </div>
-    <div id="more-examples-content" style="overflow-y:auto; max-height:50vh; padding-right:8px; padding-left:80px;">
+   <div id="more-examples-content" style="overflow-y:auto; max-height:50vh; padding-right:8px; padding-left:80px;">
 </div>
   </div>
 </div>
@@ -608,9 +626,9 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
 
 <div class="modal-overlay hidden" id="think-modal">
 <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Think About It</h3>
-      <button class="modal-close-btn" onclick="hideModal('think-modal')">✕</button>
+   <div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Think About It</h3>
+      <button class="modal-close-btn" onclick="hideModal('think-modal')" style="position:absolute; right:0;">✕</button>
     </div>
  <div class="writing-info-scroll">
       <div class="writing-info-section">
@@ -629,9 +647,9 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
 
 <div class="modal-overlay hidden" id="success-modal">
 <div class="modal-box writing-info-box">
-    <div class="modal-top-row">
-      <h3>Success Criteria</h3>
-      <button class="modal-close-btn" onclick="hideModal('success-modal')">✕</button>
+ <div class="modal-top-row" style="justify-content:center; position:relative;">
+      <h3 style="text-align:center; width:100%;">Success Criteria</h3>
+      <button class="modal-close-btn" onclick="hideModal('success-modal')" style="position:absolute; right:0;">✕</button>
     </div>
     <div class="writing-info-scroll">
       <div class="writing-info-section">

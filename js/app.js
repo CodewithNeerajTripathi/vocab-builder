@@ -127,7 +127,7 @@ const VOCAB_SETS = {
 ──────────────────────────────────────────── */
 const WRITING_DATA = {
 1: {
-    scenario: "considerate (Set 1), logical (Set 2), discover (Set 3), clarify (Set 4), sankalp (Set 5)",
+   scenario: "Words to Use: considerate (Set 1), logical (Set 2), discover (Set 3), clarify (Set 4), sankalp (Set 5)",
     sample: "A Small Choice, A Big Difference\n\nYesterday, my friend Arul looked upset during lunch. I tried to be considerate (Set 1) and asked him what had happened. He said his science notebook was missing. First, I stayed calm and thought in a logical (Set 2) way about where it could be. We decided to discover (Set 3) possible places, like the classroom and the playground. Then I helped him clarify (Set 4) where he had last kept it. Suddenly, he remembered leaving it near the lab table. We rushed there and found it safely. I felt happy and made a sankalp (Set 5) to always support my friends when they need help."
   },
   2: {
@@ -182,12 +182,14 @@ const INSTR_AUDIO_FILES = {
 
 let mcqAudioPlayer = null;
 
-function stopMCQAudio() {
+function stopMCQAudio(resetBtn = true) {
   if (mcqAudioPlayer) {
     mcqAudioPlayer.pause();
     mcqAudioPlayer.currentTime = 0;
     mcqAudioPlayer = null;
   }
+  const mcqBtn = document.getElementById('mcq-audio-btn');
+  if (resetBtn) setAudioBtnState(mcqBtn, false);
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
     isSpeaking = false;
@@ -217,6 +219,8 @@ function stopAllAudio() {
     instrAudioPlayer.currentTime = 0;
     instrAudioPlayer = null;
   }
+  setAudioBtnState(document.getElementById('writing-instr-audio-btn'), false);
+  setAudioBtnState(document.getElementById('speaking-instr-audio-btn'), false);
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
     isSpeaking = false;
@@ -250,7 +254,10 @@ function goHome() { navigate('page-intro'); }
 function startUseWords() {
   currentMode = 'use';
   const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
-  document.getElementById('writing-scenario').textContent = data.scenario;
+ const parts = data.scenario.split('Words to Use:');
+const label = parts.length > 1 ? parts[1].trim() : data.scenario;
+document.getElementById('writing-scenario').innerHTML = 
+  `<strong style="color:#272829;font-weight:800;">Words to Use:</strong> ${label}`;
   document.getElementById('writing-answer').value = '';
   navigate('page-writing');
 }
@@ -262,6 +269,8 @@ function showModal(id) {
 function hideModal(id) {
   if (id === 'more-examples-modal') {
     stopModalAudio();
+    const btn = document.getElementById('more-examples-audio-btn');
+    setAudioBtnState(btn, false);
   }
   const m = document.getElementById(id);
   m.style.display = 'none';
@@ -300,13 +309,7 @@ function closeChallengeModal() {
   hideModal('challenge-modal');
 }
 
-function startFresh() {
-  hideModal('challenge-modal');
-  document.getElementById('writing-answer').value = '';
-  const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
-  document.getElementById('writing-scenario').textContent = data.scenario;
-  navigate('page-writing');
-}
+
 /* ────────────────────────────────────────────
    SET SELECTION
 ──────────────────────────────────────────── */
@@ -314,7 +317,10 @@ function startSet(setNum) {
   currentSet  = setNum;
   if (currentMode === 'use') {
     const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
-    document.getElementById('writing-scenario').textContent = data.scenario;
+    const parts = data.scenario.split('Words to Use:');
+const label = parts.length > 1 ? parts[1].trim() : data.scenario;
+document.getElementById('writing-scenario').innerHTML = 
+  `<strong style="color:#000000;font-weight:900;">Words to Use:</strong> ${label}`;
     document.getElementById('writing-answer').value = '';
     navigate('page-writing');
   } else {
@@ -333,6 +339,7 @@ function renderLearnCard() {
   document.getElementById('learn-set-label').textContent = `Set ${currentSet}`;
   document.getElementById('learn-counter').textContent   = `${learnIndex + 1}/${words.length}`;
   document.getElementById('learn-word').textContent      = entry.word;
+  setAudioBtnState(document.querySelector('#page-learn .audio-btn'), false);
   document.getElementById('learn-pos').textContent       = entry.pos;
   document.getElementById('learn-meaning').textContent   = entry.meaning;
 
@@ -342,9 +349,10 @@ function renderLearnCard() {
 
   // Prev/Next button states
   const prevBtn = document.getElementById('learn-prev-btn');
-  const nextBtn = document.getElementById('learn-next-btn');
-  prevBtn.disabled = learnIndex === 0;
-  prevBtn.style.opacity = learnIndex === 0 ? '.4' : '1';
+const nextBtn = document.getElementById('learn-next-btn');
+prevBtn.disabled = learnIndex === 0;
+prevBtn.style.opacity = learnIndex === 0 ? '.4' : '1';
+prevBtn.innerHTML = '<img src="img/prev_btn.png" alt="Previous" style="width:70px;height:110px;object-fit:contain;" />';
 
 if (learnIndex === words.length - 1) {
     nextBtn.innerHTML = '<span style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:#fff;background:#1a3a8f;padding:16px 28px;border-radius:999px;">Start MCQ →</span>';
@@ -476,6 +484,8 @@ function renderMCQ() {
   document.getElementById('mcq-question-text').textContent = entry.question;
 
   hideFeedback();
+const mcqBtn = document.getElementById('mcq-audio-btn');
+setAudioBtnState(mcqBtn, false);
 
   // Build 4 options: 1 correct + 3 random wrong
 const options = entry.options;
@@ -494,6 +504,11 @@ options.forEach(opt => {
     wrap.appendChild(btn);
     container.appendChild(wrap);
   });
+
+  // Prev button state
+  const prevBtn = document.getElementById('mcq-prev-btn');
+  prevBtn.disabled = mcqIndex === 0;
+  prevBtn.style.opacity = mcqIndex === 0 ? '.4' : '1';
 
   // Next button state
   const nextBtn = document.getElementById('mcq-next-btn');
@@ -634,12 +649,14 @@ reviewHtml += `
 ──────────────────────────────────────────── */
 let isSpeaking = false;
 
-function stopLearnAudio() {
+function stopLearnAudio(resetBtn = true) {
   if (learnAudioPlayer) {
     learnAudioPlayer.pause();
     learnAudioPlayer.currentTime = 0;
     learnAudioPlayer = null;
   }
+  const learnBtn = document.querySelector('#page-learn .audio-btn');
+  if (resetBtn) setAudioBtnState(learnBtn, false);
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
     isSpeaking = false;
@@ -647,20 +664,25 @@ function stopLearnAudio() {
 }
 
 function toggleMoreExampleAudio() {
-  stopAllAudio();
+  const btn = document.getElementById('more-examples-audio-btn');
   const audioKey = `${currentSet}-${learnIndex}`;
   const mp3src = MODAL_AUDIO_FILES[audioKey];
   if (!mp3src) return;
 
   if (modalAudioPlayer && !modalAudioPlayer.paused) {
     stopModalAudio();
+    setAudioBtnState(btn, true);
     return;
   }
 
-  stopModalAudio();
+  stopAllAudio();
   modalAudioPlayer = new Audio(mp3src);
-  modalAudioPlayer.onended = () => { modalAudioPlayer = null; };
-  modalAudioPlayer.play().catch(() => {});
+  setAudioBtnState(btn, false);
+  modalAudioPlayer.onended = () => {
+    modalAudioPlayer = null;
+    setAudioBtnState(btn, false);
+  };
+  modalAudioPlayer.play().catch(() => { setAudioBtnState(btn, false); });
 }
 
 function stopModalAudio() {
@@ -668,6 +690,21 @@ function stopModalAudio() {
     modalAudioPlayer.pause();
     modalAudioPlayer.currentTime = 0;
     modalAudioPlayer = null;
+  }
+  const modalBtn = document.getElementById('more-examples-audio-btn');
+  setAudioBtnState(modalBtn, false);
+}
+
+function setAudioBtnState(btn, isPlaying) {
+  if (!btn) return;
+  const img = btn.querySelector('img');
+  if (!img) return;
+  if (isPlaying) {
+    img.src = 'img/mute.png';
+    btn.classList.add('playing');
+  } else {
+    img.src = 'img/audio.png';
+    btn.classList.remove('playing');
   }
 }
 
@@ -679,16 +716,22 @@ function playAudio() {
   const word = wordEl ? wordEl.textContent : '';
   const audioKey = `${currentSet}-${learnIndex}`;
   const mp3src = LEARN_AUDIO_FILES[audioKey];
+  const btn = document.querySelector('#page-learn .audio-btn');
 
   if (mp3src) {
     if (learnAudioPlayer && !learnAudioPlayer.paused) {
-      stopLearnAudio();
+      stopLearnAudio(false);
+      setAudioBtnState(btn, true);
       return;
     }
     stopLearnAudio();
     learnAudioPlayer = new Audio(mp3src);
-    learnAudioPlayer.onended = () => { learnAudioPlayer = null; };
-    learnAudioPlayer.play().catch(() => {});
+    setAudioBtnState(btn, false);
+    learnAudioPlayer.onended = () => {
+      learnAudioPlayer = null;
+      setAudioBtnState(btn, false);
+    };
+    learnAudioPlayer.play().catch(() => { setAudioBtnState(btn, false); });
     return;
   }
 
@@ -696,20 +739,24 @@ function playAudio() {
     if (isSpeaking) {
       window.speechSynthesis.cancel();
       isSpeaking = false;
+      setAudioBtnState(btn, true);
       return;
     }
     const utt = new SpeechSynthesisUtterance(word);
     utt.lang = 'en-US';
     utt.rate = 0.85;
-    utt.onend = () => { isSpeaking = false; };
+    utt.onend = () => {
+      isSpeaking = false;
+      setAudioBtnState(btn, false);
+    };
     isSpeaking = true;
+    setAudioBtnState(btn, false);
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utt);
   }
 }
-
 function playMCQAudio() {
-  stopAllAudio();
+  const btn = document.getElementById('mcq-audio-btn');
   const questionEl = document.getElementById('mcq-question-text');
   const question = questionEl ? questionEl.textContent : '';
   const audioKey = `${currentSet}-${mcqIndex}`;
@@ -717,13 +764,21 @@ function playMCQAudio() {
 
   if (mp3src) {
     if (mcqAudioPlayer && !mcqAudioPlayer.paused) {
-      stopMCQAudio();
+      stopMCQAudio(false);
+      setAudioBtnState(btn, true);
       return;
     }
-    stopMCQAudio();
+    stopAllAudio();
     mcqAudioPlayer = new Audio(mp3src);
-    mcqAudioPlayer.onended = () => { mcqAudioPlayer = null; };
-    mcqAudioPlayer.play().catch(e => { console.error('MCQ audio error:', e); });
+    setAudioBtnState(btn, false);
+    mcqAudioPlayer.onended = () => {
+      mcqAudioPlayer = null;
+      setAudioBtnState(btn, false);
+    };
+    mcqAudioPlayer.play().catch(e => {
+      console.error('MCQ audio error:', e);
+      setAudioBtnState(btn, false);
+    });
     return;
   }
 
@@ -731,13 +786,19 @@ function playMCQAudio() {
     if (isSpeaking) {
       window.speechSynthesis.cancel();
       isSpeaking = false;
+      setAudioBtnState(btn, true);
       return;
     }
+    stopAllAudio();
     const utt = new SpeechSynthesisUtterance(question);
     utt.lang = 'en-US';
     utt.rate = 0.85;
-    utt.onend = () => { isSpeaking = false; };
+    utt.onend = () => {
+      isSpeaking = false;
+      setAudioBtnState(btn, false);
+    };
     isSpeaking = true;
+    setAudioBtnState(btn, false);
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utt);
   }
@@ -756,15 +817,16 @@ function showMore() {
 function renderExampleSlide(entry) {
   const examples = (entry.examples || [entry.example]).slice(1);
 
-  let sectionsHtml = '';
+let sectionsHtml = '';
   examples.forEach((ex, i) => {
     const text = ex.replace('{word}', `<strong>${entry.word}</strong>`);
-sectionsHtml += `
-        <h4 style="font-size:2.5rem;">Example ${i + 2}</h4>
-        <p style="font-size:2.1rem; color:#374151; line-height:1.6; margin:0;">${text}</p>
+    sectionsHtml += `
+      <div style="display:flex;align-items:flex-start;gap:16px;background:#f0f7ff;border-radius:16px;padding:16px 20px;margin-bottom:14px;border-left:2px solid #1a3a8f;box-shadow:0 2px 8px rgba(30,60,160,0.08);">
+        <span style="min-width:36px;height:36px;background:#1a3a8f;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;flex-shrink:0;margin-top:2px;">${i + 2}</span>
+        <p style="font-size:2.1rem;color:#374151;line-height:1.6;margin:0;">${text}</p>
+      </div>
     `;
   });
-
   if (entry.link) {
     sectionsHtml += `
       <div class="writing-info-section" style="text-align:center;">
@@ -874,24 +936,36 @@ function saveSpeaking() {
 
 let instrAudioPlayer = null;
 
+function getInstrAudioBtn(type) {
+  return type === 'writing'
+    ? document.getElementById('writing-instr-audio-btn')
+    : document.getElementById('speaking-instr-audio-btn');
+}
+
 function playInstrAudio(type) {
+  const btn = getInstrAudioBtn(type);
+  if (instrAudioPlayer && !instrAudioPlayer.paused) {
+    instrAudioPlayer.pause();
+    instrAudioPlayer.currentTime = 0;
+    instrAudioPlayer = null;
+    setAudioBtnState(btn, true);
+    return;
+  }
+
   stopAllAudio();
   const mp3src = INSTR_AUDIO_FILES[type];
 
   if (mp3src) {
-    if (instrAudioPlayer && !instrAudioPlayer.paused) {
-      instrAudioPlayer.pause();
-      instrAudioPlayer.currentTime = 0;
-      instrAudioPlayer = null;
-      return;
-    }
-    if (instrAudioPlayer) {
-      instrAudioPlayer.pause();
-      instrAudioPlayer = null;
-    }
     instrAudioPlayer = new Audio(mp3src);
-    instrAudioPlayer.onended = () => { instrAudioPlayer = null; };
-    instrAudioPlayer.play().catch(e => { console.error('Instr audio error:', e); });
+    instrAudioPlayer.onended = () => {
+      instrAudioPlayer = null;
+      setAudioBtnState(btn, false);
+    };
+    setAudioBtnState(btn, false);
+    instrAudioPlayer.play().catch(e => {
+      console.error('Instr audio error:', e);
+      setAudioBtnState(btn, false);
+    });
     return;
   }
 
@@ -899,8 +973,21 @@ function playInstrAudio(type) {
     ? 'Write a 100–120 word paragraph about a situation where you helped someone or solved a problem. Use all 5 given words meaningfully. Add a creative title for your paragraph.'
     : 'Now read your answer aloud and record it clearly using the correct pronunciation and expression.';
   if ('speechSynthesis' in window) {
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      setAudioBtnState(btn, true);
+      return;
+    }
+    stopAllAudio();
     const utt = new SpeechSynthesisUtterance(text);
     utt.lang = 'en-US'; utt.rate = 0.85;
+    utt.onend = () => {
+      isSpeaking = false;
+      setAudioBtnState(btn, false);
+    };
+    isSpeaking = true;
+    setAudioBtnState(btn, false);
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utt);
   }
