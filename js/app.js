@@ -642,7 +642,7 @@ function shuffle(arr) {
 
 const MCQ_SETS = {
   1: [
-    { question: "What does the word gratitude mean?", options: ["feeling angry", "thanks and appreciation", "solving a problem", "being careful"], answer: "thanks and appreciation" },
+    { question: "What does the word 'gratitude' mean?", options: ["feeling angry", "thanks and appreciation", "solving a problem", "being careful"], answer: "thanks and appreciation" },
     { question: "Which word means to solve a problem or settle a disagreement?", options: ["suggest", "resolve", "predict", "organise"], answer: "resolve" },
     { question: "We should __________ our project materials before starting the activity.", options: ["resolve", "organise", "predict", "feel"], answer: "organise" },
     { question: "What does the word cautious mean?", options: ["quick and energetic", "happy and excited", "careful to avoid mistakes", "not giving up easily"], answer: "careful to avoid mistakes" },
@@ -665,17 +665,17 @@ const MCQ_SETS = {
     { question: "The class looked at two different solutions and discussed how they were similar and different. What did they do?", options: ["compare", "contrast", "ignore", "record"], answer: "compare" },
     { question: "After studying all the information, the students decided on the final answer. What did they do?", options: ["summarise", "conclude", "predict", "record"], answer: "conclude" },
   ],
-  3: [
-    { question: "What does the word 'accurate' mean?", options: ["wrong", "correct and exact", "unclear", "fast"], answer: "correct and exact" },
-    { question: "Which word means closely connected to the topic?", options: ["accurate", "relevant", "logical", "efficient"], answer: "relevant" },
-    { question: "We should __________ the lesson in a few lines after reading.", options: ["analyse", "summarise", "justify", "predict"], answer: "summarise" },
-    { question: "Which word best describes working well without wasting time?", options: ["logical", "efficient", "accurate", "relevant"], answer: "efficient" },
-    { question: "The teacher asked students to give reasons to support their answers. What should they do?", options: ["analyse", "justify", "summarise", "predict"], answer: "justify" },
-    { question: "Which word means to examine something closely?", options: ["predict", "analyse", "justify", "organise"], answer: "analyse" },
-    { question: "Riya checked her answer carefully and changed it slightly to improve it. What did she do?", options: ["modify", "plan", "change completely", "leave"], answer: "modify" },
-    { question: "Kabir explained his answer clearly and in a way that everyone understood easily. Which word best describes how he explained?", options: ["gradually", "effectively", "specifically", "quickly"], answer: "effectively" },
-    { question: "The class looked at two different solutions and discussed how they were similar and different. What did they do?", options: ["compare", "contrast", "ignore", "record"], answer: "compare" },
-    { question: "After studying all the information, the students decided on the final answer. What did they do?", options: ["summarise", "conclude", "predict", "record"], answer: "conclude" },
+3: [
+    { question: "What does the word 'suspicious' mean?", options: ["ready to help", "feeling that something may be wrong", "very old", "far away"], answer: "feeling that something may be wrong" },
+    { question: "Which word means to disappear suddenly?", options: ["rescue", "vanish", "explore", "signal"], answer: "vanish" },
+    { question: "We should __________ the fort carefully to learn more about its history.", options: ["trap", "hesitate", "explore", "whisper"], answer: "explore" },
+    { question: "Which word best describes someone who asks many thoughtful questions?", options: ["ancient", "inquisitive", "distant", "alert"], answer: "inquisitive" },
+    { question: "My father chose a safer __________ when the main road was crowded.", options: ["clue", "signal", "route", "glimpse"], answer: "route" },
+    { question: "Which word means a sign or message?", options: ["signal", "clue", "expedition", "encounter"], answer: "signal" },
+    { question: "The parrot flew out of the cage and got away. What did the parrot do?", options: ["escaped", "hesitated", "rescued", "chased"], answer: "escaped" },
+    { question: "Layla found a small paper that helped solve the mystery. What was it?", options: ["a trap", "a clue", "a route", "a whisper"], answer: "a clue" },
+    { question: "The team went on a special trip to explore the mountains. What was this trip called?", options: ["an expedition", "a signal", "a route", "a glimpse"], answer: "an expedition" },
+    { question: "NIharika was unsure about crossing the shaky bridge, so she stopped for a moment. What did Niharika do?", options: ["discover", "rescue", "hesitate", "vanish"], answer: "hesitate" },
   ],
   4: [
     { question: "What does the word 'infer' mean?", options: ["guess without thinking", "reach a conclusion from clues", "explain clearly", "read quickly"], answer: "reach a conclusion from clues" },
@@ -704,9 +704,9 @@ const MCQ_SETS = {
 };
 
 function initMCQ() {
-  const fixedQs = MCQ_SETS[currentSet];
+const fixedQs = MCQ_SETS[currentSet];
   if (fixedQs && fixedQs.length > 0) {
-    mcqWords = fixedQs;
+    mcqWords = shuffle([...fixedQs]);
   } else {
     mcqWords = shuffle(VOCAB_SETS[currentSet]).slice(0, 10).map(e => ({
       question: e.meaning,
@@ -734,7 +734,7 @@ const mcqBtn = document.getElementById('mcq-audio-btn');
 setAudioBtnState(mcqBtn, false);
 
   // Build 4 options: 1 correct + 3 random wrong
-const options = entry.options;
+const options = shuffle([...entry.options]);
 
   const container = document.getElementById('mcq-options');
   container.innerHTML = '';

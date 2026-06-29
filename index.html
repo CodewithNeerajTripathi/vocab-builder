@@ -572,7 +572,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
   </button>
 </div>
    <textarea class="writing-box" id="writing-answer" placeholder="Write your answer here..." oninput="updateWordCount()"></textarea>
-<div id="word-count-display" style="text-align:right; font-size:clamp(1rem,1.3vw,1.6rem); font-weight:700; color:#1461c7; padding:4px clamp(10px,3vw,45px) 0; flex-shrink:0;">0 words</div>
+<div id="word-count-display" style="text-align:right; font-size:clamp(0.5rem,1.1vw,1.6rem); font-weight:700; color:#1461c7; padding:4px clamp(10px,3vw,45px) 0; flex-shrink:0;">0 words</div>
 <div class="use-bottom-row">
   <button class="think-btn" onclick="showModal('success-modal')" title="Check Your Writing">
     <img src="img/succses.png" />
@@ -618,7 +618,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
     <button class="audio-btn small" id="speaking-instr-audio-btn" onclick="playInstrAudio('speaking')" title="Listen"><img src="img/audio.png" alt="Audio" /></button>
   </div>
 </div>
-<div class="use-scenario" id="speaking-answer-display" style="background:#f0f8ff; border:2px solid #e0eeff; font-size:1.8rem; line-height:1.8; min-height:80px;"></div>
+<div class="use-scenario" id="speaking-answer-display" style="background:#f0f8ff; border:2px solid #e0eeff; font-size: clamp(0.75rem,1.4vw,1.9rem); line-height:1.3; min-height: clamp(40px, 8vh, 80px);"></div>
     <div class="recorder-wrap">
       <div class="recorder-box">
         <button class="rec-mic-btn" id="rec-mic-btn" onclick="toggleRecording()" title="Recording">
