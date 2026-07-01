@@ -229,6 +229,7 @@
       <img class="star-img" id="star3" src="img/star_grey.png" alt="star" />
     </div>
 
+
     <!-- RED RIBBON -->
     <div class="ribbon-wrap">
       <img src="img/ribbon.png" alt="ribbon" class="ribbon-img" />
@@ -473,14 +474,13 @@
       <button class="modal-close-btn" onclick="closeChallengeModal()">✕</button>
     </div>
     <div class="challenge-inner-section">
-      <p class="challenge-intro">Once you finish the task, you can:</p>
+      <!-- <p class="challenge-intro">Once you finish the task, you can:</p> -->
   <ul class="challenge-list">
         <li>Add 2 more words from any other set</li>
         <li>Increase your writing to 120–150 words</li>
         <li>Add more details to make your story engaging</li>
       </ul>
     </div>
-
   </div>
 </div>
 
@@ -488,7 +488,7 @@
 <div class="modal-overlay hidden" id="sample-modal">
   <div class="modal-box writing-info-box">
 <div class="modal-top-row" style="justify-content:center; position:relative;">
-  <h3 style="text-align:center; width:100%;">Sample Answer <button class="audio-btn small" id="sample-audio-btn" onclick="playSampleAudio()" title="Listen"><img src="img/audio.png" alt="Audio" /></button></h3>
+ <h3 style="text-align:center; width:100%;">Sample Answer <button class="audio-btn small" id="sample-audio-btn" onclick="playModalAudio('sample')" title="Listen"><img src="img/audio.png" alt="Audio" /></button></h3>
   <button class="modal-close-btn" onclick="closeSampleModal()" style="position:absolute; right:0;">✕</button>
 </div>
     <div class="sample-text" id="sample-text"></div>
@@ -613,7 +613,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
   <div class="use-page-card" >
 <div class="instr-row-wrap">
   <div class="use-instr-bar">
-    <span>Now that you have written your answer. Read and record it in a clear tone, using correct pronunciation and expressions.
+    <span>Now read your answer from the previous section. Record it in a clear and confident tone, using correct pronunciation and appropriate expression.
 </span>
     <button class="audio-btn small" id="speaking-instr-audio-btn" onclick="playInstrAudio('speaking')" title="Listen"><img src="img/audio.png" alt="Audio" /></button>
   </div>

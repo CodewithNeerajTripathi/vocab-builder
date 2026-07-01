@@ -29,7 +29,7 @@ const VOCAB_SETS = {
     { word: "frustrated",  pos: "adjective",    meaning: "upset because something is difficult or not working",              example: "The toddler felt {word} when his tiny hands could not hold the toy.", examples: ["The toddler felt {word} when his tiny hands could not hold the toy.", "Kabir was {word}, but he kept trying to solve the maths problem.", "It is normal to feel {word} when things do not work quickly.", "Even when she felt {word}, Tara kept trying.", "I am so {word}. I just can't finish this DIY activity."] },
     { word: "determined",  pos: "adjective",    meaning: "not giving up easily",                                             example: "Even though she stumbled, Aparna was {word} to finish the race.", examples: ["Aparna was {word} to finish the race, even after she stumbled.", "A {word} student keeps practising after making mistakes.", "The team stayed {word} during the final minutes of the match.", "If you are {word}, you keep working towards your goal.", "Gopi's father helped him stay {word} until the end."] },
    { word: "cautious",    pos: "adjective",    meaning: "careful to avoid danger or mistakes",                              example: "The students were {word} as they walked on the wet floor of the school corridor..", examples: ["Since the floor was wet, the students were {word} as they walked.", "Ever since his fall, Surya has been {word} while climbing the stairs.", "Be {word} while crossing the road in heavy traffic.", "It is wise to be {word} when trying something unfamiliar.", "We need to be more {word} when no one is home."] },
-    { word: "fortunate",   pos: "adjective",    meaning: "lucky; having something good happen",                              example: "We are {word} to have a good library in our neighbourhood.", examples: ["We are {word} to have a good library in our neighbourhood.", "Naina felt {word} when her lost watch was returned.", "It was {word} that the rain stopped before the match began.", " 'I am {word} to have led a happy life,' said grandfather..", "We felt {word} that the bus arrived just in time."] },
+    { word: "fortunate",   pos: "adjective",    meaning: "lucky; having something good happen",                              example: "We are {word} to have a good library in our neighbourhood.", examples: ["We are {word} to have a good library in our neighbourhood.", "Naina felt {word} when her lost watch was returned.", "It was {word} that the rain stopped before the match began.", " 'I am {word} to have led a happy life,' said grandfather.", "We felt {word} that the bus arrived just in time."] },
     { word: "patiently",   pos: "adverb",       meaning: "in a calm, waiting way",                                           example: "Jackson waited {word} while the doctor checked his injured arm.", examples: ["Jackson waited {word} while the doctor checked his arm.", "The teacher listened {word} to every student's question.", "Varsha worked {word} on the model until it was complete.", "If you wait {word}, your turn will come.", "She spent hours {word} weaving threads into a beautiful sari."] },
     { word: "briskly",     pos: "adverb",       meaning: "quickly and energetically",                                        example: "Mr Singh walked {word} to the station so he would not miss the train.", examples: ["Mr Singh walked {word} to the station so he would not miss the train.", "The players moved {word} across the field during practice.", "Tara and her friends packed their bags {word} when the school bell rang.", "Walk {word}. We are getting late!", "On a cold morning, people often walk {word} to keep warm."] },
     { word: "organise",    pos: "verb",         meaning: "to plan and arrange neatly",                                       example: "We should {word} our notebooks before the new term begins.", examples: ["We should {word} our notebooks before the new term begins.", "Jai and Meena {word}d the class chart.", "If you {word} your time well, you can work without rushing.", "Tomorrow, we will {word} the materials for the science project.", "Please {word} the files and keep them in the cabinet."] },
@@ -75,10 +75,10 @@ const VOCAB_SETS = {
     { word: "whisper", pos: "verb / noun", meaning: "to speak very softly; a very soft voice", example: "The library was silent, so Meera had to {word} to her friend.(verb)", examples: ["The library was silent, so Meera had to {word} to her friend. (verb)", "I heard a {word} behind the curtain during the play rehearsal. (noun)", "As we walked through the forest, the leaves seemed to {word} in the wind. (verb)", "She leaned closer to {word} a secret to her friend. (verb)", "Why are you speaking in a {word}? (noun)"] },
     { word: "chase", pos: "verb", meaning: "to run after someone or something to catch it", example: "The whistle blew, and Gogo ran to {word} the ball across the field.", examples: ["The whistle blew, and Gogo ran to {word} the ball across the field.", "At the beach, the dog {word}d the waves and barked happily.", "In the story, the guard {word}d the thief through the market.", "You must {word} your goals with patience and effort.", " '{word} your dreams!' said the main actor in the movie."] },
     { word: "rescue", pos: "verb", meaning: "to save someone from danger", example: "The kitten was stuck on a branch, so Viji climbed up to {word} it.", examples: ["The kitten was stuck on a branch, so Viji climbed up to {word} it.", "During the trek, the guides worked together to {word} a lost traveller.", "The lifeguard {word}d a swimmer near the shore just in time.", "The neighbour came over to {word} us when our car broke down.", "The forest officers did their best to {word} the hikers."] },
-    { word: "inquisitive", pos: "adjective", meaning: "eager to know or learn more", example: "An {word} reader notices tiny details that others may miss.", examples: ["The locked chest rattled softly. At once, Anika grew {word} about what was inside.", "The {word} child asked endless questions about how things worked.", "An {word} reader notices tiny details that others may miss.", "If you stay {word}, every trip can teach you something new.", "The journalist asked {word} questions during the interview."] },
+    { word: "inquisitive", pos: "adjective", meaning: "eager to know or learn more", example: "The locked chest rattled softly. At once, Anika grew {word} about what was inside.", examples: ["The locked chest rattled softly. At once, Anika grew {word} about what was inside.", "The {word} child asked endless questions about how things worked.", "An {word} reader notices tiny details that others may miss.", "If you stay {word}, every trip can teach you something new.", "The journalist asked {word} questions during the interview."] },
     { word: "route", pos: "noun", meaning: "the way or direction taken to get somewhere", example: "The main road was crowded, so the driver chose a quieter {word} through the village.", examples: ["The main road was crowded, so the driver chose a quieter {word} through the village.", "On the class trip, Jivika traced the {word} from Delhi to Agra on the map.", "A safe {word} helped the tourists reach the campsite before dark.", "We will take another {word} if the weather changes suddenly.", "Which {word} should we follow to reach the the main city?"] },
     { word: "signal", pos: "noun / verb", meaning: "a sign or message; to give a sign", example: "As the red light flashed at the crossing, people quickly understood that it was a {word} to stop. (noun)", examples: ["The red light flashed, and everyone knew it was a {word} to stop. (noun)", "Standing near the cliff, the guide raised a flag to {word} the group to move back to safety. (verb)", "Lost in the mountains, they used a whistle as a {word} to call for help. (noun)", "Before the race began, the coach lifted a hand to {word} the runners to get ready. (verb) ", "The loud siren was a {word} for everyone to leave the building quickly. (noun)"] },
-    { word: "escape", pos: "verb / noun", meaning: "to get away from a place or danger; a way of getting away", example: "The cage door was open, and the parrot managed to {word}.(noun)", examples: ["The cage door was open, and the parrot managed to {word}. (verb)", "In the novel, the hero planned a clever {word} through a secret tunnel. (noun)", "The thief {word}d into the crowd at the station. (verb)", "You must {word} quickly if there is danger. (verb)", "There was no easy {word} from the locked room.(noun)"] },
+    { word: "escape", pos: "verb / noun", meaning: "to get away from a place or danger; a way of getting away", example: "The cage door was open, and the parrot managed to {word}.(verb)", examples: ["The cage door was open, and the parrot managed to {word}. (verb)", "In the novel, the hero planned a clever {word} through a secret tunnel. (noun)", "The thief {word}d into the crowd at the station. (verb)", "You must {word} quickly if there is danger. (verb)", "There was no easy {word} from the locked room.(noun)"] },
     { word: "clue", pos: "noun", meaning: "something that helps solve a mystery or problem", example: "The mystery began when Balapriya found the first {word} under the table.", examples: ["The mystery began when Balapriya found the first {word} under the table.", "A bus ticket on the floor became an important {word}.", "Each {word} brought the team closer to the answer.", "Follow every {word} carefully, even the tiny ones.", "What {word} did you find near the window?"] },
     { word: "explore", pos: "verb", meaning: "to travel around or look around to learn more", example: "The gates opened, and the children rushed to {word} the old fort.", examples: ["The gates opened, and the children rushed to {word} the old fort.", "On the trip to Jaipur, we {word}d quiet lanes and colourful markets.", "Early in the morning, they set out to {word} the quiet beach and collect shells.", "With a torch in hand, he decided to {word} the dark cave behind the waterfall.", "I would love to {word} Japan in spring season."] },
     { word: "trap", pos: "noun / verb", meaning: "something used to catch; to catch or hold someone or something", example: "The hunter set a {word} deep in the jungle.(noun)", examples: ["The hunter set a {word} deep in the jungle. (noun)", "The suitcase got {word}ped between the train seats.  (verb)", "He didn't mean to {word} the bird inside the room. (verb)", "The mouse got caught in a {word}. (noun)", "This question is a {word} for students who don't read carefully. (noun)"] },
@@ -145,7 +145,7 @@ const VOCAB_SETS = {
 const WRITING_DATA = {
 1: {
    scenario: "Words to Use: determined (Set 1), efficient (Set 2), clue (Set 3), verify (Set 4), jugaad (Set 5)",
-    sample: "A Small Choice, A Big Difference\n\nYesterday, my friend Arul looked upset during lunch. I tried to be considerate (Set 1) and asked him what had happened. He said his science notebook was missing. First, I stayed calm and thought in a logical (Set 2) way about where it could be. We decided to discover (Set 3) possible places, like the classroom and the playground. Then I helped him clarify (Set 4) where he had last kept it. Suddenly, he remembered leaving it near the lab table. We rushed there and found it safely. I felt happy and made a sankalp (Set 5) to always support my friends when they need help."
+    sample: "The Missing Chart Problem\n\nJust before our class presentation, my friend Madhavi realised that her social studies chart was missing. She looked worried, but I was determined (set 1) to help her. We searched the classroom quickly and found a small clue. Suddenly, I saw one corner of the chart was peeping out from under a pile of notebooks near the window. It was torn! Madhavi was upset. Since we had very little time left, I used a simple yet efficient jugaad! I taped the torn corner neatly from the back. Before taking it to the teacher, we decided to verify that it was the final chart and not the rough one. Thankfully, Madhavi was able to give her presentation confidently."
   },
   2: {
     scenario: "You meet a new student at school who is feeling shy and nervous. Describe how you helped them feel welcome.",
@@ -179,13 +179,196 @@ let learnAudioPlayer = null;
 let modalAudioPlayer = null;
 
 const LEARN_AUDIO_FILES = {
-  '1-0': './img/considerate_01.mp3',
-  '1-1': './img/frustrated_01.mp3'
+  '1-0': './audio/sets/set-1/Start/set-1-Q-01.mp3',
+  '1-1': './audio/sets/set-1/Start/set-1-Q-02.mp3',
+  '1-2': './audio/sets/set-1/Start/set-1-Q-03.mp3',
+  '1-3': './audio/sets/set-1/Start/set-1-Q-04.mp3',
+  '1-4': './audio/sets/set-1/Start/set-1-Q-05.mp3',
+  '1-5': './audio/sets/set-1/Start/set-1-Q-06.mp3',
+  '1-6': './audio/sets/set-1/Start/set-1-Q-07.mp3',
+  '1-7': './audio/sets/set-1/Start/set-1-Q-08.mp3',
+  '1-8': './audio/sets/set-1/Start/set-1-Q-09.mp3',
+  '1-9': './audio/sets/set-1/Start/set-1-Q-10.mp3',
+  '1-10': './audio/sets/set-1/Start/set-1-Q-11.mp3',
+  '1-11': './audio/sets/set-1/Start/set-1-Q-12.mp3',
+  '1-12': './audio/sets/set-1/Start/set-1-Q-13.mp3',
+  '1-13': './audio/sets/set-1/Start/set-1-Q-14.mp3',
+  '1-14': './audio/sets/set-1/Start/set-1-Q-15.mp3',
+  '1-15': './audio/sets/set-1/Start/set-1-Q-16.mp3',
+  '1-16': './audio/sets/set-1/Start/set-1-Q-17.mp3',
+  '1-17': './audio/sets/set-1/Start/set-1-Q-18.mp3',
+  '1-18': './audio/sets/set-1/Start/set-1-Q-19.mp3',
+  '1-19': './audio/sets/set-1/Start/set-1-Q-20.mp3',
+
+  '2-0': './audio/sets/set-2/Start/set-2-Q-01.mp3',
+  '2-1': './audio/sets/set-2/Start/set-2-Q-02.mp3',
+  '2-2': './audio/sets/set-2/Start/set-2-Q-03.mp3',
+  '2-3': './audio/sets/set-2/Start/set-2-Q-04.mp3',
+  '2-4': './audio/sets/set-2/Start/set-2-Q-05.mp3',
+  '2-5': './audio/sets/set-2/Start/set-2-Q-06.mp3',
+  '2-6': './audio/sets/set-2/Start/set-2-Q-07.mp3',
+  '2-7': './audio/sets/set-2/Start/set-2-Q-08.mp3',
+  '2-8': './audio/sets/set-2/Start/set-2-Q-09.mp3',
+  '2-9': './audio/sets/set-2/Start/set-2-Q-10.mp3',
+  '2-10': './audio/sets/set-2/Start/set-2-Q-11.mp3',
+  '2-11': './audio/sets/set-2/Start/set-2-Q-12.mp3',
+  '2-12': './audio/sets/set-2/Start/set-2-Q-13.mp3',
+  '2-13': './audio/sets/set-2/Start/set-2-Q-14.mp3',
+  '2-14': './audio/sets/set-2/Start/set-2-Q-15.mp3',
+  '2-15': './audio/sets/set-2/Start/set-2-Q-16.mp3',
+  '2-16': './audio/sets/set-2/Start/set-2-Q-17.mp3',
+  '2-17': './audio/sets/set-2/Start/set-2-Q-18.mp3',
+  '2-18': './audio/sets/set-2/Start/set-2-Q-19.mp3',
+  '2-19': './audio/sets/set-2/Start/set-2-Q-20.mp3',
+
+  '3-0': './audio/sets/set-3/Strat/1.mp3',
+  '3-1': './audio/sets/set-3/Strat/2.mp3',
+  '3-2': './audio/sets/set-3/Strat/3.mp3',
+  '3-3': './audio/sets/set-3/Strat/4.mp3',
+  '3-4': './audio/sets/set-3/Strat/5.mp3',
+  '3-5': './audio/sets/set-3/Strat/6.mp3',
+  '3-6': './audio/sets/set-3/Strat/7.mp3',
+  '3-7': './audio/sets/set-3/Strat/8.mp3',
+  '3-8': './audio/sets/set-3/Strat/9.mp3',
+  '3-9': './audio/sets/set-3/Strat/10.mp3',
+  '3-10': './audio/sets/set-3/Strat/11.mp3',
+  '3-11': './audio/sets/set-3/Strat/12.mp3',
+  '3-12': './audio/sets/set-3/Strat/13.mp3',
+  '3-13': './audio/sets/set-3/Strat/14.mp3',
+  '3-14': './audio/sets/set-3/Strat/15.mp3',
+  '3-15': './audio/sets/set-3/Strat/16.mp3',
+  '3-16': './audio/sets/set-3/Strat/17.mp3',
+  '3-17': './audio/sets/set-3/Strat/18.mp3',
+  '3-18': './audio/sets/set-3/Strat/19.mp3',
+  '3-19': './audio/sets/set-3/Strat/20.mp3',
+
+  '4-0': './audio/sets/set-4/Start/01.mp3',
+  '4-1': './audio/sets/set-4/Start/02.mp3',
+  '4-2': './audio/sets/set-4/Start/03.mp3',
+  '4-3': './audio/sets/set-4/Start/04.mp3',
+  '4-4': './audio/sets/set-4/Start/05.mp3',
+  '4-5': './audio/sets/set-4/Start/06.mp3',
+  '4-6': './audio/sets/set-4/Start/07.mp3',
+  '4-7': './audio/sets/set-4/Start/08.mp3',
+  '4-8': './audio/sets/set-4/Start/09.mp3',
+  '4-9': './audio/sets/set-4/Start/10.mp3',
+  '4-10': './audio/sets/set-4/Start/11.mp3',
+  '4-11': './audio/sets/set-4/Start/12.mp3',
+  '4-12': './audio/sets/set-4/Start/13.mp3',
+  '4-13': './audio/sets/set-4/Start/14.mp3',
+  '4-14': './audio/sets/set-4/Start/15.mp3',
+  '4-15': './audio/sets/set-4/Start/16.mp3',
+  '4-16': './audio/sets/set-4/Start/17.mp3',
+  '4-17': './audio/sets/set-4/Start/18.mp3',
+  '4-18': './audio/sets/set-4/Start/19.mp3',
+  '4-19': './audio/sets/set-4/Start/20.mp3',
+
+  '5-0': './audio/sets/set-5/set-5-Q-01.mp3',
+  '5-1': './audio/sets/set-5/set-5-Q-02.mp3',
+  '5-2': './audio/sets/set-5/set-5-Q-03.mp3',
+  '5-3': './audio/sets/set-5/set-5-Q-04.mp3',
+  '5-4': './audio/sets/set-5/set-5-Q-05.mp3',
+  '5-5': './audio/sets/set-5/set-5-Q-06.mp3',
+  '5-6': './audio/sets/set-5/set-5-Q-07.mp3',
+  '5-7': './audio/sets/set-5/set-5-Q-08.mp3',
+  '5-8': './audio/sets/set-5/set-5-Q-09.mp3',
+  '5-9': './audio/sets/set-5/set-5-Q-10.mp3',
+  '5-10': './audio/sets/set-5/set-5-Q-11.mp3',
+  '5-11': './audio/sets/set-5/set-5-Q-12.mp3',
+  '5-12': './audio/sets/set-5/set-5-Q-13.mp3',
+  '5-13': './audio/sets/set-5/set-5-Q-14.mp3',
+  '5-14': './audio/sets/set-5/set-5-Q-15.mp3',
+  '5-15': './audio/sets/set-5/set-5-Q-16.mp3',
+  '5-16': './audio/sets/set-5/set-5-Q-17.mp3',
+  '5-17': './audio/sets/set-5/set-5-Q-18.mp3',
+  '5-18': './audio/sets/set-5/set-5-Q-19.mp3',
+  '5-19': './audio/sets/set-5/set-5-Q-20.mp3'
 };
 
 const MODAL_AUDIO_FILES = {
-  '1-0': './img/considerate_02.mp3',
-  '1-1': './img/frustrated_02.mp3'
+  '1-0': './audio/sets/set-1/End/set-1-Q-01.mp3',
+  '1-1': './audio/sets/set-1/End/set-1-Q-02.mp3',
+  '1-2': './audio/sets/set-1/End/set-1-Q-03.mp3',
+  '1-3': './audio/sets/set-1/End/set-1-Q-04.mp3',
+  '1-4': './audio/sets/set-1/End/set-1-Q-05.mp3',
+  '1-5': './audio/sets/set-1/End/set-1-Q-06.mp3',
+  '1-6': './audio/sets/set-1/End/set-1-Q-07.mp3',
+  '1-7': './audio/sets/set-1/End/set-1-Q-08.mp3',
+  '1-8': './audio/sets/set-1/End/set-1-Q-09.mp3',
+  '1-9': './audio/sets/set-1/End/set-1-Q-10.mp3',
+  '1-10': './audio/sets/set-1/End/set-1-Q-11.mp3',
+  '1-11': './audio/sets/set-1/End/set-1-Q-12.mp3',
+  '1-12': './audio/sets/set-1/End/set-1-Q-13.mp3',
+  '1-13': './audio/sets/set-1/End/set-1-Q-14.mp3',
+  '1-14': './audio/sets/set-1/End/set-1-Q-15.mp3',
+  '1-15': './audio/sets/set-1/End/set-1-Q-16.mp3',
+  '1-16': './audio/sets/set-1/End/set-1-Q-17.mp3',
+  '1-17': './audio/sets/set-1/End/set-1-Q-18.mp3',
+  '1-18': './audio/sets/set-1/End/set-1-Q-19.mp3',
+  '1-19': './audio/sets/set-1/End/set-1-Q-20.mp3',
+
+  '2-0': './audio/sets/set-2/End/set-2-Q-01.mp3',
+  '2-1': './audio/sets/set-2/End/set-2-Q-02.mp3',
+  '2-2': './audio/sets/set-2/End/set-2-Q-03.mp3',
+  '2-3': './audio/sets/set-2/End/set-2-Q-04.mp3',
+  '2-4': './audio/sets/set-2/End/set-2-Q-05.mp3',
+  '2-5': './audio/sets/set-2/End/set-2-Q-06.mp3',
+  '2-6': './audio/sets/set-2/End/set-2-Q-07.mp3',
+  '2-7': './audio/sets/set-2/End/set-2-Q-08.mp3',
+  '2-8': './audio/sets/set-2/End/set-2-Q-09.mp3',
+  '2-9': './audio/sets/set-2/End/set-2-Q-10.mp3',
+  '2-10': './audio/sets/set-2/End/set-2-Q-11.mp3',
+  '2-11': './audio/sets/set-2/End/set-2-Q-12.mp3',
+  '2-12': './audio/sets/set-2/End/set-2-Q-13.mp3',
+  '2-13': './audio/sets/set-2/End/set-2-Q-14.mp3',
+  '2-14': './audio/sets/set-2/End/set-2-Q-15.mp3',
+  '2-15': './audio/sets/set-2/End/set-2-Q-16.mp3',
+  '2-16': './audio/sets/set-2/End/set-2-Q-17.mp3',
+  '2-17': './audio/sets/set-2/End/set-2-Q-18.mp3',
+  '2-18': './audio/sets/set-2/End/set-2-Q-19.mp3',
+  '2-19': './audio/sets/set-2/End/set-2-Q-20.mp3',
+
+  '3-0': './audio/sets/set-3/End/1.mp3',
+  '3-1': './audio/sets/set-3/End/2.mp3',
+  '3-2': './audio/sets/set-3/End/3.mp3',
+  '3-3': './audio/sets/set-3/End/4.mp3',
+  '3-4': './audio/sets/set-3/End/5.mp3',
+  '3-5': './audio/sets/set-3/End/6.mp3',
+  '3-6': './audio/sets/set-3/End/7.mp3',
+  '3-7': './audio/sets/set-3/End/8.mp3',
+  '3-8': './audio/sets/set-3/End/9.mp3',
+  '3-9': './audio/sets/set-3/End/10.mp3',
+  '3-10': './audio/sets/set-3/End/11.mp3',
+  '3-11': './audio/sets/set-3/End/12.mp3',
+  '3-12': './audio/sets/set-3/End/13.mp3',
+  '3-13': './audio/sets/set-3/End/14.mp3',
+  '3-14': './audio/sets/set-3/End/15.mp3',
+  '3-15': './audio/sets/set-3/End/16.mp3',
+  '3-16': './audio/sets/set-3/End/17.mp3',
+  '3-17': './audio/sets/set-3/End/18.mp3',
+  '3-18': './audio/sets/set-3/End/19.mp3',
+  '3-19': './audio/sets/set-3/End/20.mp3',
+
+  '4-0': './audio/sets/set-4/End/01.mp3',
+  '4-1': './audio/sets/set-4/End/02.mp3',
+  '4-2': './audio/sets/set-4/End/03.mp3',
+  '4-3': './audio/sets/set-4/End/04.mp3',
+  '4-4': './audio/sets/set-4/End/05.mp3',
+  '4-5': './audio/sets/set-4/End/06.mp3',
+  '4-6': './audio/sets/set-4/End/07.mp3',
+  '4-7': './audio/sets/set-4/End/08.mp3',
+  '4-8': './audio/sets/set-4/End/09.mp3',
+  '4-9': './audio/sets/set-4/End/10.mp3',
+  '4-10': './audio/sets/set-4/End/11.mp3',
+  '4-11': './audio/sets/set-4/End/12.mp3',
+  '4-12': './audio/sets/set-4/End/13.mp3',
+  '4-13': './audio/sets/set-4/End/14.mp3',
+  '4-14': './audio/sets/set-4/End/15.mp3',
+  '4-15': './audio/sets/set-4/End/16.mp3',
+  '4-16': './audio/sets/set-4/End/17.mp3',
+  '4-17': './audio/sets/set-4/End/18.mp3',
+  '4-18': './audio/sets/set-4/End/19.mp3',
+  '4-19': './audio/sets/set-4/End/20.mp3'
 };
 
 const MCQ_AUDIO_FILES = {
@@ -193,11 +376,134 @@ const MCQ_AUDIO_FILES = {
   '1-1': './img/mcq_q2_set1.mp3'
 };
 
-const INSTR_AUDIO_FILES = {
-  'writing': './img/Instructions.mp3',
-  'scenario': './img/scenario.mp3'
+const MCQ_SET1_AUDIO = {
+  0: { q: 'audio/MCQ/set-1-mcq/01/set-1 Quiz -01_01.mp3', opts: ['audio/MCQ/set-1-mcq/01/set-1 Quiz -01_02.mp3','audio/MCQ/set-1-mcq/01/set-1 Quiz -01_03.mp3','audio/MCQ/set-1-mcq/01/set-1 Quiz -01_04.mp3','audio/MCQ/set-1-mcq/01/set-1 Quiz -01_05.mp3'] },
+  1: { q: 'audio/MCQ/set-1-mcq/02/set-1 Quiz -01_01.mp3', opts: ['audio/MCQ/set-1-mcq/02/set-1 Quiz -01_02.mp3','audio/MCQ/set-1-mcq/02/set-1 Quiz -01_03.mp3','audio/MCQ/set-1-mcq/02/set-1 Quiz -01_04.mp3','audio/MCQ/set-1-mcq/02/set-1 Quiz -01_05.mp3'] },
+  2: { q: 'audio/MCQ/set-1-mcq/03/set-1 Quiz -03_01.mp3', opts: ['audio/MCQ/set-1-mcq/03/set-1 Quiz -03_02.mp3','audio/MCQ/set-1-mcq/03/set-1 Quiz -03_03.mp3','audio/MCQ/set-1-mcq/03/set-1 Quiz -03_04.mp3','audio/MCQ/set-1-mcq/03/set-1 Quiz -03_05.mp3'] },
+  3: { q: 'audio/MCQ/set-1-mcq/04/set-1 Quiz -04_01.mp3', opts: ['audio/MCQ/set-1-mcq/04/set-1 Quiz -04_02.mp3','audio/MCQ/set-1-mcq/04/set-1 Quiz -04_03.mp3','audio/MCQ/set-1-mcq/04/set-1 Quiz -04_04.mp3','audio/MCQ/set-1-mcq/04/set-1 Quiz -04_05.mp3'] },
+  4: { q: 'audio/MCQ/set-1-mcq/05/set-1 Quiz -05_01.mp3', opts: ['audio/MCQ/set-1-mcq/05/set-1 Quiz -05_02.mp3','audio/MCQ/set-1-mcq/05/set-1 Quiz -05_03.mp3','audio/MCQ/set-1-mcq/05/set-1 Quiz -05_04.mp3','audio/MCQ/set-1-mcq/05/set-1 Quiz -05_05.mp3'] },
+  5: { q: 'audio/MCQ/set-1-mcq/06/set-1 Quiz -06_01.mp3', opts: ['audio/MCQ/set-1-mcq/06/set-1 Quiz -06_02.mp3','audio/MCQ/set-1-mcq/06/set-1 Quiz -06_03.mp3','audio/MCQ/set-1-mcq/06/set-1 Quiz -06_04.mp3','audio/MCQ/set-1-mcq/06/set-1 Quiz -06_05.mp3'] },
+  6: { q: 'audio/MCQ/set-1-mcq/07/set-1 Quiz -07_01.mp3', opts: ['audio/MCQ/set-1-mcq/07/set-1 Quiz -07_02.mp3','audio/MCQ/set-1-mcq/07/set-1 Quiz -07_03.mp3','audio/MCQ/set-1-mcq/07/set-1 Quiz -07_04.mp3','audio/MCQ/set-1-mcq/07/set-1 Quiz -07_05.mp3'] },
+  7: { q: 'audio/MCQ/set-1-mcq/08/set-1 Quiz -08_01.mp3', opts: ['audio/MCQ/set-1-mcq/08/set-1 Quiz -08_02.mp3','audio/MCQ/set-1-mcq/08/set-1 Quiz -08_03.mp3','audio/MCQ/set-1-mcq/08/set-1 Quiz -08_04.mp3','audio/MCQ/set-1-mcq/08/set-1 Quiz -08_05.mp3'] },
+  8: { q: 'audio/MCQ/set-1-mcq/09/set-1 Quiz -09_01.mp3', opts: ['audio/MCQ/set-1-mcq/09/set-1 Quiz -09_02.mp3','audio/MCQ/set-1-mcq/09/set-1 Quiz -09_03.mp3','audio/MCQ/set-1-mcq/09/set-1 Quiz -09_04.mp3','audio/MCQ/set-1-mcq/09/set-1 Quiz -09_05.mp3'] },
+  9: { q: 'audio/MCQ/set-1-mcq/10/set-1 Quiz -10_01.mp3', opts: ['audio/MCQ/set-1-mcq/10/set-1 Quiz -10_02.mp3','audio/MCQ/set-1-mcq/10/set-1 Quiz -10_03.mp3','audio/MCQ/set-1-mcq/10/set-1 Quiz -10_04.mp3','audio/MCQ/set-1-mcq/10/set-1 Quiz -10_05.mp3'] }
 };
 
+const MCQ_SET2_AUDIO = {
+  0: { q: 'audio/MCQ/set-2-mcq/01/set-2 Quiz-01 01.mp3', opts: ['audio/MCQ/set-2-mcq/01/set-2 Quiz-01 02.mp3','audio/MCQ/set-2-mcq/01/set-2 Quiz-01 03.mp3','audio/MCQ/set-2-mcq/01/set-2 Quiz-01 04.mp3','audio/MCQ/set-2-mcq/01/set-2 Quiz-01 05.mp3'] },
+  1: { q: 'audio/MCQ/set-2-mcq/02/set-2 Quiz-02 01.mp3', opts: ['audio/MCQ/set-2-mcq/02/set-2 Quiz-02 02.mp3','audio/MCQ/set-2-mcq/02/set-2 Quiz-02 03.mp3','audio/MCQ/set-2-mcq/02/set-2 Quiz-02 04.mp3','audio/MCQ/set-2-mcq/02/set-2 Quiz-02 05.mp3'] },
+  2: { q: 'audio/MCQ/set-2-mcq/03/set-2 Quiz-03 01.mp3', opts: ['audio/MCQ/set-2-mcq/03/set-2 Quiz-03 02.mp3','audio/MCQ/set-2-mcq/03/set-2 Quiz-03 03.mp3','audio/MCQ/set-2-mcq/03/set-2 Quiz-03 04.mp3','audio/MCQ/set-2-mcq/03/set-2 Quiz-03 05.mp3'] },
+  3: { q: 'audio/MCQ/set-2-mcq/04/set-2 Quiz-04 01.mp3', opts: ['audio/MCQ/set-2-mcq/04/set-2 Quiz-04 02.mp3','audio/MCQ/set-2-mcq/04/set-2 Quiz-04 03.mp3','audio/MCQ/set-2-mcq/04/set-2 Quiz-04 04.mp3','audio/MCQ/set-2-mcq/04/set-2 Quiz-04 05.mp3'] },
+  4: { q: 'audio/MCQ/set-2-mcq/05/set-2 Quiz-05 01.mp3', opts: ['audio/MCQ/set-2-mcq/05/set-2 Quiz-05 02.mp3','audio/MCQ/set-2-mcq/05/set-2 Quiz-05 03.mp3','audio/MCQ/set-2-mcq/05/set-2 Quiz-05 04.mp3','audio/MCQ/set-2-mcq/05/set-2 Quiz-05 05.mp3'] },
+  5: { q: 'audio/MCQ/set-2-mcq/06/set-2 Quiz-06 01.mp3', opts: ['audio/MCQ/set-2-mcq/06/set-2 Quiz-06 02.mp3','audio/MCQ/set-2-mcq/06/set-2 Quiz-06 03.mp3','audio/MCQ/set-2-mcq/06/set-2 Quiz-06 04.mp3','audio/MCQ/set-2-mcq/06/set-2 Quiz-06 05.mp3'] },
+  6: { q: 'audio/MCQ/set-2-mcq/07/set-2 Quiz-07 01.mp3', opts: ['audio/MCQ/set-2-mcq/07/set-2 Quiz-07 02.mp3','audio/MCQ/set-2-mcq/07/set-2 Quiz-07 03.mp3','audio/MCQ/set-2-mcq/07/set-2 Quiz-07 04.mp3','audio/MCQ/set-2-mcq/07/set-2 Quiz-07 05.mp3'] },
+  7: { q: 'audio/MCQ/set-2-mcq/08/set-2 Quiz-08 01.mp3', opts: ['audio/MCQ/set-2-mcq/08/set-2 Quiz-08 02.mp3','audio/MCQ/set-2-mcq/08/set-2 Quiz-08 03.mp3','audio/MCQ/set-2-mcq/08/set-2 Quiz-08 04.mp3','audio/MCQ/set-2-mcq/08/set-2 Quiz-08 05.mp3'] },
+  8: { q: 'audio/MCQ/set-2-mcq/09/set-2 Quiz-09 01.mp3', opts: ['audio/MCQ/set-2-mcq/09/set-2 Quiz-09 02.mp3','audio/MCQ/set-2-mcq/09/set-2 Quiz-09 03.mp3','audio/MCQ/set-2-mcq/09/set-2 Quiz-09 04.mp3','audio/MCQ/set-2-mcq/09/set-2 Quiz-09 05.mp3'] },
+  9: { q: 'audio/MCQ/set-2-mcq/10/set-2 Quiz-10 01.mp3', opts: ['audio/MCQ/set-2-mcq/10/set-2 Quiz-10 02.mp3','audio/MCQ/set-2-mcq/10/set-2 Quiz-10 03.mp3','audio/MCQ/set-2-mcq/10/set-2 Quiz-10 04.mp3','audio/MCQ/set-2-mcq/10/set-2 Quiz-10 05.mp3'] }
+};
+
+const MCQ_SET3_AUDIO = {
+  0: { q: 'audio/MCQ/set-3-mcq/01/set-3 Quiz-01 01.mp3', opts: ['audio/MCQ/set-3-mcq/01/set-3 Quiz-01 02.mp3','audio/MCQ/set-3-mcq/01/set-3 Quiz-01 03.mp3','audio/MCQ/set-3-mcq/01/set-3 Quiz-01 04.mp3','audio/MCQ/set-3-mcq/01/set-3 Quiz-01 05.mp3'] },
+  1: { q: 'audio/MCQ/set-3-mcq/02/set-3 Quiz-02 01.mp3', opts: ['audio/MCQ/set-3-mcq/02/set-3 Quiz-02 02.mp3','audio/MCQ/set-3-mcq/02/set-3 Quiz-02 03.mp3','audio/MCQ/set-3-mcq/02/set-3 Quiz-02 04.mp3','audio/MCQ/set-3-mcq/02/set-3 Quiz-02 05.mp3'] },
+  2: { q: 'audio/MCQ/set-3-mcq/03/set-3 Quiz-03 01.mp3', opts: ['audio/MCQ/set-3-mcq/03/set-3 Quiz-03 02.mp3','audio/MCQ/set-3-mcq/03/set-3 Quiz-03 03.mp3','audio/MCQ/set-3-mcq/03/set-3 Quiz-03 04.mp3','audio/MCQ/set-3-mcq/03/set-3 Quiz-03 05.mp3'] },
+  3: { q: 'audio/MCQ/set-3-mcq/04/set-3 Quiz-04 01.mp3', opts: ['audio/MCQ/set-3-mcq/04/set-3 Quiz-04 02.mp3','audio/MCQ/set-3-mcq/04/set-3 Quiz-04 03.mp3','audio/MCQ/set-3-mcq/04/set-3 Quiz-04 04.mp3','audio/MCQ/set-3-mcq/04/set-3 Quiz-04 05.mp3'] },
+  4: { q: 'audio/MCQ/set-3-mcq/05/set-3 Quiz-05 01.mp3', opts: ['audio/MCQ/set-3-mcq/05/set-3 Quiz-05 02.mp3','audio/MCQ/set-3-mcq/05/set-3 Quiz-05 03.mp3','audio/MCQ/set-3-mcq/05/set-3 Quiz-05 04.mp3','audio/MCQ/set-3-mcq/05/set-3 Quiz-05 05.mp3'] },
+  5: { q: 'audio/MCQ/set-3-mcq/06/set-3 Quiz-06 01.mp3', opts: ['audio/MCQ/set-3-mcq/06/set-3 Quiz-06 02.mp3','audio/MCQ/set-3-mcq/06/set-3 Quiz-06 03.mp3','audio/MCQ/set-3-mcq/06/set-3 Quiz-06 04.mp3','audio/MCQ/set-3-mcq/06/set-3 Quiz-06 05.mp3'] },
+  6: { q: 'audio/MCQ/set-3-mcq/07/set-3 Quiz-07 01.mp3', opts: ['audio/MCQ/set-3-mcq/07/set-3 Quiz-07 02.mp3','audio/MCQ/set-3-mcq/07/set-3 Quiz-07 03.mp3','audio/MCQ/set-3-mcq/07/set-3 Quiz-07 04.mp3','audio/MCQ/set-3-mcq/07/set-3 Quiz-07 05.mp3'] },
+  7: { q: 'audio/MCQ/set-3-mcq/08/set-3 Quiz-08 01.mp3', opts: ['audio/MCQ/set-3-mcq/08/set-3 Quiz-08 02.mp3','audio/MCQ/set-3-mcq/08/set-3 Quiz-08 03.mp3','audio/MCQ/set-3-mcq/08/set-3 Quiz-08 04.mp3','audio/MCQ/set-3-mcq/08/set-3 Quiz-08 05.mp3'] },
+  8: { q: 'audio/MCQ/set-3-mcq/09/set-3 Quiz-09 01.mp3', opts: ['audio/MCQ/set-3-mcq/09/set-3 Quiz-09 02.mp3','audio/MCQ/set-3-mcq/09/set-3 Quiz-09 03.mp3','audio/MCQ/set-3-mcq/09/set-3 Quiz-09 04.mp3','audio/MCQ/set-3-mcq/09/set-3 Quiz-09 05.mp3'] },
+  9: { q: 'audio/MCQ/set-3-mcq/10/set-3 Quiz-10 01.mp3', opts: ['audio/MCQ/set-3-mcq/10/set-3 Quiz-10 02.mp3','audio/MCQ/set-3-mcq/10/set-3 Quiz-10 03.mp3','audio/MCQ/set-3-mcq/10/set-3 Quiz-10 04.mp3','audio/MCQ/set-3-mcq/10/set-3 Quiz-10 05.mp3'] }
+};
+
+const MCQ_SET4_AUDIO = {
+  0: { q: 'audio/MCQ/set-4-mcq/01/1.mp3', opts: ['audio/MCQ/set-4-mcq/01/2.mp3','audio/MCQ/set-4-mcq/01/3.mp3','audio/MCQ/set-4-mcq/01/4.mp3','audio/MCQ/set-4-mcq/01/5.mp3'] },
+  1: { q: 'audio/MCQ/set-4-mcq/02/1.mp3', opts: ['audio/MCQ/set-4-mcq/02/2.mp3','audio/MCQ/set-4-mcq/02/3.mp3','audio/MCQ/set-4-mcq/02/4.mp3','audio/MCQ/set-4-mcq/02/5.mp3'] },
+  2: { q: 'audio/MCQ/set-4-mcq/03/1.mp3', opts: ['audio/MCQ/set-4-mcq/03/2.mp3','audio/MCQ/set-4-mcq/03/3.mp3','audio/MCQ/set-4-mcq/03/4.mp3','audio/MCQ/set-4-mcq/03/5.mp3'] },
+  3: { q: 'audio/MCQ/set-4-mcq/04/1.mp3', opts: ['audio/MCQ/set-4-mcq/04/2.mp3','audio/MCQ/set-4-mcq/04/3.mp3','audio/MCQ/set-4-mcq/04/4.mp3','audio/MCQ/set-4-mcq/04/5.mp3'] },
+  4: { q: 'audio/MCQ/set-4-mcq/05/1.mp3', opts: ['audio/MCQ/set-4-mcq/05/2.mp3','audio/MCQ/set-4-mcq/05/3.mp3','audio/MCQ/set-4-mcq/05/4.mp3','audio/MCQ/set-4-mcq/05/5.mp3'] },
+  5: { q: 'audio/MCQ/set-4-mcq/06/1.mp3', opts: ['audio/MCQ/set-4-mcq/06/2.mp3','audio/MCQ/set-4-mcq/06/3.mp3','audio/MCQ/set-4-mcq/06/4.mp3','audio/MCQ/set-4-mcq/06/5.mp3'] },
+  6: { q: 'audio/MCQ/set-4-mcq/07/1.mp3', opts: ['audio/MCQ/set-4-mcq/07/2.mp3','audio/MCQ/set-4-mcq/07/3.mp3','audio/MCQ/set-4-mcq/07/4.mp3','audio/MCQ/set-4-mcq/07/5.mp3'] },
+  7: { q: 'audio/MCQ/set-4-mcq/08/1.mp3', opts: ['audio/MCQ/set-4-mcq/08/2.mp3','audio/MCQ/set-4-mcq/08/3.mp3','audio/MCQ/set-4-mcq/08/4.mp3','audio/MCQ/set-4-mcq/08/5.mp3'] },
+  8: { q: 'audio/MCQ/set-4-mcq/09/1.mp3', opts: ['audio/MCQ/set-4-mcq/09/2.mp3','audio/MCQ/set-4-mcq/09/3.mp3','audio/MCQ/set-4-mcq/09/4.mp3','audio/MCQ/set-4-mcq/09/5.mp3'] },
+  9: { q: 'audio/MCQ/set-4-mcq/10/1.mp3', opts: ['audio/MCQ/set-4-mcq/10/2.mp3','audio/MCQ/set-4-mcq/10/3.mp3','audio/MCQ/set-4-mcq/10/4.mp3','audio/MCQ/set-4-mcq/10/5.mp3'] }
+};
+
+const MCQ_SET5_AUDIO = {
+  0: { q: 'audio/MCQ/set-5-mcq/01/set-5 Quiz-01_01.mp3', opts: ['audio/MCQ/set-5-mcq/01/set-5 Quiz-01_02.mp3','audio/MCQ/set-5-mcq/01/set-5 Quiz-01_03.mp3','audio/MCQ/set-5-mcq/01/set-5 Quiz-01_04.mp3','audio/MCQ/set-5-mcq/01/set-5 Quiz-01_05.mp3'] },
+  1: { q: 'audio/MCQ/set-5-mcq/02/set-5 Quiz-02_01.mp3', opts: ['audio/MCQ/set-5-mcq/02/set-5 Quiz-02_02.mp3','audio/MCQ/set-5-mcq/02/set-5 Quiz-02_03.mp3','audio/MCQ/set-5-mcq/02/set-5 Quiz-02_04.mp3','audio/MCQ/set-5-mcq/02/set-5 Quiz-02_05.mp3'] },
+  2: { q: 'audio/MCQ/set-5-mcq/03/set-5 Quiz-03_01.mp3', opts: ['audio/MCQ/set-5-mcq/03/set-5 Quiz-03_02.mp3','audio/MCQ/set-5-mcq/03/set-5 Quiz-03_03.mp3','audio/MCQ/set-5-mcq/03/set-5 Quiz-03_04.mp3','audio/MCQ/set-5-mcq/03/set-5 Quiz-03_05.mp3'] },
+  3: { q: 'audio/MCQ/set-5-mcq/04/set-5 Quiz-04_01.mp3', opts: ['audio/MCQ/set-5-mcq/04/set-5 Quiz-04_02.mp3','audio/MCQ/set-5-mcq/04/set-5 Quiz-04_03.mp3','audio/MCQ/set-5-mcq/04/set-5 Quiz-04_04.mp3','audio/MCQ/set-5-mcq/04/set-5 Quiz-04_05.mp3'] },
+  4: { q: 'audio/MCQ/set-5-mcq/05/set-5 Quiz-05_01.mp3', opts: ['audio/MCQ/set-5-mcq/05/set-5 Quiz-05_02.mp3','audio/MCQ/set-5-mcq/05/set-5 Quiz-05_03.mp3','audio/MCQ/set-5-mcq/05/set-5 Quiz-05_04.mp3','audio/MCQ/set-5-mcq/05/set-5 Quiz-05_05.mp3'] },
+  5: { q: 'audio/MCQ/set-5-mcq/06/set-5 Quiz-06_01.mp3', opts: ['audio/MCQ/set-5-mcq/06/set-5 Quiz-06_02.mp3','audio/MCQ/set-5-mcq/06/set-5 Quiz-06_03.mp3','audio/MCQ/set-5-mcq/06/set-5 Quiz-06_04.mp3','audio/MCQ/set-5-mcq/06/set-5 Quiz-06_05.mp3'] },
+  6: { q: 'audio/MCQ/set-5-mcq/07/set-5 Quiz-07_01.mp3', opts: ['audio/MCQ/set-5-mcq/07/set-5 Quiz-07_02.mp3','audio/MCQ/set-5-mcq/07/set-5 Quiz-07_03.mp3','audio/MCQ/set-5-mcq/07/set-5 Quiz-07_04.mp3','audio/MCQ/set-5-mcq/07/set-5 Quiz-07_05.mp3'] },
+  7: { q: 'audio/MCQ/set-5-mcq/08/set-5 Quiz-08_01.mp3', opts: ['audio/MCQ/set-5-mcq/08/set-5 Quiz-08_02.mp3','audio/MCQ/set-5-mcq/08/set-5 Quiz-08_03.mp3','audio/MCQ/set-5-mcq/08/set-5 Quiz-08_04.mp3','audio/MCQ/set-5-mcq/08/set-5 Quiz-08_05.mp3'] },
+  8: { q: 'audio/MCQ/set-5-mcq/09/set-5 Quiz-09_01.mp3', opts: ['audio/MCQ/set-5-mcq/09/set-5 Quiz-09_02.mp3','audio/MCQ/set-5-mcq/09/set-5 Quiz-09_03.mp3','audio/MCQ/set-5-mcq/09/set-5 Quiz-09_04.mp3','audio/MCQ/set-5-mcq/09/set-5 Quiz-09_05.mp3'] },
+  9: { q: 'audio/MCQ/set-5-mcq/10/set-5 Quiz-10_01.mp3', opts: ['audio/MCQ/set-5-mcq/10/set-5 Quiz-10_02.mp3','audio/MCQ/set-5-mcq/10/set-5 Quiz-10_03.mp3','audio/MCQ/set-5-mcq/10/set-5 Quiz-10_04.mp3','audio/MCQ/set-5-mcq/10/set-5 Quiz-10_05.mp3'] }
+};
+
+const MCQ_SET_AUDIO_MAP = {
+  1: MCQ_SET1_AUDIO,
+  2: MCQ_SET2_AUDIO,
+  3: MCQ_SET3_AUDIO,
+  4: MCQ_SET4_AUDIO,
+  5: MCQ_SET5_AUDIO
+};
+
+const INSTR_AUDIO_FILES = {
+  'writing': 'audio/Use the Words-Writing/Use the Words-Writing-01.mp3',
+  'scenario': 'audio/Use the Words-Writing/Use the Words-Writing-02.mp3',
+  'speaking': 'audio/Use the Words - Speaking/Use the Words - Speaking.mp3'
+};
+
+const WRITING_MODAL_AUDIO_FILES = {
+  'think': 'audio/Use the Words-Writing/Use the Words-Writing-03.mp3',
+  'sample': 'audio/Use the Words-Writing/Use the Words-Writing-04.mp3',
+  'success': 'audio/Use the Words-Writing/Use the Words-Writing-05.mp3',
+  'challenge': 'audio/Use the Words-Writing/Use the Words-Writing-06.mp3'
+};
+
+let writingModalAudioPlayer = null;
+let writingModalAudioType = null;
+
+function getModalAudioBtn(type) {
+  return document.getElementById(type + '-audio-btn');
+}
+
+function playModalAudio(type) {
+  const btn = getModalAudioBtn(type);
+  const reversed = (type === 'think' || type === 'sample');
+
+  if (writingModalAudioPlayer && !writingModalAudioPlayer.paused && writingModalAudioType === type) {
+    writingModalAudioPlayer.pause();
+    writingModalAudioPlayer.currentTime = 0;
+    writingModalAudioPlayer = null;
+    writingModalAudioType = null;
+    setAudioBtnState(btn, reversed ? true : false);
+    return;
+  }
+  stopAllAudio();
+  const mp3src = WRITING_MODAL_AUDIO_FILES[type];
+  if (!mp3src) return;
+  writingModalAudioPlayer = new Audio(mp3src);
+  writingModalAudioType = type;
+  writingModalAudioPlayer.onended = () => {
+    writingModalAudioPlayer = null;
+    writingModalAudioType = null;
+    setAudioBtnState(btn, false);
+  };
+  writingModalAudioPlayer.onerror = () => {
+    writingModalAudioPlayer = null;
+    writingModalAudioType = null;
+    setAudioBtnState(btn, false);
+  };
+  writingModalAudioPlayer.play().then(() => {
+    setAudioBtnState(btn, reversed ? false : true);
+  }).catch(() => {
+    writingModalAudioPlayer = null;
+    writingModalAudioType = null;
+    setAudioBtnState(btn, false);
+  });
+}
 let mcqAudioPlayer = null;
 
 function stopMCQAudio(resetBtn = true) {
@@ -232,6 +538,15 @@ function stopAllAudio() {
   stopLearnAudio();
   stopMCQAudio();
   stopModalAudio();
+if (writingModalAudioPlayer) {
+    writingModalAudioPlayer.pause();
+    writingModalAudioPlayer.currentTime = 0;
+    writingModalAudioPlayer = null;
+    if (writingModalAudioType) {
+      setAudioBtnState(getModalAudioBtn(writingModalAudioType), false);
+    }
+    writingModalAudioType = null;
+  }
 if (instrAudioPlayer) {
     instrAudioPlayer.pause();
     instrAudioPlayer.currentTime = 0;
@@ -266,9 +581,7 @@ if (scenarioBtn) setAudioBtnState(scenarioBtn, false);
 }
 
 function navigate(pageId, mode) {
-  if (pageId !== 'page-learn') {
-    stopLearnAudio();
-  }
+  stopAllAudio();
   // hide all pages
   document.querySelectorAll('.page').forEach(p => {
     p.classList.remove('active');
@@ -339,26 +652,15 @@ function showModal(id) {
   m.classList.remove('hidden');
 }
 function hideModal(id) {
-  if (id === 'more-examples-modal') {
-    stopModalAudio();
-    const btn = document.getElementById('more-examples-audio-btn');
-    setAudioBtnState(btn, false);
-  }
+  stopAllAudio();
   const m = document.getElementById(id);
   m.style.display = 'none';
   m.classList.add('hidden');
 }
 function showInfo() { showModal('info-modal'); }
 function closeInfo() {
-  if (infoAudioPlayer) {
-    infoAudioPlayer.pause();
-    infoAudioPlayer.currentTime = 0;
-    infoAudioPlayer = null;
-  }
-  setAudioBtnState(document.getElementById('info-audio-btn'), false);
   hideModal('info-modal');
 }
-
 let infoAudioPlayer = null;
 
 function playInfoAudio() {
@@ -369,7 +671,7 @@ if (infoAudioPlayer && !infoAudioPlayer.paused) {
     infoAudioPlayer.pause();
     infoAudioPlayer.currentTime = 0;
     infoAudioPlayer = null;
-    setAudioBtnState(btn, false);
+    setAudioBtnState(btn, true);
     return;
   }
 
@@ -384,7 +686,7 @@ stopAllAudio();
     setAudioBtnState(btn, false);
   };
   infoAudioPlayer.play().then(() => {
-    setAudioBtnState(btn, true);
+    setAudioBtnState(btn, false);
   }).catch(() => {
     infoAudioPlayer = null;
     setAudioBtnState(btn, false);
@@ -414,8 +716,7 @@ function showSampleAnswer() {
   const data = WRITING_DATA[currentSet] || WRITING_DATA[1];
   const firstLine = data.sample.split('\n')[0];
   const rest = data.sample.split('\n').slice(1).join('\n');
- document.getElementById('sample-text').innerHTML = `<strong style="font-size:1.1em;">${firstLine}</strong>` + rest.replace(/\n/g, '<br/>');
-  setAudioBtnState(document.getElementById('sample-audio-btn'), false);
+document.getElementById('sample-text').innerHTML = `<strong style="font-size:1.1em;">${firstLine}</strong>` + rest.replace(/\n/g, '<br/>');
   showModal('sample-modal');
 }
 let setsInfoAudioPlayer = null;
@@ -497,7 +798,6 @@ function playSampleAudio() {
 }
 function closeSampleModal() {
   if (isSpeaking) { window.speechSynthesis.cancel(); isSpeaking = false; }
-  setAudioBtnState(document.getElementById('sample-audio-btn'), false);
   hideModal('sample-modal');
 }
 function saveWriting() { showModal('challenge-modal'); }
@@ -1014,19 +1314,67 @@ function playAudio() {
     window.speechSynthesis.speak(utt);
   }
 }
+let mcqAudioStopFlag = false;
+
 function playMCQAudio() {
   const btn = document.getElementById('mcq-audio-btn');
   const questionEl = document.getElementById('mcq-question-text');
   const question = questionEl ? questionEl.textContent : '';
+
+  // Toggle off if already playing
+  if (mcqAudioPlayer && !mcqAudioPlayer.paused) {
+    mcqAudioStopFlag = true;
+    stopMCQAudio(false);
+    setAudioBtnState(btn, true);
+    return;
+  }
+
+// Sequential audio for all sets: question then options in displayed order
+  const entryForAudio = mcqWords[mcqIndex];
+  const setAudioData = MCQ_SET_AUDIO_MAP[currentSet];
+  const originalQIndex = setAudioData
+    ? MCQ_SETS[currentSet].findIndex(q => q.question === entryForAudio.question)
+    : -1;
+
+  if (setAudioData && originalQIndex !== -1 && setAudioData[originalQIndex]) {
+    stopAllAudio();
+    mcqAudioStopFlag = false;
+    setAudioBtnState(btn, false);
+
+    const entry = entryForAudio;
+    const optionBtns = Array.from(document.querySelectorAll('.mcq-opt-btn'));
+    const audioData = setAudioData[originalQIndex];
+    // Build playlist: question first, then each displayed option mapped to its original audio
+    const playlist = [audioData.q];
+    optionBtns.forEach(b => {
+      const originalIndex = entry.options.indexOf(b.textContent);
+      if (originalIndex !== -1 && audioData.opts[originalIndex]) {
+        playlist.push(audioData.opts[originalIndex]);
+      }
+    });
+
+    let i = 0;
+    function playNext() {
+      if (mcqAudioStopFlag || i >= playlist.length) {
+        mcqAudioPlayer = null;
+        setAudioBtnState(btn, false);
+        return;
+      }
+      mcqAudioPlayer = new Audio(playlist[i]);
+      i++;
+      mcqAudioPlayer.onended = playNext;
+      mcqAudioPlayer.onerror = playNext;
+      mcqAudioPlayer.play().catch(playNext);
+    }
+    playNext();
+    return;
+  }
+
+  // Fallback: old single-file behaviour for other sets
   const audioKey = `${currentSet}-${mcqIndex}`;
   const mp3src = MCQ_AUDIO_FILES[audioKey];
 
   if (mp3src) {
-    if (mcqAudioPlayer && !mcqAudioPlayer.paused) {
-      stopMCQAudio(false);
-      setAudioBtnState(btn, true);
-      return;
-    }
     stopAllAudio();
     mcqAudioPlayer = new Audio(mp3src);
     setAudioBtnState(btn, false);
@@ -1169,7 +1517,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ────────────────────────────────────────────
+/* ─────────────────────────────────────────── 
    USE THE WORDS FUNCTIONS
 ──────────────────────────────────────────── */
 
@@ -1194,7 +1542,7 @@ function saveSpeaking() {
   a.href = url;
   a.download = downloadName;
   document.body.appendChild(a);
-  a.click();
+  a.click(); 
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
@@ -1202,9 +1550,9 @@ function saveSpeaking() {
 let instrAudioPlayer = null;
 
 function getInstrAudioBtn(type) {
-  return type === 'writing'
-    ? document.getElementById('writing-instr-audio-btn')
-    : document.getElementById('speaking-instr-audio-btn');
+  if (type === 'writing') return document.getElementById('writing-instr-audio-btn');
+  if (type === 'scenario') return document.getElementById('scenario-audio-btn');
+  return document.getElementById('speaking-instr-audio-btn');
 }
 
 function playInstrAudio(type) {

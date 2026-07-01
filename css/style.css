@@ -179,7 +179,8 @@ html, body {
   display:block !important;
 }
 
-/* PAGE 4 (Learn): Previous, Skip to Quiz, Next — CSS-built buttons, identical size */
+
+
 .learn-nav-btn {
   box-sizing: border-box;
   width: clamp(80px,11vw,170px);
@@ -196,38 +197,53 @@ html, body {
   transition: transform .15s, filter .15s;
   flex-shrink: 0;
 }
+
+
 .learn-nav-btn:hover { transform: scale(1.04); filter: drop-shadow(0 6px 10px rgba(30,60,160,0.30)); }
 .learn-nav-btn:active { transform: scale(0.96); }
 .nav-arrow { font-size: 1.1em; line-height: 1; }
+
 
 .learn-nav-prev {
   background: #fff;
   color: var(--blue-dark);
   border: 2px solid var(--blue-dark);
 }
+
+
 .learn-nav-prev:disabled {
   opacity: .4;
   cursor: default;
   transform: none;
 }
+
+
 .learn-nav-skip,
 .learn-nav-next {
   background: var(--blue-dark);
   color: #fff;
   border: none;
 }
+
+
 .learn-nav-next {
   gap: 4px !important;
   width: auto !important;
   padding: 0 20px !important;
 }
+
+
 .learn-nav-next:hover {
   transform: scale(1.04);
   filter: drop-shadow(0 6px 10px rgba(30,60,160,0.30));
 }
+
+
 .learn-nav-next:active {
   transform: scale(0.96);
 }
+
+
 /* ---------- PAGE 1: INTRO ---------- */
 #page-intro {
   background: none;
@@ -1471,7 +1487,7 @@ padding:6px 5px;
 .modal-box.writing-info-box { max-width: min(1100px,95vw); width:95vw; text-align:left; }
 .modal-box h3 {
   font-family:var(--font-head);
-  font-size:2.2rem !important;
+  font-size: clamp(1rem, 2.2vw, 2.2rem) !important;
   font-weight:900 !important;
   color:var(--blue-dark);
 }
@@ -1848,7 +1864,7 @@ padding:6px 5px;
   .set-card { min-height: 90px; padding: 10px 8px; width: 100% !important; }
   .set-name { font-size: 1.4rem; }
   .sets-heading { font-size: 1.2rem; }
-  .menu-img-btn img { height: 230px; }
+  .menu-img-btn img { height: 200px !important; }
   .congrats-card { margin: 0 4px 14px; padding: 12px 10px 12px; }
   .ribbon-wrap { width: 160px; }
   .use-instr-bar { width: calc(100% - 54px); }
@@ -2104,7 +2120,7 @@ padding:6px 5px;
 }
 
 #page-use-menu .menu-img-btn img {
-  height: clamp(200px,43vh,560px);
+  height: clamp(100px,40vh,560px);
   display: block;
   border-radius: var(--radius);
   box-shadow: 0 8px 32px rgba(54, 55, 58, 0.18), 0 2px 8px rgba(0,0,0,0.10);
