@@ -26,9 +26,9 @@ function toggleFullscreen() {
 const VOCAB_SETS = {
 1: [
     { word: "considerate", pos: "adjective",    meaning: "thoughtful about other people's feelings and needs",               example: "Deepika is {word} when someone feels left out.", examples: ["Deepika is {word} when someone feels left out.", "It was {word} of Nihal to wait for his friend after class.", "It is always {word} to include everyone in a group activity.", "A {word} student listens without interrupting.", "You were so rude to Hema. Was that {word} of you?"] },
-    { word: "frustrated",  pos: "adjective",    meaning: "upset because something is difficult or not working",              example: "The toddler felt {word} when his tiny hands could not hold the toy.", examples: ["The toddler felt {word} when his tiny hands could not hold the toy.", "Kabir was {word}, but he kept trying to solve the maths problem.", "It is normal to feel {word} when things do not work quickly.", "Even when she felt {word}, Tara kept trying.", "I am so {word}. I just can't finish this DIY activity."] },
+    { word: "frustrated",  pos: "adjective",    meaning: "upset because something is difficult or not working",              example: "The toddler felt {word} when his tiny hands could not hold the toy.", examples: ["The toddler felt {word} when his tiny hands could not hold the toy.", "Kabir was {word}, but he kept trying to solve the maths problem.", "It is normal to feel {word} when things do not work quickly.", "Even when she felt {word}, Rina kept trying.", "I am so {word}. I just can't finish this DIY activity."] },
     { word: "determined",  pos: "adjective",    meaning: "not giving up easily",                                             example: "Even though she stumbled, Aparna was {word} to finish the race.", examples: ["Aparna was {word} to finish the race, even after she stumbled.", "A {word} student keeps practising after making mistakes.", "The team stayed {word} during the final minutes of the match.", "If you are {word}, you keep working towards your goal.", "Gopi's father helped him stay {word} until the end."] },
-   { word: "cautious",    pos: "adjective",    meaning: "careful to avoid danger or mistakes",                              example: "The students were {word} as they walked on the wet floor of the school corridor..", examples: ["Since the floor was wet, the students were {word} as they walked.", "Ever since his fall, Surya has been {word} while climbing the stairs.", "Be {word} while crossing the road in heavy traffic.", "It is wise to be {word} when trying something unfamiliar.", "We need to be more {word} when no one is home."] },
+   { word: "cautious",    pos: "adjective",    meaning: "careful to avoid danger or mistakes",                              example: "The students were {word} as they walked on the wet floor of the school corridor.", examples: ["Since the floor was wet, the students were {word} as they walked.", "Ever since his fall, Surya has been {word} while climbing the stairs.", "Be {word} while crossing the road in heavy traffic.", "It is wise to be {word} when trying something unfamiliar.", "We need to be more {word} when no one is home."] },
     { word: "fortunate",   pos: "adjective",    meaning: "lucky; having something good happen",                              example: "We are {word} to have a good library in our neighbourhood.", examples: ["We are {word} to have a good library in our neighbourhood.", "Naina felt {word} when her lost watch was returned.", "It was {word} that the rain stopped before the match began.", " 'I am {word} to have led a happy life,' said grandfather.", "We felt {word} that the bus arrived just in time."] },
     { word: "patiently",   pos: "adverb",       meaning: "in a calm, waiting way",                                           example: "Jackson waited {word} while the doctor checked his injured arm.", examples: ["Jackson waited {word} while the doctor checked his arm.", "The teacher listened {word} to every student's question.", "Varsha worked {word} on the model until it was complete.", "If you wait {word}, your turn will come.", "She spent hours {word} weaving threads into a beautiful sari."] },
     { word: "briskly",     pos: "adverb",       meaning: "quickly and energetically",                                        example: "Mr Singh walked {word} to the station so he would not miss the train.", examples: ["Mr Singh walked {word} to the station so he would not miss the train.", "The players moved {word} across the field during practice.", "Tara and her friends packed their bags {word} when the school bell rang.", "Walk {word}. We are getting late!", "On a cold morning, people often walk {word} to keep warm."] },
@@ -145,24 +145,25 @@ const VOCAB_SETS = {
 const WRITING_DATA = {
 1: {
    scenario: "Words to Use: determined (Set 1), efficient (Set 2), clue (Set 3), verify (Set 4), jugaad (Set 5)",
-    sample: "The Missing Chart Problem\n\nJust before our class presentation, my friend Madhavi realised that her social studies chart was missing. She looked worried, but I was determined (set 1) to help her. We searched the classroom quickly and found a small clue. Suddenly, I saw one corner of the chart was peeping out from under a pile of notebooks near the window. It was torn! Madhavi was upset. Since we had very little time left, I used a simple yet efficient jugaad! I taped the torn corner neatly from the back. Before taking it to the teacher, we decided to verify that it was the final chart and not the rough one. Thankfully, Madhavi was able to give her presentation confidently."
-  },
-  2: {
-    scenario: "You meet a new student at school who is feeling shy and nervous. Describe how you helped them feel welcome.",
-    sample: "I noticed a new student standing alone at lunch, looking nervous. Being kind and cheerful, I walked over and introduced myself with a gentle smile. I was honest about how I felt on my first day too. The new student seemed humble and polite, so I was patient and calm. I invited them to sit with my friends. We were generous with our time and made them feel included. By the end of the day, the new student was smiling. It felt wonderful to be loyal and thoughtful. True friendships are built when we are sincere and brave enough to reach out first."
-  },
-  3: {
-    scenario: "Describe a time when you worked hard to achieve something difficult. What did you do and what did you learn?",
-    sample: "Last year, I decided to achieve something I had always dreamed of — winning the school science competition. I began to organise my ideas carefully. My teacher encouraged me to explore different approaches. I had to persist through many failed experiments, but I did not abandon my goal. My friend offered to assist me. Together we tried to improve our model every day. We inspired each other to create something unique. On the day of the competition, we communicated our ideas clearly. We managed to solve the problem and transform our idea into a winning project. I learned that if you respect the process, you can achieve anything."
-  },
-  4: {
-    scenario: "Describe a challenge you faced in your community and how you and others worked together to solve it.",
-    sample: "In our community, the local park had become dirty and unsafe. This affected the environment and reduced the freedom children had to play. A group of us showed leadership and decided to take action. Our motivation was simple — every child deserves a safe space. We organised a clean-up drive with determination. People came together in harmony, each bringing knowledge and resources. It was a wonderful opportunity for everyone. Progress was slow at first, but with patience and resilience, the park was transformed. Our community grew in confidence. Now children play there with joy and gratitude. Wisdom lies in working together."
-  },
-  5: {
-    scenario: "Describe a place that you found fascinating and mysterious. What made it so special?",
-    sample: "Last summer, I visited an ancient temple hidden deep in the hills. It was a wondrous and majestic sight — enormous stone walls covered in vibrant carvings that told remarkable stories. The atmosphere was mysterious, as if the place held tremendous secrets. I felt fragile in its presence, humbled by its splendid history. Every detail was unique and accurate. I was ambitious to explore every corner. I was grateful for the opportunity to visit such a fascinating place. It made me feel connected to something much larger than everyday life — truly wondrous."
+    sample: "The Missing Chart Problem\n\nJust before our class presentation, my friend Sneha realised that her social studies chart was missing. She looked worried, but I was determined (set 1) to help her. We searched the classroom quickly and found a small clue. Suddenly, I saw one corner of the chart was peeping out from under a pile of notebooks near the window. It was torn! Sneha was upset. Since we had very little time left, I used a simple yet efficient jugaad! I taped the torn corner neatly from the back. Before taking it to the teacher, we decided to verify that it was the final chart and not the rough one. Thankfully, Sneha was able to give her presentation confidently."
   }
+  // ,
+  // 2: {
+  //   scenario: "You meet a new student at school who is feeling shy and nervous. Describe how you helped them feel welcome.",
+  //   sample: "I noticed a new student standing alone at lunch, looking nervous. Being kind and cheerful, I walked over and introduced myself with a gentle smile. I was honest about how I felt on my first day too. The new student seemed humble and polite, so I was patient and calm. I invited them to sit with my friends. We were generous with our time and made them feel included. By the end of the day, the new student was smiling. It felt wonderful to be loyal and thoughtful. True friendships are built when we are sincere and brave enough to reach out first."
+  // },
+  // 3: {
+  //   scenario: "Describe a time when you worked hard to achieve something difficult. What did you do and what did you learn?",
+  //   sample: "Last year, I decided to achieve something I had always dreamed of — winning the school science competition. I began to organise my ideas carefully. My teacher encouraged me to explore different approaches. I had to persist through many failed experiments, but I did not abandon my goal. My friend offered to assist me. Together we tried to improve our model every day. We inspired each other to create something unique. On the day of the competition, we communicated our ideas clearly. We managed to solve the problem and transform our idea into a winning project. I learned that if you respect the process, you can achieve anything."
+  // },
+  // 4: {
+  //   scenario: "Describe a challenge you faced in your community and how you and others worked together to solve it.",
+  //   sample: "In our community, the local park had become dirty and unsafe. This affected the environment and reduced the freedom children had to play. A group of us showed leadership and decided to take action. Our motivation was simple — every child deserves a safe space. We organised a clean-up drive with determination. People came together in harmony, each bringing knowledge and resources. It was a wonderful opportunity for everyone. Progress was slow at first, but with patience and resilience, the park was transformed. Our community grew in confidence. Now children play there with joy and gratitude. Wisdom lies in working together."
+  // },
+  // 5: {
+  //   scenario: "Describe a place that you found fascinating and mysterious. What made it so special?",
+  //   sample: "Last summer, I visited an ancient temple hidden deep in the hills. It was a wondrous and majestic sight — enormous stone walls covered in vibrant carvings that told remarkable stories. The atmosphere was mysterious, as if the place held tremendous secrets. I felt fragile in its presence, humbled by its splendid history. Every detail was unique and accurate. I was ambitious to explore every corner. I was grateful for the opportunity to visit such a fascinating place. It made me feel connected to something much larger than everyday life — truly wondrous."
+  // }
 };
 
 /* USE THE WORDS STATE */
@@ -471,7 +472,7 @@ function getModalAudioBtn(type) {
 
 function playModalAudio(type) {
   const btn = getModalAudioBtn(type);
-  const reversed = (type === 'think' || type === 'sample');
+  const reversed = (type === 'think' || type === 'sample' || type === 'success' || type === 'challenge');
 
   if (writingModalAudioPlayer && !writingModalAudioPlayer.paused && writingModalAudioType === type) {
     writingModalAudioPlayer.pause();
@@ -674,7 +675,7 @@ if (infoAudioPlayer && !infoAudioPlayer.paused) {
     setAudioBtnState(btn, true);
     return;
   }
-
+       
 stopAllAudio();
   infoAudioPlayer = new Audio(mp3src);
   infoAudioPlayer.onended = () => {
@@ -723,11 +724,11 @@ let setsInfoAudioPlayer = null;
 
 function playSetsInfoAudio() {
   const btn = document.getElementById('sets-info-audio-btn');
-  if (setsInfoAudioPlayer && !setsInfoAudioPlayer.paused) {
+if (setsInfoAudioPlayer && !setsInfoAudioPlayer.paused) {
     setsInfoAudioPlayer.pause();
     setsInfoAudioPlayer.currentTime = 0;
     setsInfoAudioPlayer = null;
-    setAudioBtnState(btn, false);
+    setAudioBtnState(btn, true);
     return;
   }
   stopAllAudio();
@@ -740,8 +741,8 @@ function playSetsInfoAudio() {
     setsInfoAudioPlayer = null;
     setAudioBtnState(btn, false);
   };
-  setsInfoAudioPlayer.play().then(() => {
-    setAudioBtnState(btn, true);
+setsInfoAudioPlayer.play().then(() => {
+    setAudioBtnState(btn, false);
   }).catch(() => {
     setsInfoAudioPlayer = null;
     setAudioBtnState(btn, false);
@@ -752,11 +753,11 @@ let writingInfoAudioPlayer = null;
 
 function playWritingInfoAudio() {
   const btn = document.getElementById('writing-info-audio-btn');
-  if (writingInfoAudioPlayer && !writingInfoAudioPlayer.paused) {
+if (writingInfoAudioPlayer && !writingInfoAudioPlayer.paused) {
     writingInfoAudioPlayer.pause();
     writingInfoAudioPlayer.currentTime = 0;
     writingInfoAudioPlayer = null;
-    setAudioBtnState(btn, false);
+    setAudioBtnState(btn, true);
     return;
   }
   stopAllAudio();
@@ -769,8 +770,9 @@ function playWritingInfoAudio() {
     writingInfoAudioPlayer = null;
     setAudioBtnState(btn, false);
   };
-  writingInfoAudioPlayer.play().then(() => {
-    setAudioBtnState(btn, true);
+
+writingInfoAudioPlayer.play().then(() => {
+    setAudioBtnState(btn, false);
   }).catch(() => {
     writingInfoAudioPlayer = null;
     setAudioBtnState(btn, false);
@@ -1510,11 +1512,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    el.addEventListener('mouseleave', () => {
+el.addEventListener('mouseleave', () => {
       tooltipEl.style.opacity = '0';
       tooltipEl.style.visibility = 'hidden';
     });
   });
+
+// GLOBAL CLICK SOUND for all clickable buttons/cards (audio pool - avoids playback conflicts)
+  const CLICK_SOUND_POOL_SIZE = 5;
+  const clickSoundPool = [];
+  for (let i = 0; i < CLICK_SOUND_POOL_SIZE; i++) {
+    const a = new Audio('audio/click.mp3');
+    a.preload = 'auto';
+    clickSoundPool.push(a);
+  }
+  let clickSoundIndex = 0;
+
+  document.addEventListener('click', (e) => {
+    const clickable = e.target.closest('button, .set-card, .menu-img-btn, [onclick]');
+    if (!clickable) return;
+    const player = clickSoundPool[clickSoundIndex];
+    clickSoundIndex = (clickSoundIndex + 1) % CLICK_SOUND_POOL_SIZE;
+    try {
+      player.pause();
+      player.currentTime = 0;
+      player.play().catch(() => {});
+    } catch (err) {}
+  }, true);
 });
 
 /* ─────────────────────────────────────────── 

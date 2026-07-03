@@ -161,7 +161,7 @@ html, body {
 
 #page-intro .top-icons .icon-btn:first-child img {
   width: clamp(32px,4.8vw,72px);
-  height: clamp(30px,4.6vw,68px);
+  height: clamp(30px,4.6vw,72px);
 }
 
 /* MCQ page keeps its own smaller nav sizing */
