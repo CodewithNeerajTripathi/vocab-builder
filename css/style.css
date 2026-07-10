@@ -882,6 +882,32 @@ padding:6px 5px;
 .mcq-feedback.hidden,
 .wrong-feedback.hidden { display:none !important; }
 
+/* Keep options centered while shifting the feedback panel right */
+.mcq-body {
+  justify-content: center;
+}
+.mcq-feedback,
+.wrong-feedback {
+  margin-left: auto;
+  right: 8%;
+}
+
+@media (max-width: 768px) {
+  .mcq-feedback,
+  .wrong-feedback {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(90px, 18vw, 140px);
+    bottom: auto;
+  }
+  .mcq-body {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 .feedback-text {
   text-align:center;
   font-family:var(--font-head);
@@ -922,7 +948,8 @@ padding:6px 5px;
   position:absolute; left:50%; top:50%;
   transform:translate(-60%,-50%);
   width:420px; height:420px;
-  background:url('../img/bg-color1.png') center center / contain no-repeat;
+  /* replaced image with CSS gradient to recreate green glow behind stars */
+  background: radial-gradient(circle at 45% 40%, rgba(165,243,208,0.95) 0%, rgba(132,204,22,0.18) 22%, rgba(34,197,94,0.06) 40%, transparent 55%) no-repeat;
   z-index:0; pointer-events:none;
 }
 .congrats-card::after {
@@ -930,7 +957,8 @@ padding:6px 5px;
   position:absolute; left:50%; top:50%;
   transform:translate(-40%,-50%);
   width:420px; height:420px;
-  background:url('../img/bg-color2.png') center center / contain no-repeat;
+  /* replaced image with CSS gradient to recreate warm ribbon glow */
+  background: radial-gradient(circle at 55% 58%, rgba(254,243,199,0.95) 0%, rgba(250,204,21,0.18) 22%, rgba(249,115,22,0.06) 45%, transparent 60%) no-repeat;
   z-index:1; pointer-events:none;
 }
 .congrats-card>* { position:relative; z-index:2; }
@@ -1067,7 +1095,7 @@ padding:6px 5px;
   background:#fff8f0;
   border:3px solid #f8f0f0;
   padding: clamp(10px,1.5vw,20px) clamp(12px,1.5vw,18px);
-  font-size: clamp(0.9rem,1.3vw,2.1rem);
+  font-size: clamp(0.9rem,1.9vw,2.3rem);
   font-weight:700;
   color:#1f2937;
   flex-shrink:0;
@@ -1094,7 +1122,7 @@ padding:6px 5px;
   padding: clamp(8px,1vw,10px) clamp(12px,1.5vw,20px) clamp(8px,1vw,12px);
   background:#f1fdff;
   border-radius:10px;
-  font-size: clamp(0.9rem,1.3vw,2.1rem);
+   font-size: clamp(0.9rem,1.9vw,2.3rem);
   font-weight:600;
   color:#374151;
   line-height:1.3;
@@ -1466,6 +1494,8 @@ padding:6px 5px;
   background:rgba(0,0,0,.45);
   display:none; align-items:center; justify-content:center;
   z-index:1000;
+  padding:12px;
+  overflow-y:auto;
   animation:overlayIn .25s ease;
 }
 @keyframes overlayIn { from{opacity:0;} to{opacity:1;} }
@@ -1473,9 +1503,9 @@ padding:6px 5px;
 
 .modal-box {
   background:#fff; border-radius:var(--radius);
-  padding:10px 15px; max-width:420px; width:90%;
+  padding:8px 12px; max-width:420px; width:90%;
   text-align:center; display:flex; flex-direction:column;
-  gap:16px; box-shadow:0 20px 60px rgba(0,0,0,.2);
+  gap:10px; box-shadow:0 20px 60px rgba(0,0,0,.2);
   animation:modalPop .35s cubic-bezier(0.34,1.56,0.64,1);
 }
 @keyframes modalPop {
@@ -1492,6 +1522,85 @@ padding:6px 5px;
   color:var(--blue-dark);
 }
 .modal-box p { color:#374151; line-height:1.2; }
+
+@media (max-width: 1000px), (max-height: 700px) {
+  .modal-overlay {
+    align-items:center;
+    padding:8px;
+  }
+
+  .modal-box.writing-info-box {
+    width:min(90vw, 500px);
+    max-width:min(90vw, 500px);
+    max-height:min(88dvh, 700px);
+    padding:8px 8px 10px;
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  .modal-top-row {
+    margin-bottom:8px;
+    flex-wrap:wrap;
+  }
+
+  .modal-top-row h3 {
+    margin:0 0 4px;
+    font-size:clamp(0.9rem, 4vw, 1.1rem) !important;
+  }
+
+  .modal-box p,
+  .writing-info-box p,
+  .writing-info-box li {
+    font-size: clamp(0.85rem, 2.4vw, 0.95rem);
+    line-height: 1.4;
+  }
+
+  .writing-info-scroll {
+    margin:0;
+    padding:6px 4px 6px;
+    border-radius:12px;
+    max-height:calc(100dvh - 112px);
+  }
+
+  .writing-info-section {
+    padding:8px 10px;
+    margin-bottom:8px;
+  }
+
+  .writing-info-section h4 {
+    font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+    margin-bottom: 8px;
+  }
+
+  .writing-info-section p,
+  .writing-info-section li {
+    font-size:clamp(0.85rem, 2.4vw, 0.95rem);
+    line-height:1.35;
+  }
+
+  #think-modal .writing-info-section li {
+    font-size:clamp(0.9rem, 2.4vw, 1rem);
+  }
+
+  #success-modal .writing-info-section li {
+    padding:10px 12px 10px 42px;
+  }
+
+  .modal-info-section p {
+    font-size: clamp(0.9rem, 2.4vw, 1rem);
+    line-height:1.4;
+  }
+
+  .challenge-box .modal-top-row h3 {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .challenge-intro,
+  .challenge-list li,
+  .sample-text {
+    font-size: clamp(0.85rem, 2.4vw, 1rem);
+  }
+}
 
 .think-btn {
   background:none; border:none; cursor:pointer;
@@ -1624,40 +1733,51 @@ padding:6px 5px;
 }
 
 /* ── LAPTOP / SMALL DESKTOP ≤1366px ── */
+/* ── LAPTOP / SMALL DESKTOP ≤1366px ── */
+/* ── LAPTOP / SMALL DESKTOP ≤1366px ── */
 @media (max-width: 1366px) {
   .sets-grid {
-    gap: 22px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 24px;
     padding: 0 30px 28px;
   }
-  .sets-heading { font-size: 2.6rem; }
+  .set-card {
+    flex: 0 1 calc(33.333% - 24px);
+    max-width: 300px;
+    min-height: 180px;
+    padding: 14px 12px;
+  }
+  .set-name { font-size: 2rem; }
+  .set-subname { font-size: 1.3rem; }
+  .sets-heading { font-size: 2.2rem; }
   .learn-card-inner { padding: 20px 24px; gap: 8px; }
   .mcq-card { margin: 8px 18px 50px; }
   .congrats-card { margin: 0 clamp(20px,5vw,80px) 60px; }
   .use-page-card { margin: 16px 30px 50px; }
 }
-
+/* ── SMALL LAPTOP ≤1200px ── */
 /* ── SMALL LAPTOP ≤1200px ── */
 @media (max-width: 1200px) {
-.sets-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .sets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     gap: clamp(12px,1.8vh,24px) clamp(14px,1.8vw,28px);
     padding: 0 clamp(16px,3vw,40px) clamp(16px,2vh,28px);
-    align-content: center;
-    overflow-y: auto;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
-.set-card:nth-child(4) { grid-column: 2; margin-left: -160px; }
-  .set-card:nth-child(5) { grid-column: 3; margin-left: -150px; }
   .mcq-question-bar { width: 95%; }
   .congrats-card { margin: 0 clamp(10px,3vw,50px) 40px; }
   .learn-card-inner { padding: 16px 20px; gap: 6px; }
   .use-page-card { margin: 12px 20px 40px; }
   .recorder-box { max-width: min(560px, 90vw); }
   .set-card {
-    width: 100%;
+    width: clamp(140px, 26vw, 260px);
     min-height: clamp(150px, 18vh, 220px);
     padding: clamp(10px,2vh,18px) 12px;
   }
@@ -1668,14 +1788,22 @@ padding:6px 5px;
 
 /* ── TABLET ≤1024px ── */
 @media (max-width: 1024px) {
-.sets-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px 20px;
-    padding: 0 20px 24px;
+ .sets-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 14px 16px;
+    padding: 0 16px 18px;
   }
-  .set-card { min-height: 110px; padding: 12px 10px 10px;}
-  .set-name { font-size: 1.9rem; }
-  .sets-heading { font-size: 2rem; }
+  .set-card {
+    flex: 0 1 calc(30% - 16px);
+    max-width: 200px;
+    min-height: 90px;
+    padding: 10px 8px 8px;
+  }
+  .set-name { font-size: 1.6rem; }
+  .set-subname { font-size: 1.1rem; }
+  .sets-heading { font-size: 1.6rem; margin: 6px 0 8px; }
 
  .learn-card-inner { 
     padding: 16px 18px; 
@@ -1690,11 +1818,11 @@ padding:6px 5px;
   #page-learn .example-label { font-size: clamp(1rem, 1.8vw, 2rem) !important; }
 .mcq-card { margin: 4px 10px 10px; overflow: hidden; padding: 8px 10px; gap: 6px; }
   .mcq-body { gap: 10px; flex: 1; }
-.mcq-options { max-width: min(380px, 50vw); padding-right: 0; gap: 8px; }
+.mcq-options { max-width: min(280px, 50vw); padding-right: 0; gap: 8px; }
   .mcq-opt-btn { 
-    font-size: clamp(1rem, 1.8vw, 2rem) !important;
-    min-height: clamp(40px, 5vh, 58px) !important;
-    padding: 8px 16px !important;
+    font-size: clamp(0.8rem, 1.8vw, 2rem) !important;
+    min-height: clamp(30px, 5vh, 58px) !important;
+    padding: 8px 1px !important;
   }
   #mcq-counter {
     font-size: 0.85rem !important;
@@ -1749,19 +1877,39 @@ padding:6px 5px;
 }
 .top-icons .icon-btn { padding: 2px 3px; }
 .top-icons .icon-btn img {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px !important;
-  max-height: 22px !important;
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
 }
-  .intro-content {
-    padding: 20px 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#page-intro .intro-content {
+    width: 100%;
+    padding: 20px 16px 20px 80px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
     gap: 14px;
   }
-  .intro-text { max-width: 100%; text-align: center; }
+  #page-intro .intro-text {
+    flex: 0 0 auto !important;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+  #page-intro .intro-hero {
+    flex: 0 0 auto !important;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    order: 2;
+  }
+  #page-intro .hero-img {
+    margin: 0;
+  }
+  #page-intro .start-btn {
+    margin: 0;
+  }
   .brand-title { margin-bottom: 8px; }
   .brand-sub { margin-bottom: 16px; }
 
@@ -1773,42 +1921,116 @@ padding:6px 5px;
   }
   .menu-img-btn img { height: 200px; width: 100%; max-width: 320px; object-fit: cover; }
 
-  /* 2-column sets grid on mobile */
 .sets-grid {
-    gap: 12px;
-    padding: 0 12px 20px;
-    align-content: start;
+    gap: 10px;
+    padding: 0 10px 10px;
   }
-  .set-card { width: clamp(140px, 44vw, 260px); min-height: 130px; padding: 16px 12px 12px; }
-  .set-name { font-size: 1.8rem; }
+  .set-card {
+    flex: 0 1 calc(28% - 10px);
+    max-width: 170px;
+    min-height: 70px;
+    padding: 6px 6px;
+  }
+  .set-name { font-size: 1.1rem; }
+  .set-subname { font-size: 0.85rem; }
+  .sets-heading { font-size: 1.1rem; margin: 4px 0 6px; }
+
+
+.learn-card-wrap {
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px 6px;
+    overflow-y: auto;
+  }
 
 .learn-card-inner {
+    height: auto;
     min-height: 0;
-    height: 60% !important;
+    max-height: 100%;
     flex: 0 1 auto;
-    padding: 14px 12px 12px;
-    justify-content: space-between;
+    padding: 6px 12px 12px;
+    justify-content: flex-start;
     gap: 6px;
+    overflow-y: auto;
   }
-  .learn-card-inner>*:not(.nav-row):not(.counter-badge) { max-width: 100%; }
-  .word-block { padding-top: 28px; }
-
+.learn-card-inner>*:not(.nav-row):not(.counter-badge) {
+    max-width: 72%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .word-meaning,
+  .example-box {
+    width: fit-content;
+    max-width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+  }
+  .example-box {
+    text-align: center;
+  }
+ .word-block { padding-top: 4px; }
  .learn-card-wrap {
     align-items: center;
     justify-content: center;
     padding: 6px 6px 6px;
   }
-
-  .mcq-card { margin: 6px 8px 24px; padding: 12px 10px 10px; gap: 10px; }
-  .mcq-question-bar { width: 100%; flex-wrap: wrap; gap: 8px; }
-  .mcq-body { flex-direction: column; align-items: center; gap: 10px; }
-  .mcq-options { max-width: 100%; gap: 10px; }
-  .mcq-check { width: 28px; height: 28px; right: -34px; font-size: 0.9rem; }
-  .mcq-feedback, .wrong-feedback {
-    position: static; width: 100%;
-    flex-direction: row; justify-content: center;
+ .learn-nav-btn {
+    height: clamp(28px,4vh,36px) !important;
+    border-radius: 10px !important;
+    font-size: 0.7rem !important;
+    padding: 0 4px !important;
+  }
+  .learn-nav-next {
+    padding: 0 10px !important;
   }
 
+.mcq-card {
+    margin: 4px 8px 8px;
+    padding: 0px 10px 6px;
+    gap: 4px;
+    max-height: 90vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+.mcq-question-bar {
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 3px 1px;
+    margin-top: 0;
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+#mcq-counter {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    border-radius: 20px;
+    font-size: 0.8rem !important;
+    padding: 5px 12px !important;
+  }
+  .counter-badge {
+    font-size: 0.85rem !important;
+    padding: 5px 12px !important;
+    top: 10px !important;
+  }
+.mcq-body { flex-direction: row; align-items: center; justify-content: center; gap: 10px; margin-top: 4px; }
+ .mcq-options { width: 65%; max-width: 240px; gap: 8px; }
+  .mcq-opt-btn { height: 30px !important; min-height: 30px !important; font-size: 0.8rem !important; padding: 0 10px !important; display: flex; align-items: center; justify-content: center; }
+  .mcq-check { width: 20px; height: 20px; right: -26px; font-size: 0.7rem; }
+  .mcq-feedback, .wrong-feedback {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: clamp(90px, 18vw, 140px);
+    bottom: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #page-mcq .nav-row { flex-shrink: 0; padding-top: 4px; }
   .congrats-card { margin: 0 6px 20px; padding: 16px 14px 14px; gap: 8px; }
   .ribbon-wrap { width: 200px; }
   .congrats-btns { flex-wrap: wrap; justify-content: center; gap: 8px; }
@@ -1822,22 +2044,62 @@ padding:6px 5px;
   .use-scenario { width: calc(100% - 66px); margin-left: 8px; margin-top: 8px; margin-bottom: 8px; }
   .writing-box { margin: 8px 8px; padding: 10px; }
   .use-bottom-row { padding: 8px 8px; flex-wrap: wrap; gap: 6px; }
- .sample-ans-btn { position: static !important; order: 2; flex: 0 0 auto; }
-  #page-writing .use-bottom-row .sample-ans-btn { position: static; }
+.sample-ans-btn { position: static !important; order: 2; flex: 0 0 auto; }
+#page-writing .use-bottom-row .sample-ans-btn {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    font-size: 0.65rem !important;
+    padding: 4px 10px !important;
+    border-width: 1.5px !important;
+  }
+  #page-writing .use-bottom-row > div:last-child { order: 3; flex-shrink: 0; }
+#page-writing .use-bottom-row .save-btn img {
+    height: 26px !important;
+  }
+#page-writing .use-bottom-row > div:last-child .icon-btn img {
+    width: 60px !important;
+    height: 36px !important;
+  }
 
-  #speaking-answer-display { margin: 8px 8px 10px; min-height: 50px; max-height: 160px; }
-  .recorder-wrap { padding: 10px 8px; }
-  .recorder-box { flex-wrap: wrap; max-width: 100%; border-radius: 18px; }
+#speaking-answer-display { margin: 8px 8px 10px; min-height: 50px; max-height: 160px; }
+  .recorder-wrap { padding: 6px 8px; }
+  .speak-prev-btn img { height: 34px !important; }
+  #page-speaking .use-bottom-row .save-btn img { height: 26px !important; }
+.recorder-box {
+    flex-wrap: nowrap;
+    max-width: 40% !important;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 5px 10px;
+    gap: 5px;
+    border-width: 1.5px;
+  }
+.rec-mic-btn img { width: 26px !important; height: 26px !important; }
+  .rec-play-btn { width: 28px !important; height: 28px !important; }
+  .rec-play-btn img { width: 12px !important; height: 12px !important; }
+  .rec-delete-btn { width: 26px !important; height: 26px !important; }
+  .rec-delete-btn img { width: 12px !important; height: 12px !important; }
+  .rec-time { font-size: 0.75rem !important; min-width: 26px; }
+  .rec-progress-wrap { height: 10px; flex: 0 1 55%; }
+  .recorder-box { max-width: 90%; margin: 0 auto; }
 
   /* Modals slide up from bottom */
-  .modal-overlay { align-items: flex-end; }
+  .modal-overlay { align-items: center; }
   .writing-info-box {
-    max-width: 100vw !important; width: 100vw;
-    max-height: 92dvh; padding: 12px 10px 10px;
-    border-radius: 20px 20px 0 0;
+    max-width: min(92vw, 520px) !important;
+    width: min(92vw, 520px);
+    max-height: min(90dvh, 700px);
+    padding: 12px 10px 10px;
+    border-radius: 20px;
   }
   .writing-info-scroll { margin-left: 4px; margin-right: 2px; margin-bottom: 10px; padding: 6px 4px 8px; }
-  .challenge-box { max-width: 100vw; width: 100vw; border-radius: 20px 20px 0 0; padding: 14px 12px; }
+  .challenge-box {
+    max-width: min(92vw, 520px);
+    width: min(92vw, 520px);
+    border-radius: 20px;
+    padding: 14px 12px;
+  }
   .js-tooltip { display: none !important; }
 }
 
@@ -1941,8 +2203,17 @@ padding:6px 5px;
     width: clamp(60px, 18vw, 90px) !important;
     height: auto !important;
   }
+  .js-tooltip { display: none !important; }
+  .writing-info-section h4 { font-size: 0.95rem !important; }
+  .writing-info-section p,
+  .writing-info-section li { font-size: 0.85rem !important; line-height: 1.4 !important; }
+  .modal-top-row h3 { font-size: 1rem !important; }
 }
 
+
+
+
+/* ── SMALL MOBILE ≤480px ── */
 
 /* ── PAGE 8 WRITING BOTTOM ROW FIX ≤480px ── */
 @media (max-width: 480px) {
@@ -1974,9 +2245,9 @@ padding:6px 5px;
     gap: 4px;
     order: 2;
   }
-  #page-writing .use-bottom-row > div:last-child .icon-btn img {
-    width: clamp(60px, 16vw, 90px) !important;
-    height: auto !important;
+#page-writing .use-bottom-row > div:last-child .icon-btn img {
+    width: 80px !important;
+    height: 48px !important;
   }
 #page-writing .use-bottom-row .save-btn img {
     height: clamp(18px, 5vw, 32px) !important;
@@ -2096,9 +2367,6 @@ padding:6px 5px;
 
 
 
-
-
-
 .speak-prev-btn {
   background: none;
   border: none;
@@ -2127,6 +2395,229 @@ padding:6px 5px;
   border: 3px solid #e3ebf8;
   transition: transform .2s, box-shadow .2s;
 }
-#page-use-menu .menu-img-btn:hover img {
-  box-shadow: 0 16px 48px rgba(30,60,160,0.22), 0 4px 12px rgba(0,0,0,0.12);
+/* ---------- ROTATE TO LANDSCAPE OVERLAY ---------- */
+.rotate-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #455569;
+  color: #fff;
+  z-index: 999999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
 }
+.rotate-icon-img {
+  width: clamp(120px, 70vw, 320px);
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotateHint 1.6s ease-in-out infinite;
+}
+.rotate-overlay p {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  max-width: 320px;
+  line-height: 1.5;
+}
+@keyframes rotateHint {
+  0%, 100% { transform: rotate(-10deg); }
+  50%      { transform: rotate(10deg); }
+}
+@media (max-width: 900px) and (orientation: portrait) {
+  .rotate-overlay { display: flex; }
+}
+
+/* Force smaller font for injected example paragraphs on small screens */
+@media (max-width: 768px) {
+  /* override inline large font-size in injected <p> */
+  #more-examples-content p {
+    font-size: clamp(0.7rem, 2.6vw, 0.9rem) !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    color: #374151 !important;
+  }
+
+  /* reduce the padding on the injected example cards */
+  #more-examples-content > div[style] {
+    padding: 10px 12px !important;
+    margin-bottom: 10px !important;
+    border-left-width: 3px !important;
+    border-radius: 12px !important;
+  }
+
+  /* tighten the overall modal content area */
+  #more-examples-modal .modal-box,
+  #more-examples-modal .writing-info-box {
+    width: min(94vw, 460px) !important;
+    max-height: min(82dvh, 620px) !important;
+    padding: 8px 8px !important;
+  }
+}
+
+/* Also ensure medium screens up to 1000px get tighter layout */
+@media (max-width: 1000px) {
+  /* remove large inline left-padding set in HTML */
+  #more-examples-content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #more-examples-content p,
+  #more-examples-content > div[style] p {
+    font-size: clamp(0.85rem, 2.2vw, 1rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  #more-examples-content > div[style] {
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* slightly narrower modal for medium screens */
+  #more-examples-modal .modal-box,
+  #more-examples-modal .writing-info-box {
+    width: min(90vw, 520px) !important;
+    max-height: min(86dvh, 700px) !important;
+  }
+}
+
+/* PAGE 6: medium screens up to 1000px - scale fonts, spacing, and decorations */
+@media (max-width: 1000px) {
+  .congrats-card {
+    margin: 12px 24px 24px !important;
+    padding: 20px 20px 18px !important;
+    gap: 10px !important;
+    border-radius: 14px !important;
+    text-align: center;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  .congrats-card::before,
+  .congrats-card::after {
+    display: block !important;
+    width: clamp(160px, 20vw, 360px) !important;
+    height: clamp(160px, 20vw, 360px) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    opacity: 0.38 !important;
+    transform: translate(-50%,-50%) !important;
+    left: 50% !important;
+    top: 50% !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  .congrats-title {
+    font-size: clamp(1.4rem, 3.2vw, 2.6rem) !important;
+  }
+
+  .congrats-msg {
+    font-size: clamp(0.95rem, 1.6vw, 1.4rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  .star-img { width: clamp(32px,5.5vw,70px) !important; height: auto !important; }
+
+  .ribbon-wrap {
+    display: block !important;
+    width: clamp(120px, 18vw, 260px) !important;
+    margin-top: 10px !important;
+  }
+
+  .congrats-btns { gap: 12px !important; margin-top: 12px !important; }
+}
+
+/* Ensure the congrats card can scroll when viewport height is reduced */
+@media (max-width: 1000px), (max-height: 820px) {
+  .congrats-card {
+    max-height: min(86dvh, 720px) !important;
+    overflow-y: auto !important;
+    padding-bottom: 48px !important; /* ensure bottom buttons aren't clipped */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .congrats-card > * { box-sizing: border-box; }
+
+  .congrats-btns { flex-shrink: 0 !important; }
+
+  /* keep results area scrollable but limited */
+  #results-review { max-height: 24vh; overflow-y: auto; }
+}
+
+/* PAGE 6: tighter responsive rules for small screens */
+@media (max-width: 768px) {
+  .congrats-card {
+    margin: 8px 12px 20px !important;
+    padding: 12px 14px !important;
+    gap: 4px !important;
+    border-radius: 12px !important;
+    text-align: center;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* keep decorative background gradients but scale and reposition them to avoid overflow */
+  .congrats-card::before,
+  .congrats-card::after {
+    display: block !important;
+    width: clamp(120px, 28vw, 300px) !important;
+    height: clamp(120px, 28vw, 300px) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    opacity: 0.48 !important;
+    transform: translate(-50%,-50%) !important;
+    left: 50% !important;
+    top: 50% !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  .congrats-title {
+    font-size: clamp(1rem, 5vw, 1.8rem) !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+
+  .congrats-msg {
+    font-size: clamp(0.8rem, 2.2vw, 1.05rem) !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+
+  .stars-row { margin-top:3px; gap:4px !important; }
+  .star-img { width: clamp(20px,5vw,48px) !important; height:auto !important; }
+
+  /* ensure ribbon is visible on small screens but scaled down */
+  .ribbon-wrap {
+    display: block !important;
+    width: clamp(90px, 25vw, 220px) !important;
+    margin-top: 8px !important;
+  }
+
+  .congrats-btns { gap: 4px !important; margin-top: 4px !important; }
+  .replay-img, .exit-btn img, .notes-btn-round img { height: clamp(25px,5vw,52px) !important; }
+}
+
+
+/* Small-screen height safety: allow scrolling when viewport is short */
+@media (max-width: 768px), (max-height: 680px) {
+  .congrats-card {
+    max-height: min(82dvh, 640px) !important;
+    overflow-y: auto !important;
+    padding-bottom: 56px !important;
+  }
+
+  .congrats-btns { flex-shrink: 0 !important; }
+}
+

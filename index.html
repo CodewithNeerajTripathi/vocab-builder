@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<div class="rotate-overlay" id="rotate-overlay">
+    <img src="img/Rotate.png" alt="Rotate device" class="rotate-icon-img" />
+  </div>
+   
   <!-- ========== PAGE 1: INTRO ========== -->
 <div class="page active" id="page-intro">
   <div class="bg-layer"><img src="img/bg.png" alt="" /></div>
@@ -26,13 +30,13 @@
       <div class="intro-text">
         <h1 class="brand-title">Vocab<br/>Builder</h1>
         <p class="brand-sub">Build Your Word Power</p>
-        <button class="start-btn" onclick="navigate('page-menu')" title="Start">
+        <button class="start-btn" onclick="navigate('page-menu')">
           <img src="img/start.png" alt="START" class="start-img" />
         </button>
       </div>
       
     </div>
-    <div class="copyright">Copyright © 2026 Macmillan Education India Private Limited. All rights reserved.</div>
+    <div class="copyright">Copyright © 2027 Macmillan Education India Private Limited. All rights reserved.</div>
   </div>
 
   <!-- ========== PAGE 2: MENU (Learn / Use the Words) ========== -->
@@ -48,10 +52,10 @@
         <button class="icon-btn" onclick="toggleFullscreen()" id="fs-btn" title="Full Screen View"><img src="img/full-close.png" alt="Fullscreen" id="fs-icon" /></button>
       </div>
     </div>
-    <div class="menu-cards">      <button class="menu-img-btn" onclick="navigate('page-sets', 'learn')" title="Learn the Words">
+    <div class="menu-cards">      <button class="menu-img-btn" onclick="navigate('page-sets', 'learn')" >
         <img src="img/learn_card.png" alt="Learn the Words" />
       </button>
-      <button class="menu-img-btn" onclick="navigate('page-use-menu')" title="Use the Words">
+      <button class="menu-img-btn" onclick="navigate('page-use-menu')" >
         <img src="img/use_card.png" alt="Use the Words" />
       </button>
     </div>
@@ -111,7 +115,8 @@
       <div class="set-badge-wrap">
         <span class="set-badge" id="learn-set-label">Set 1</span>
       </div>
-      <div class="top-icons">
+<div class="top-icons">
+        <button class="icon-btn" onclick="navigate('page-sets')" title="Back"><img src="img/back.png" alt="Back" /></button>
         <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
         <button class="icon-btn" onclick="navigate('page-intro')" title="Home"><img src="img/home.png" alt="Home" /></button>
         <button class="icon-btn" onclick="toggleFullscreen()" id="fs-btn" title="Full Screen View"><img src="img/full-close.png" alt="Fullscreen" id="fs-icon" /></button>
@@ -134,9 +139,9 @@
         <div class="example-text" id="learn-example"><strong id="learn-word-bold">Thanks</strong> for the help!</div>
       </div>
 <div class="nav-row">
-  <button class="learn-nav-btn learn-nav-prev" id="learn-prev-btn" onclick="learnPrev()" title="Previous"><span class="nav-arrow">←</span> Previous</button>
-  <button class="learn-nav-btn learn-nav-skip skip-quiz-btn" onclick="goToQuiz()" title="Skip to Quiz">Skip to Quiz</button>
-  <button class="learn-nav-btn learn-nav-next" id="learn-next-btn" onclick="learnNext()" title="Next">Next <span class="nav-arrow">→</span></button>
+  <button class="learn-nav-btn learn-nav-prev" id="learn-prev-btn" onclick="learnPrev()"><span class="nav-arrow">←</span> Previous</button>
+ <button class="learn-nav-btn learn-nav-skip skip-quiz-btn" onclick="goToQuiz()">Skip to Quiz</button>
+  <button class="learn-nav-btn learn-nav-next" id="learn-next-btn" onclick="learnNext()">Next <span class="nav-arrow">→</span></button>
 </div>
     </div>
   </div>
@@ -155,7 +160,8 @@
     <div class="set-badge-wrap">
       <span class="set-badge mcq-badge" id="mcq-set-label">Set 1 - Quiz</span>
     </div>
-    <div class="top-icons">
+<div class="top-icons">
+<button class="icon-btn" onclick="navigate('page-learn')" title="Back"><img src="img/back.png" alt="Back" /></button>
       <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
       <button class="icon-btn" onclick="navigate('page-intro')" title="Home"><img src="img/home.png" alt="Home" /></button>
       <button class="icon-btn" onclick="toggleFullscreen()" id="fs-btn" title="Full Screen View"><img src="img/full-close.png" alt="Fullscreen" id="fs-icon" /></button>
@@ -184,11 +190,12 @@
       </div>
     </div>
 
-    <!-- NAV ROW -->
+<!-- NAV ROW -->
     <div class="nav-row">
-      <button class="icon-btn" id="mcq-prev-btn" onclick="mcqPrev()" title="Previous"><img src="img/prev_btn.png" alt="Previous" /></button>
+      <button class="icon-btn" id="mcq-prev-btn" onclick="mcqPrev()" ><img src="img/prev_btn.png" alt="Previous" /></button>
       
-      <button class="icon-btn" id="mcq-next-btn" onclick="mcqNext()" title="Next"><img src="img/next_btn.png" alt="Next" /></button>
+      <button class="icon-btn" id="mcq-next-btn" onclick="mcqNext()" ><img src="img/next_btn.png" alt="Next" /></button>
+      <button class="learn-nav-btn learn-nav-skip skip-quiz-btn" id="mcq-finish-btn" onclick="mcqFinish()" style="display:none;">Finish</button>
     </div>
   </div>
 </div>
@@ -215,7 +222,7 @@
 
   <!-- WHITE CARD -->
   <div class="congrats-card">
-    <h2 class="congrats-title">Congralutions!</h2>
+    <h2 class="congrats-title">Congratulations!</h2>
     <p class="congrats-msg" id="congrats-msg">
       You did a great job! You earned 2 stars.<br/>
       You can move on to the next set now,<br/>
@@ -527,7 +534,7 @@
     </div>
   </div>
 <div class="use-menu-center">
-<button class="menu-img-btn" onclick="startUseWords()" title="Click to Start">
+<button class="menu-img-btn" onclick="startUseWords()" >
   <img src="img/words-bg.png" alt="Writing and Speaking" />
 </button>
   </div>
@@ -546,7 +553,8 @@
     <div class="set-badge-wrap">
       <span class="set-badge" style="background:#1461c7;">Writing</span>
     </div>
-    <div class="top-icons">
+<div class="top-icons">
+      <button class="icon-btn" onclick="navigate('page-use-menu')" title="Back"><img src="img/back.png" alt="Back" /></button>
       <button class="icon-btn menu-btn" onclick="navigate('page-menu')" title="Menu"><img src="img/hamburger.png" alt="Menu" /></button>
       <button class="icon-btn" onclick="navigate('page-intro')" title="Home"><img src="img/home.png" alt="Home" /></button>
       <button class="icon-btn" onclick="toggleFullscreen()" id="fs-btn" title="Full Screen View"><img src="img/full-close.png" alt="Fullscreen" id="fs-icon" /></button>
@@ -582,7 +590,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
     <button class="save-btn" onclick="downloadWritingPDF()" title="Save">
       <img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" />
     </button>
-    <button class="icon-btn" onclick="startChallenge()" style="padding:0;" title="Next">
+    <button class="icon-btn" onclick="startChallenge()" style="padding:0;" >
       <img src="img/next_btn.png" alt="Next" style="width:118px;height:70px;object-fit:contain;" />
     </button>
   </div>
@@ -638,7 +646,7 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
       </div>
     </div>
   <div class="use-bottom-row">
-     <button class="speak-prev-btn" onclick="navigate('page-writing')" title="Previous">
+     <button class="speak-prev-btn" onclick="navigate('page-writing')" >
         <img src="img/prev_btn.png" alt="Previous" />
       </button>
       <button class="save-btn" onclick="saveSpeaking()" title="Save"><img src="img/save.png" alt="Save" style="height:52px;object-fit:contain;" /></button>
@@ -702,8 +710,8 @@ Use all 5 given words meaningfully. Add a creative title for your paragraph.
         <ul>
           <li>Have I used all 5 target words in the right way?</li>
           <li>Is my paragraph clear and well organised?</li>
-          <li>Do my ideas flow in the correct order?</li>
-          <li>Do my ideas flow in the correct order?</li>
+         <li>Do my ideas flow in the correct order?</li>
+<li>Does my ending show learning or reflection?</li>
         </ul>
       </div>
     </div>
